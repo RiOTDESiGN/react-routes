@@ -1,0 +1,47 @@
+{
+    "projects": [
+      {
+        "id": "RNG",
+        "name": "Random Number Generator",
+        "type": "HTML, CSS, Javascript",
+        "image": "../src/assets/rng.png",
+        "url": "https://www.ruudphotography.com/RNG/",
+        "description": "Description of Project 1",
+        "synopsis": "Synopsis of Project 1"
+      },
+      {
+        "id": "Mars",
+        "name": "Mars, the red planet",
+        "type": "Type 2",
+        "image": "../src/assets/mars.png",
+        "description": "Description of Project 2",
+        "synopsis": "Synopsis of Project 2"
+      },
+      {
+        "id": "Drumpad",
+        "name": "Retro Drumpad",
+        "type": "Type 3",
+        "image": "../src/assets/drumpad.png",
+        "description": "Description of Project 3",
+        "synopsis": "Synopsis of Project 3"
+      },
+      {
+        "id": "Dogfood",
+        "name": "Dogfood Calculator",
+        "type": "Type 3",
+        "image": "dogfood.png",
+        "url": "https://www.ruudphotography.com/LABB/",
+        "description": "Description of Project 3",
+        "synopsis": "Synopsis of Project 3"
+      },
+      {
+        "id": "Newsfeed",
+        "name": "Article Newsfeed",
+        "type": "Type 3",
+        "image": "../src/assets/rng.png",
+        "description": "Description of Project 3",
+        "synopsis": "Synopsis of Project 3"
+      }
+    ]
+  }
+  
