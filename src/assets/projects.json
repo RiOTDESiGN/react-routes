@@ -14,6 +14,7 @@
         "name": "Mars, the red planet",
         "type": "Type 2",
         "image": "../src/assets/mars.png",
+        "url": "https://www.ruudphotography.com/MARS/",
         "description": "Description of Project 2",
         "synopsis": "Synopsis of Project 2"
       },
@@ -22,6 +23,7 @@
         "name": "Retro Drumpad",
         "type": "Type 3",
         "image": "../src/assets/drumpad.png",
+        "url": "https://www.ruudphotography.com/DRUMPAD/",
         "description": "Description of Project 3",
         "synopsis": "Synopsis of Project 3"
       },
@@ -39,6 +41,7 @@
         "name": "Article Newsfeed",
         "type": "Type 3",
         "image": "../src/assets/rng.png",
+        "url": "https://erik-r-u-kodehode.github.io/react-first-project/",
         "description": "Description of Project 3",
         "synopsis": "Synopsis of Project 3"
       }

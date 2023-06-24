@@ -9,11 +9,13 @@ export function ProjectContent({ id }) {
 
   return (
     <>
-      <div>
+      <div class="ProjectContent">
         <h2>{project.name}</h2>
         <p>Type: {project.type}</p>
         <p>Description: {project.description}</p>
         <p>Synopsis: {project.synopsis}</p>
+        <br />
+        <p>Live-view:</p>
         <iframe src={project.url} frameborder="0"></iframe>
         {/* <div class="imgbox"><img src={project.image} alt={project.name} /></div> */}
       </div>
