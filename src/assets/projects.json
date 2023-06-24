@@ -12,7 +12,7 @@
       {
         "id": "Mars",
         "name": "Mars, the red planet",
-        "type": "Type 2",
+        "type": "HTML, CSS, Javascript",
         "image": "../src/assets/mars.png",
         "url": "https://www.ruudphotography.com/MARS/",
         "description": "Description of Project 2",
@@ -21,7 +21,7 @@
       {
         "id": "Drumpad",
         "name": "Retro Drumpad",
-        "type": "Type 3",
+        "type": "HTML, CSS, Javascript",
         "image": "../src/assets/drumpad.png",
         "url": "https://www.ruudphotography.com/DRUMPAD/",
         "description": "Description of Project 3",
@@ -30,20 +30,20 @@
       {
         "id": "Dogfood",
         "name": "Dogfood Calculator",
-        "type": "Type 3",
+        "type": "HTML, CSS, Javascript",
         "image": "dogfood.png",
         "url": "https://www.ruudphotography.com/LABB/",
-        "description": "Description of Project 3",
-        "synopsis": "Synopsis of Project 3"
+        "description": "Description of Project 4",
+        "synopsis": "Synopsis of Project 4"
       },
       {
         "id": "Newsfeed",
         "name": "Article Newsfeed",
-        "type": "Type 3",
+        "type": "HTML, CSS, Javascript",
         "image": "../src/assets/rng.png",
         "url": "https://erik-r-u-kodehode.github.io/react-first-project/",
-        "description": "Description of Project 3",
-        "synopsis": "Synopsis of Project 3"
+        "description": "Description of Project 5",
+        "synopsis": "Synopsis of Project 5"
       }
     ]
   }
