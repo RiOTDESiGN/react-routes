@@ -5,7 +5,6 @@ export function PageNotFound() {
   const navigate = useNavigate();
   const [count, setCount] = useState(5);
 
-  // Countdown function
   useEffect(() => {
     const countdownInterval = setInterval(() => {
       setCount((prevCount) => prevCount - 1);
@@ -22,7 +21,7 @@ export function PageNotFound() {
 
   return (
     <>
-      <h1>PageNotFound</h1>
+      <h1>Page not found</h1>
       <br />
       <h2>Re-directing to landingpage in {count} seconds.</h2>
     </>

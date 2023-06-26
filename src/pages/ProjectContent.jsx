@@ -1,10 +1,11 @@
+import { PageNotFound } from './PageNotFound'
 import projectsData from '../assets/projects.json';
 
 export function ProjectContent({ id }) {
   const project = projectsData.projects.find((project) => project.id === id);
 
   if (!project) {
-    return <p>Project not found</p>;
+    return <PageNotFound />;
   }
 
   return (
