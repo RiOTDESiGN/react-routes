@@ -21,9 +21,11 @@ export function PageNotFound() {
 
   return (
     <>
-      <h1>Page not found</h1>
+      <div className="title"><h1>Page not found</h1>test</div>
       <br />
+      <div className="pageContent">
       <h2>Re-directing to landingpage in {count} seconds.</h2>
+      </div>
     </>
   );
 }

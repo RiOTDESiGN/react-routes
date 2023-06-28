@@ -6,8 +6,7 @@ export function Project() {
 
   return (
     <>
-      <h1>Project: {id}</h1>
-      <hr />
+      <div className="title"><h1>Project: {id}</h1>test</div>
       <ProjectContent id={id} />
     </>
   );

@@ -23,6 +23,6 @@
 }
 
 body {
-  place-items: center;
+  position: relative;
   overflow: hidden;
 }

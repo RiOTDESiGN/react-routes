@@ -10,7 +10,7 @@ export function ProjectContent({ id }) {
 
   return (
     <>
-      <div class="ProjectContent">
+      <div class="pageContent">
         <h2>{project.name}</h2>
         <p>Type: {project.type}</p>
         <p>Description: {project.description}</p>

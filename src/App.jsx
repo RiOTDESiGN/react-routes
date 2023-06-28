@@ -20,6 +20,9 @@ function App() {
       <li><NavLink to="/Contact">Contact</NavLink></li>
     </ul>
   </nav>
+  <div className="homeAnimation">
+
+  </div>
   <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/About" element={<About />} />
