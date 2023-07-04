@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
 import { Page } from './Page'
 
-export function Contact() {
+export function Kontakt() {
 
-    const [placeholder, setPlaceholder] = useState("Enter your text here");
+    const [placeholder, setPlaceholder] = useState("Skriv beskjeden din her");
     const firstnameRef = useRef(null);
     const lastnameRef = useRef(null);
     const emailRef = useRef(null);
@@ -15,7 +15,7 @@ export function Contact() {
   
     const handleBlur = () => {
       if (textareaRef.current.value === "") {
-        setPlaceholder("Enter your text here");
+        setPlaceholder("Skriv beskjeden din her");
       }
     };
   
@@ -24,11 +24,11 @@ export function Contact() {
       lastnameRef.current.value = "";
       emailRef.current.value = "";
       textareaRef.current.value = "";
-      setPlaceholder("Enter your text here");
+      setPlaceholder("Skriv beskjeden din her");
     };
 
   return (
-    <Page title="Contact" icon="./src/assets/images/contact_icon2.webp">
+    <Page title="Kontakt" icon="./src/assets/images/contact_icon2.webp">
         <div className="form-box">
           <div className="form">
             <div className="col">
@@ -42,7 +42,7 @@ export function Contact() {
                 />
                 <div className="cut"></div>
                 <label htmlFor="firstname" className="placeholder">
-                  First name
+                  Fornavn
                 </label>
               </div>
               <div className="input-container ic2">
@@ -55,7 +55,7 @@ export function Contact() {
                 />
                 <div className="cut"></div>
                 <label htmlFor="lastname" className="placeholder">
-                  Last name
+                  Etternavn
                 </label>
               </div>
               <div className="input-container ic2">
@@ -68,12 +68,12 @@ export function Contact() {
                 />
                 <div className="cut cut-short"></div>
                 <label htmlFor="email" className="placeholder">
-                  Email
+                  Epost
                 </label>
               </div>
               <div className="space"></div>
               <button id="clearForm" type="button" className="submit" onClick={handleClearForm}>
-                Clear Form
+                Tøm skjema
               </button>
             </div>
             <div className="space"></div>
@@ -88,7 +88,7 @@ export function Contact() {
                 ></textarea>
               </form>
               <button type="submit" className="submit">
-                Submit
+                Send
               </button>
             </div>
           </div>

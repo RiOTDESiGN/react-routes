@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Page } from './Page'
 
-export function PageNotFound() {
+export function SideIkkeFunnet() {
   const navigate = useNavigate();
   const [count, setCount] = useState(5);
 
@@ -21,8 +21,8 @@ export function PageNotFound() {
   }, [count, navigate]);
 
   return (
-    <Page title="Page not found" icon="../src/assets/images/404.png">
-    <h2>Re-directing to landingpage in {count} seconds.</h2>
+    <Page title="Side ikke funnet" icon="../src/assets/404_icon.webp">
+    <h2>Omdirigerer til fremsiden om {count} sekunder.</h2>
     </Page>
   );
 }

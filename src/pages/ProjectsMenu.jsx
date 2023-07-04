@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom"
 
-export function ProjectsLayout() {
+export function ProjectsMenu() {
     return (
         <>
             <div className="ProjectsLayout">

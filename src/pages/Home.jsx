@@ -1,10 +1,9 @@
+import { Page } from './Page'
+
 export function Home() {
-    return (
-        <>
-          <div className="title"><h1>Home</h1>test</div>
-          <div className="pageContent">
-          <h3>stuff</h3>
-          </div>
-        </>
-      );
+  return (
+    <Page title="Home" icon="./src/assets/images/home_icon2.webp">
+      <h3>stuff 2</h3>
+    </Page>
+  );
 }

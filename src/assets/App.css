@@ -1,25 +1,66 @@
-#root {
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
   min-width: 600px;
   text-align: left;
+  overflow: hidden;
+  color-scheme: light dark;
+  --tip: #757575;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+.dark-mode {
+  --cta: #646cff;
+  --t: #ddd;
+  --bgc: #111;
+  --black: #000;
+}
+
+.light-mode {
+  --cta: #d16603;
+  --t: #111;
+  --bgc: #ddd;
+  --black: #fff;
+}
+
+.app {
+  position: relative;
+  color: var(--t);
+  background-color: var(--bgc);
+  z-index: 0;
 }
 
 iframe {
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 306px);
   scroll-behavior: smooth;
-  border-radius: 10px;
+  border-top: 2px solid var(--cta);
 }
 
-img {
-  width: 100%;
-  border-radius: 10px;
+p {
+  text-align: justify;
 }
 
 .imgbox {
   position: relative;
   display: flex;
   border-radius: 10px;
-  border: 2px solid white;
+  border: 2px solid var(--t);
 }
 .imgbox::before {
   position: absolute;
@@ -40,6 +81,7 @@ img {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: 'Staatliches';
 }
 
 ul {
@@ -56,22 +98,23 @@ hr {
 
 nav {
   position: sticky;
-  top: 0;
-  padding: 30px 0 34px 40px;
-  margin-bottom: 20px;
   display: flex;
-  z-index: 99;
+  justify-content: space-between;
+  top: 0;
+  padding: 30px 40px 34px 40px;
+  margin-bottom: 20px;
+  z-index: 3;
 }
 
 a {
   position: relative;
   font-weight: 500;
-  color: #646cff;
+  color: var(--cta);
   text-decoration: inherit;
   transition: all 0.15s linear;
 }
 a:hover {
-  color: #646cff;
+  color: var(--cta);
 }
 a:hover::after {
   position: absolute;
@@ -79,29 +122,27 @@ a:hover::after {
   content: "";
   width: 3px;
   border-radius: 6px;
-  border: 3px solid #fff;
-  z-index: 100;
+  border: 3px solid var(--t);
   animation: animatelink .2s linear;
-  z-index: -33;
 }
 @keyframes animatelink {
   0% {
-    color: #fff;
+    color: var(--t);
     opacity: 0;
     transform:scale(0)
   }
   100% {
-    color: #646cff;
+    color: var(--cta);
     opacity: 1;
     transform:scale(1)
   }
 }
 .active {
   position: relative;
-  color: #fff;
+  color: var(--t);
 }
 .active:hover {
-  color: #646cff;
+  color: var(--cta);
 }
 .active::after {
   position: absolute;
@@ -109,36 +150,34 @@ a:hover::after {
   content: "";
   width: 3px;
   border-radius: 6px;
-  border: 3px solid #646cff;
-  z-index: 100;
+  border: 3px solid var(--cta);
   animation: animatelink .2s linear;
-  z-index: -33;
 }
 @keyframes animatelink {
   0% {
-    color: #fff;
+    color: var(--t);
     opacity: 0;
     transform:scale(0)
   }
   100% {
-    color: #646cff;
+    color: var(--cta);
     opacity: 1;
     transform:scale(1)
   }
 }
 .active:hover::after {
-  color: #646cff;
-  border: 3px solid #fff;
+  color: var(--cta);
+  border: 3px solid var(--t);
   animation: animatelinkhover .2s linear;
 }
 @keyframes animatelinkhover {
   0% {
-    color: #fff;
+    color: var(--t);
     opacity: 0;
     transform:scale(0)
   }
   100% {
-    color: #fff;
+    color: var(--t);
     opacity: 1;
     transform:scale(1)
   }
@@ -148,38 +187,109 @@ a:hover::after {
 .pageContent {
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 164px);
   padding: 20px 40px;
-  height: calc(100vh - 214px);
+}
+
+.projectContent {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px 20px 40px;
+}
+
+.projectTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  /* background-color: #ddd; */
+}
+.projectTitle img {
+  height: 100%;
+}
+
+.badges {
+  display: flex;
 }
 
 .ProjectsLayout {
   position: fixed;
   top: 64px;
   display: flex;
+  justify-content: end;
   width: 100%;
-  gap: 40px;
+  gap: 30px;
   padding: 0 40px 2px 40px;
-  background-color: #000;
-  z-index: 101;
+  background-color: var(--cta);
+  z-index: 3;
+}
+.ProjectsLayout a {
+  color: var(--bgc);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.ProjectsLayout .active {
+  position: relative;
+  color: var(--t);
+}
+.ProjectsLayout .active:hover {
+  color: var(--t);
+}
+.ProjectsLayout .active::after {
+  position: absolute;
+  bottom: 0px;
+  content: "";
+  width: 3px;
+  border-radius: 6px;
+  border: 3px solid var(--bgc);
+  animation: animatelink .2s linear;
+}
+@keyframes animatelink {
+  0% {
+    color: var(--t);
+    opacity: 0;
+    transform:scale(0)
+  }
+  100% {
+    color: var(--cta);
+    opacity: 1;
+    transform:scale(1)
+  }
+}
+.ProjectsLayout .active:hover::after {
+  color: var(--cta);
+  border: 3px solid var(--t);
+  animation: animatelinkhover .2s linear;
+}
+@keyframes animatelinkhover {
+  0% {
+    color: var(--t);
+    opacity: 0;
+    transform:scale(0)
+  }
+  100% {
+    color: var(--t);
+    opacity: 1;
+    transform:scale(1)
+  }
 }
 .ProjectsLayout::after {
   position: absolute;
   top: -12px;
-  left: 232px;
+  right: 156px;
   content: "";
   border-width: 6px;
   border-style: solid;
-  border-color: transparent transparent #000 transparent;
-  z-index: 100;
+  border-color: transparent transparent var(--cta) transparent;
 }
 
 .form-box {
   background-color: #333;
-  color: #f8f8fa;
+  color: var(--t);
   width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
-  margin-top: 0px;
+  margin-top: 34px;
   margin-bottom: 20px;
   padding: 15px 20px;
   border-radius: 10px;
@@ -227,10 +337,10 @@ a:hover::after {
 }
 
 .input {
-  background-color: #000;
+  background-color: var(--black);
   border-radius: 6px;
   border: 0;
-  color: #333;
+  color: var(--t);
   font-size: 18px;
   height: 100%;
   outline: 0;
@@ -260,7 +370,7 @@ a:hover::after {
 }
 
 .placeholder {
-  color: #65657b;
+  color: var(--tip);
   font-family: sans-serif;
   left: 20px;
   line-height: 14px;
@@ -277,18 +387,18 @@ a:hover::after {
 }
 
 .input:not(:placeholder-shown) ~ .placeholder {
-  color: #808097;
+  color: var(--black);
 }
 
 .input:focus ~ .placeholder {
-  color: #000;
+  color: var(--tip);
 }
 
 .submit {
-  background-color: #646cff;;
+  background-color: var(--cta);;
   border-radius: 6px;
   border: 0;
-  color: #f8f8fa;
+  color: var(--t);
   cursor: pointer;
   font-size: 18px;
   height: 50px;
@@ -299,7 +409,7 @@ a:hover::after {
 }
 
 .submit:active {
-  background-color: #000;
+  background-color: var(--black);
 }
 
 textarea {
@@ -308,8 +418,8 @@ textarea {
   padding: 16px 20px;
   border: 0;
   border-radius: 6px;
-  background-color: #000;
-  color: #333;
+  background-color: var(--black);
+  color: var(--t);
   font-size: 16px;
   resize: none;
 }
@@ -318,8 +428,42 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px 10px 40px;
-  /* border: 1px solid red; */
+  padding: 0 40px;
+}
+
+.line {
+  display: flex;
+  height: 1px;
+  width: 100%;
+  background-color: red;
+}
+
+.about {
+  display: inline-block;
+}
+
+.titleImg {
+  position: absolute;
+  right: 40px;
+}
+
+.wonder {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 45px;
+  right: -40px;
+  width: 200px;
+  height: 30px;
+  padding-bottom: 2px;
+  background-color: var(--cta);
+  transform: rotate(-45deg);
+  color: var(--t);
+  font-weight: 700;
+  pointer-events: none;
+  cursor: none;
+  opacity: 1;
 }
 
 .homeAnimation {
@@ -328,10 +472,12 @@ textarea {
   top: 0;
   height: 198px;
   width: 100%;
-  /* border: 1px solid red; */
-  background: linear-gradient(to bottom, #111, #242424);
-  z-index: -99;
+  background: linear-gradient(to bottom, var(--black), var(--bgc));
+  z-index: -1;
 }
 
-
-
+.sectionRight {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}

@@ -6,7 +6,6 @@ export function Project() {
 
   return (
     <>
-      <div className="title"><h1>Project: {id}</h1>test</div>
       <ProjectContent id={id} />
     </>
   );

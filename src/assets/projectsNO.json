@@ -1,12 +1,12 @@
 {
     "projects": [
       {
-        "id": "RNG",
-        "name": "Random Number Generator",
+        "id": "TNG",
+        "name": "Tilfeldig Nummer Generator",
         "type": "HTML, CSS, Javascript",
         "image": "../src/assets/rng.png",
         "url": "https://www.ruudphotography.com/RNG/",
-        "description": "Description of Project 1",
+        "description": "Beskrivelse av Prosjekt 1",
         "synopsis": "Synopsis of Project 1",
         "badgeCH": "./src/assets/images/CSS3_and_HTML5.webp",
         "badgeNameCH": "CSS3 and HTML5",
@@ -27,7 +27,7 @@
         "badgeNameJS": "Javascript"
       },
       {
-        "id": "Drumpad",
+        "id": "Trommemaskin",
         "name": "Retro Drumpad",
         "type": "HTML, CSS, Javascript",
         "image": "../src/assets/drumpad.png",
@@ -40,7 +40,7 @@
         "badgeNameJS": "Javascript"
       },
       {
-        "id": "Dogfood",
+        "id": "Hundemat",
         "name": "Dogfood Calculator",
         "type": "HTML, CSS, Javascript",
         "image": "dogfood.png",
@@ -53,7 +53,7 @@
         "badgeNameJS": "Javascript"
       },
       {
-        "id": "Newsfeed",
+        "id": "Nyhetsartikler",
         "name": "Article Newsfeed",
         "type": "HTML, CSS, Javascript",
         "image": "../src/assets/rng.png",

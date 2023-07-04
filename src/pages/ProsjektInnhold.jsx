@@ -1,11 +1,11 @@
-import { PageNotFound } from './PageNotFound';
-import projectsData from '../assets/projects.json';
+import { SideIkkeFunnet } from './SideIkkeFunnet';
+import projectsData from '../assets/projectsNO.json';
 
-export function ProjectContent({ id, language }) {
+export function ProsjektInnhold({ id }) {
   const project = projectsData.projects.find((project) => project.id === id);
 
   if (!project) {
-    return <PageNotFound />;
+    return <SideIkkeFunnet />;
   }
 
   const renderBadge = (badgeSrc, badgeAlt) => {
@@ -19,7 +19,7 @@ export function ProjectContent({ id, language }) {
     <>
       <div className="projectContent">
         <div className="projectTitle">
-          <h1>Project: {id}</h1>
+          <h1>Prosjekt: {id}</h1>
           <div className="badges">
             {renderBadge(project.badgeCH, project.badgeNameCH)}
             {renderBadge(project.badgeJS, project.badgeNameJS)}
@@ -28,11 +28,11 @@ export function ProjectContent({ id, language }) {
         </div>
         <h2>{project.name}</h2>
         <p>Type: {project.type}</p>
-        <p>Description: {project.description}</p>
+        <p>Beskrivelse: {project.description}</p>
         <p>Synopsis: {project.synopsis}</p>
       </div>
       <iframe src={project.url}></iframe>
-      <div className="wonder">LIVE VIEW</div>
+      <div className="wonder">LIVE TEST</div>
     </>
   );
 }
