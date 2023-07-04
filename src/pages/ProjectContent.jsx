@@ -1,5 +1,5 @@
 import { PageNotFound } from './PageNotFound';
-import projectsData from '../assets/projects.json';
+import projectsData from '../assets/projectsEN.json';
 
 export function ProjectContent({ id, language }) {
   const project = projectsData.projects.find((project) => project.id === id);

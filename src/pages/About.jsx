@@ -2,7 +2,7 @@ import { Page } from './Page'
 
 export function About() {
   return (
-    <Page title="About" icon="./src/assets/images/about_icon2.webp">
+    <Page title="About" icon="./src/assets/images/about_icon.webp">
         <h3>WHO am I //</h3>
         <p>
             My name is Erik, and I am a curious and determined man currently learning front-end development through KodeHode. I enjoy working in the IT field and find design and functionality fascinating. Privately, I am a so-called Jack of All Trades and I engage in various activities such as music production, photography, gaming, dog care, and mechanical work on cars, among others.

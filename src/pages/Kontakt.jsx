@@ -28,7 +28,7 @@ export function Kontakt() {
     };
 
   return (
-    <Page title="Kontakt" icon="./src/assets/images/contact_icon2.webp">
+    <Page title="Kontakt" icon="./src/assets/images/contact_icon.webp">
         <div className="form-box">
           <div className="form">
             <div className="col">

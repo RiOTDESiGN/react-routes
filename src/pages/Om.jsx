@@ -2,7 +2,7 @@ import { Page } from './Page'
 
 export function Om() {
   return (
-    <Page title="Om" icon="./src/assets/images/about_icon2.webp">
+    <Page title="Om" icon="./src/assets/images/about_icon.webp">
         <h3>HVEM er jeg//</h3>
         <p>Mitt navn er Erik, og jeg er en nysgjerrig og målrettet mann som for tiden lærer front-end utvikling i regi av KodeHode. Jeg trives veldig godt innen IT, og synes design og funksjonalitet er spennende. Privat så er jeg en såkalt Jack of All Trades, og driver med mye forskjellig. Musikk, fotografi, gaming, hundehold, og mekanisk arbeid på bil bl.a.
         </p>
