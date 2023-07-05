@@ -2,7 +2,7 @@ import { SideIkkeFunnet } from './SideIkkeFunnet';
 import projectsData from '../assets/projectsNO.json';
 
 export function ProsjektInnhold({ id }) {
-  const project = projectsData.projects.find((project) => project.id === id);
+  const project = projectsData.find((project) => project.id === id);
 
   if (!project) {
     return <SideIkkeFunnet />;
@@ -21,7 +21,8 @@ export function ProsjektInnhold({ id }) {
         <div className="projectTitle">
           <h1>Prosjekt: {id}</h1>
           <div className="badges">
-            {renderBadge(project.badgeCH, project.badgeNameCH)}
+            {renderBadge(project.badgeHTML, project.badgeNameHTML)}
+            {renderBadge(project.badgeCSS, project.badgeNameCSS)}
             {renderBadge(project.badgeJS, project.badgeNameJS)}
             {renderBadge(project.badgeR, project.badgeNameR)}
           </div>

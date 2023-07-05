@@ -21,7 +21,7 @@ export function SideIkkeFunnet() {
   }, [count, navigate]);
 
   return (
-    <Page title="Side ikke funnet" icon="../src/assets/404_icon.webp">
+    <Page title="Side ikke funnet" icon="../src/assets/images/404.webp">
     <h2>Omdirigerer til fremsiden om {count} sekunder.</h2>
     </Page>
   );

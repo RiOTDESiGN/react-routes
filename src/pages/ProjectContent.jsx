@@ -1,8 +1,8 @@
 import { PageNotFound } from './PageNotFound';
 import projectsData from '../assets/projectsEN.json';
 
-export function ProjectContent({ id, language }) {
-  const project = projectsData.projects.find((project) => project.id === id);
+export function ProjectContent({ id }) {
+  const project = projectsData.find((project) => project.id === id);
 
   if (!project) {
     return <PageNotFound />;
@@ -21,7 +21,8 @@ export function ProjectContent({ id, language }) {
         <div className="projectTitle">
           <h1>Project: {id}</h1>
           <div className="badges">
-            {renderBadge(project.badgeCH, project.badgeNameCH)}
+            {renderBadge(project.badgeHTML, project.badgeNameHTML)}
+            {renderBadge(project.badgeCSS, project.badgeNameCSS)}
             {renderBadge(project.badgeJS, project.badgeNameJS)}
             {renderBadge(project.badgeR, project.badgeNameR)}
           </div>

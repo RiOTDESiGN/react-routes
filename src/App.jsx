@@ -66,10 +66,10 @@ function App() {
     <HashRouter>
       <div className={`app ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
         <nav>
-          <div id="toggle" className="mode" onClick={handleModeToggle}>
+          <div id="toggle" className="displayMode" onClick={handleModeToggle}>
             {`${isDarkMode ? 'Light Mode' : 'Dark Mode'}`}
           </div>
-          <div id="language-toggle" className="mode" onClick={handleLanguageToggle}>
+          <div id="language-toggle" className="languageMode" onClick={handleLanguageToggle}>
             {language === 'english' ? 'Norsk' : 'English'}
           </div>
           <ul>

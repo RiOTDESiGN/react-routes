@@ -21,7 +21,7 @@ export function PageNotFound() {
   }, [count, navigate]);
 
   return (
-    <Page title="Page not found" icon="../src/assets/images/404.png">
+    <Page title="Page not found" icon="../src/assets/images/404.webp">
     <h2>Re-directing to landingpage in {count} seconds.</h2>
     </Page>
   );
