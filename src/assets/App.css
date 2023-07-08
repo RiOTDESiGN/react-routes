@@ -9,7 +9,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  text-align: left;
   overflow: hidden;
   color-scheme: light dark;
   --tip: #757575;
@@ -21,6 +20,12 @@
   padding: 0;
   border: 0;
   outline: 0;
+}
+
+html, body {
+  width: 100vh;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .dark-mode {
@@ -39,6 +44,8 @@
 
 .app {
   position: relative;
+  height: 100%;
+  max-width: 1000px;
   color: var(--t);
   background-color: var(--bgc);
   z-index: 0;
@@ -98,7 +105,7 @@ hr {
 nav {
   position: sticky;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   top: 0;
   padding: 30px 40px 34px 40px;
   margin-bottom: 20px;
@@ -212,7 +219,7 @@ a:hover::after {
 }
 
 .ProjectsLayout {
-  position: fixed;
+  position: absolute;
   top: 64px;
   display: flex;
   justify-content: end;
@@ -500,14 +507,12 @@ textarea {
   z-index: 5;
   opacity: 0;
   transform: translateY(300px);
-  /* transform: scale(10); */
   transition: all 300ms;
   z-index: -3;
 }
 
 .badgeContainer:hover::before {
   transform: translateY(0px);
-  /* transform: scale(1); */
   opacity: 1;
 }
 
@@ -547,7 +552,6 @@ textarea {
   position: absolute;
   top: -2px;
   color: var(--cta);
-  /* background-color: #000; */
   border-radius: 10px;
   padding: 2px 6px;
   font-weight: 700;
@@ -566,4 +570,86 @@ textarea {
 .badgeContainer:hover .badgeText {
   opacity: 1;
   transform: scale(1) translateY(-120%);
+}
+
+.invert-filter {
+  filter: invert();
+}
+
+.translator-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  top: 12px;
+  left: 150px;
+  height: 40px;
+  z-index: 4;
+}
+
+.translator-globe {
+  position: relative;
+  cursor: pointer;
+}
+
+.translator {
+  position: absolute;
+  top: 36px;
+  left: -22px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  list-style-type: none;
+  background-color: var(--bgc);
+  padding: 10px 10px 14px 10px;
+  border: 2px solid var(--cta);
+  border-radius: 10px;
+}
+.translator::before {
+  position: absolute;
+  top: -14px;
+  left: 22px;
+  content: "";
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent var(--cta) transparent;
+}
+
+.translator-button {
+  background-color: transparent;
+}
+
+.langTitle {
+  pointer-events: none;
+  color: var(--t);
+  padding-bottom: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+.langOption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 9px;
+  font-weight: 700;
+  cursor: url('./images/Hand.png'), pointer;
+  background-color: transparent;
+  color: var(--t);
+}
+.langOption:disabled {
+  color: var(--cta);
+  cursor: default;
+  filter: opacity(50%);
+}
+
+.displayMode {
+  position: absolute;
+  display: flex;
+  top: 12px;
+  left: 50px;
+  cursor: pointer;
+  z-index: 4;
 }

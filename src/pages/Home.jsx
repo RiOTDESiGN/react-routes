@@ -1,9 +1,10 @@
 import { Page } from './Page'
 
-export function Home() {
+export function Home({ t }) {
   return (
-    <Page title="Home" icon="./src/assets/images/home_icon.webp">
-      <h3>stuff 2</h3>
+    <Page title={t('Home.title')} icon="./src/assets/images/home_icon.webp" alt="Home">
+      <h3>{t('Home.home_title_1')}</h3>
+      <p>{t('Home.home_content_1')}</p>
     </Page>
   );
 }

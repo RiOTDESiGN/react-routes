@@ -1,13 +1,18 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Page } from './Page'
 
-export function Contact() {
+export function Contact({ t }) {
 
-    const [placeholder, setPlaceholder] = useState("Enter your text here");
+    const [placeholder, setPlaceholder] = useState("");
     const firstnameRef = useRef(null);
     const lastnameRef = useRef(null);
     const emailRef = useRef(null);
     const textareaRef = useRef(null);
+    const enterText = t('Contact.form_entertext');
+
+    useEffect(() => {
+      setPlaceholder(enterText);
+    }, [t]);
   
     const handleFocus = () => {
       setPlaceholder("");
@@ -15,7 +20,7 @@ export function Contact() {
   
     const handleBlur = () => {
       if (textareaRef.current.value === "") {
-        setPlaceholder("Enter your text here");
+        setPlaceholder(enterText);
       }
     };
   
@@ -24,11 +29,12 @@ export function Contact() {
       lastnameRef.current.value = "";
       emailRef.current.value = "";
       textareaRef.current.value = "";
-      setPlaceholder("Enter your text here");
+      const enterText = t('Contact.form_entertext');
+      setPlaceholder(enterText);
     };
 
   return (
-    <Page title="Contact" icon="./src/assets/images/contact_icon.webp">
+    <Page title={t('Contact.title')} icon="./src/assets/images/contact_icon.webp">
         <div className="form-box">
           <div className="form">
             <div className="col">
@@ -42,7 +48,7 @@ export function Contact() {
                 />
                 <div className="cut"></div>
                 <label htmlFor="firstname" className="placeholder">
-                  First name
+                {t('Contact.form_firstname')}
                 </label>
               </div>
               <div className="input-container ic2">
@@ -55,7 +61,7 @@ export function Contact() {
                 />
                 <div className="cut"></div>
                 <label htmlFor="lastname" className="placeholder">
-                  Last name
+                {t('Contact.form_lastname')}
                 </label>
               </div>
               <div className="input-container ic2">
@@ -68,12 +74,12 @@ export function Contact() {
                 />
                 <div className="cut cut-short"></div>
                 <label htmlFor="email" className="placeholder">
-                  Email
+                {t('Contact.form_email')}
                 </label>
               </div>
               <div className="space"></div>
               <button id="clearForm" type="button" className="submit" onClick={handleClearForm}>
-                Clear Form
+              {t('Contact.form_clear')}
               </button>
             </div>
             <div className="space"></div>
@@ -88,7 +94,7 @@ export function Contact() {
                 ></textarea>
               </form>
               <button type="submit" className="submit">
-                Submit
+              {t('Contact.form_submit')}
               </button>
             </div>
           </div>
