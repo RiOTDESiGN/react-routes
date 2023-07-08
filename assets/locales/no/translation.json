@@ -1,0 +1,42 @@
+{
+    "Settings": {
+        "language": "Norsk",
+        "app_title": "Min Portefølje"
+    },
+    "Home": {
+        "title": "Hjem",
+        "home_title_1": "Introduksjon :)",
+        "home_content_1": "Innhold."
+    },
+    "About": {
+        "title": "Om ",
+        "about_title_1": "HVEM er jeg//",
+        "about_content_1": "Mitt navn er Erik, og jeg er en nysgjerrig og målrettet mann som for tiden lærer front-end utvikling i regi av KodeHode. Jeg trives veldig godt innen IT, og synes design og funksjonalitet er spennende. Privat så er jeg en såkalt Jack of All Trades, og driver med mye forskjellig. Musikk, fotografi, gaming, hundehold, og mekanisk arbeid på bil bl.a.",
+        "about_title_2": "HVA kan jeg //",
+        "about_content_2": "Mine kunnskaper er fordelt over mange felt, men i hovedsak har jeg arbeidet mest med HTML, CSS, Photoshop og web design. Jeg har også drevet en del med Wordpress.",
+        "about_title_3": "HVOR vil jeg //",
+        "about_content_3": "I fremtiden ser jeg for meg å arbeide med design og funksjonalitet, i forbindelse med nettsider eller applikasjon produksjon. Jeg ønsker også å utvikle mine back-end kunnskaper med intensjon om å bli en fullstack utvikler."
+    },
+    "Projects": {
+        "title": "Prosjekter",
+        "projects_title_1": "Dette er mine prosjekter.",
+        "projects_content_1": "Litt om hva jeg har jobbet med.",
+        "project_1": {
+            "title": "Project 1",
+            "description": "This is project 1."
+        },
+        "project_2": {
+            "title": "Project 2",
+            "description": "This is project 2."
+        }
+    },
+    "Contact": {
+        "title": "Kontakt",
+        "form_firstname": "Fornavn",
+        "form_lastname": "Etternavn",
+        "form_email": "Epost",
+        "form_entertext": "Skriv din beskjed her..",
+        "form_clear": "Tøm skjema",
+        "form_submit": "Send"
+    }
+}
