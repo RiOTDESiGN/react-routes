@@ -1,7 +1,7 @@
 {
     "Settings": {
         "language": "Norsk",
-        "app_title": "Min Portefølje"
+        "app_title": "PRD Portefølje"
     },
     "Home": {
         "title": "Hjem",
@@ -32,6 +32,8 @@
     },
     "Contact": {
         "title": "Kontakt",
+        "contact_title_1": "Introduksjon Kontakt :)",
+        "contact_content_1": "Innhold Kontakt.",
         "form_firstname": "Fornavn",
         "form_lastname": "Etternavn",
         "form_email": "Epost",
