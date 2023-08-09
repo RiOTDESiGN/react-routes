@@ -117,7 +117,6 @@ export function SettingsTab({ isDarkMode, handleModeToggle }) {
 
   useEffect(() => {
     const pageContentElements = document.querySelectorAll(".pageContent");
-    const projectContentElements = document.querySelectorAll(".projectContent");
   
     pageContentElements.forEach(element => {
     if (isShrinkHeaderActive) {
