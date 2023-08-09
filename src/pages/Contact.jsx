@@ -34,7 +34,13 @@ export function Contact({ t }) {
     };
 
   return (
-    <Page title={t('Contact.title')} icon="./src/assets/images/contact_icon.webp">
+    <Page title={t('Contact.title')} icon="/assets/images/contact_icon.webp" alt="Contact">
+      <h3>{t('Contact.contact_title_1')}</h3>
+      <p>{t('Contact.contact_content_1')}</p>
+
+
+
+
         <div className="form-box">
           <div className="form">
             <div className="col">
@@ -47,9 +53,7 @@ export function Contact({ t }) {
                   placeholder=" "
                 />
                 <div className="cut"></div>
-                <label htmlFor="firstname" className="placeholder">
-                {t('Contact.form_firstname')}
-                </label>
+                <label htmlFor="firstname" className="placeholder">{t('Contact.form_firstname')}</label>
               </div>
               <div className="input-container ic2">
                 <input
@@ -99,6 +103,10 @@ export function Contact({ t }) {
             </div>
           </div>
         </div>
+
+
+
+
     </Page>
   );
 }

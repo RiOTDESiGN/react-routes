@@ -1,5 +1,6 @@
-import { PageNotFound } from './PageNotFound';
-import projectsData from '../assets/projectsEN.json';
+import React from "react";
+import { PageNotFound } from "./PageNotFound";
+import projectsData from "../assets/projects.json";
 
 export function ProjectContent({ id }) {
   const project = projectsData.find((project) => project.id === id);
@@ -17,6 +18,7 @@ export function ProjectContent({ id }) {
 
   return (
     <>
+    <div className="page">
       <div className="projectContent">
         <div className="projectTitle">
           <h1>Project: {id}</h1>
@@ -32,8 +34,11 @@ export function ProjectContent({ id }) {
         <p>Description: {project.description}</p>
         <p>Synopsis: {project.synopsis}</p>
       </div>
-      <iframe src={project.url}></iframe>
+      <div className="wrapper">
       <div className="wonder">LIVE VIEW</div>
+      <iframe id="iframe" src={project.url} title={project.name}></iframe>
+      </div>
+    </div>
     </>
   );
 }
