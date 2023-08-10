@@ -5,6 +5,7 @@ import { Projects } from './pages/Projects';
 import { Contact } from './pages/Contact';
 import { useTranslation } from "react-i18next";
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
+import { useSettings } from './SettingsContext';
 
 import './assets/App2.css';
 import './assets/splide-default.min.css';
@@ -19,8 +20,9 @@ const carouselOptions = {
   snap: true,
 };
 
-export function App({ isDarkMode }) {
+export function App() {
   const { t } = useTranslation();
+  const { isDarkMode, isShrinkHeaderActive } = useSettings();
   const [activeLinkIndex, setActiveLinkIndex] = useState(0);
 
   const splideRef = useRef(null);
@@ -48,7 +50,7 @@ export function App({ isDarkMode }) {
 
   return (
     <div className="app">
-      <header id="header">
+      <header id="header" className={`${isShrinkHeaderActive ? 'headerShrink' : ""}`}>
         <div className="logoWrapper">
         <div className={`PRDlogo ${isDarkMode ? 'invert-filter' : ''}`} onClick={() => handleNavClick(0)}></div>
         <div className="PRDlogoTitle">Pivot Riot<br />Design</div>
@@ -60,7 +62,7 @@ export function App({ isDarkMode }) {
             <Home t={t} />
           </SplideSlide>
           <SplideSlide>
-            <About t={t} isDarkMode={isDarkMode} />
+            <About t={t} />
           </SplideSlide>
           <SplideSlide>
             <Projects t={t} />
@@ -114,3 +116,5 @@ export function App({ isDarkMode }) {
     </div>
   );
 }
+
+export default App;

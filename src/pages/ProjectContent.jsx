@@ -1,8 +1,10 @@
 import React from "react";
+import { useSettings } from '../SettingsContext';
 import { PageNotFound } from "./PageNotFound";
 import projectsData from "../assets/projects.json";
 
 export function ProjectContent({ id }) {
+  const { isShrinkHeaderActive } = useSettings();
   const project = projectsData.find((project) => project.id === id);
 
   if (!project) {
@@ -18,8 +20,8 @@ export function ProjectContent({ id }) {
 
   return (
     <>
-    <div className="page">
-      <div className="projectContent">
+    <div className={`page ${isShrinkHeaderActive ? 'pageContentAdapt' : ""}`}>
+      <div className={`projectContent ${isShrinkHeaderActive ? 'projectContentGrow' : ""}`}>
         <div className="projectTitle">
           <h1>Project: {id}</h1>
           <div className="badges">
@@ -36,7 +38,7 @@ export function ProjectContent({ id }) {
       </div>
       <div className="wrapper">
       <div className="wonder">LIVE VIEW</div>
-      <iframe id="iframe" src={project.url} title={project.name}></iframe>
+      <iframe className={`${isShrinkHeaderActive ? 'iframeGrow' : ""}`} id="iframe" src={project.url} title={project.name}></iframe>
       </div>
     </div>
     </>

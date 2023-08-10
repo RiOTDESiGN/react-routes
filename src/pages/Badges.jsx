@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Badge from './Badge';
 import badgesData from '../assets/badges.json';
 
-export function Badges({ isDarkMode }) {
+export function Badges() {
   useEffect(() => {
     const badgeContainers = document.querySelectorAll('.badgeContainer');
 
@@ -23,7 +23,6 @@ export function Badges({ isDarkMode }) {
             key={badge.name} 
             name={badge.name} 
             image={badge.image}
-            isDarkMode={isDarkMode}
         />
       ))}
     </div>

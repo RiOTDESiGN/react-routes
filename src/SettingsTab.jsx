@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from "react-i18next";
+import { useSettings } from './SettingsContext'; // Import the useSettings hook
 
 import 'flag-icons/css/flag-icons.min.css'
 
@@ -11,12 +12,12 @@ const languages = [
   { code: 'no', name: 'Norsk', country_code: 'no' }
 ]
 
-export function SettingsTab({ isDarkMode, handleModeToggle }) {
+export function SettingsTab() {
   const currentLanguageCode = cookies.get('i18next') || 'en'
   const { t, i18n } = useTranslation();
   const [translatorVisible, setTranslatorVisible] = useState(false);
   const [isSettingsTabActive, setIsSettingsTabActive] = useState(false);
-  const [isShrinkHeaderActive, setIsShrinkHeaderActive] = useState(false);
+  const { isShrinkHeaderActive, toggleShrinkHeader, isDarkMode, toggleDarkMode } = useSettings();
 
   const handleTranslatorToggle = (event) => {
     if (event) {
@@ -30,14 +31,6 @@ export function SettingsTab({ isDarkMode, handleModeToggle }) {
       setIsSettingsTabActive(false);
     } else {
       setIsSettingsTabActive(true);
-    }
-  };
-
-  const handleShrinkHeader = () => {
-    if (isShrinkHeaderActive) {
-      setIsShrinkHeaderActive(false);
-    } else {
-      setIsShrinkHeaderActive(true);
     }
   };
 
@@ -95,79 +88,11 @@ export function SettingsTab({ isDarkMode, handleModeToggle }) {
     }
   }, [isSettingsTabActive]);
 
-  useEffect(() => {
-    const headerElement = document.getElementById("header");
-  
-    if (isShrinkHeaderActive) {
-      headerElement.classList.add("headerShrink");
-    } else {
-      headerElement.classList.remove("headerShrink");
-    };
-  }, [isShrinkHeaderActive]);
-
-  useEffect(() => {
-    const headerElement = document.getElementById("projectsBar");
-  
-    if (isShrinkHeaderActive) {
-      headerElement.classList.add("projectsBarShrink");
-    } else {
-      headerElement.classList.remove("projectsBarShrink");
-    };
-  }, [isShrinkHeaderActive]);
-
-  useEffect(() => {
-    const pageContentElements = document.querySelectorAll(".pageContent");
-  
-    pageContentElements.forEach(element => {
-    if (isShrinkHeaderActive) {
-      element.classList.add("pageContentGrow");
-    } else {
-      element.classList.remove("pageContentGrow");
-    }
-    });
-  }, [isShrinkHeaderActive]);
-  
-  useEffect(() => {
-    const projectContentElements = document.querySelectorAll(".projectContent");
-  
-    projectContentElements.forEach(element => {
-    if (isShrinkHeaderActive) {
-      element.classList.add("projectContentGrow");
-    } else {
-      element.classList.remove("projectContentGrow");
-    }
-    });
-  }, [isShrinkHeaderActive]);
-
-  useEffect(() => {
-    const pageElements = document.querySelectorAll(".page");
-  
-    pageElements.forEach(element => {
-    if (isShrinkHeaderActive) {
-      element.classList.add("pageContentAdapt");
-    } else {
-      element.classList.remove("pageContentAdapt");
-    }
-    });
-  }, [isShrinkHeaderActive]);
-
-  useEffect(() => {
-    const iframeElement = document.getElementById("iframe");
-  
-    if (iframeElement && isShrinkHeaderActive) {
-      iframeElement.classList.add("iframeGrow");
-    } else if (!iframeElement && isShrinkHeaderActive) {
-      return
-    } else if (iframeElement && !isShrinkHeaderActive) {
-      iframeElement.classList.remove("iframeGrow");
-    }
-  }, [isShrinkHeaderActive]);
-
   return (
     <div id="settingsTab" className={`settings ${isSettingsTabActive ? 'settingsTabSlideOut' : ''}`}>
 
 <div className="settingsColumn1">
-      <div id="toggle" className="displayMode" onClick={handleModeToggle}>
+      <div id="toggle" className="displayMode" onClick={toggleDarkMode}>
         {!isDarkMode ? <img src="/assets/images/moon.webp" alt="Moon" /> : <img className={`${isDarkMode ? 'invert-filter' : ''}`} src="/assets/images/sun.webp" alt="Sun" />}
       </div>
       <button className="translator-button" onClick={(event) => handleTranslatorToggle(event)}>
@@ -195,13 +120,41 @@ export function SettingsTab({ isDarkMode, handleModeToggle }) {
 </div>
 <div className="settingsColumn2">
       <FullscreenIcon />
-      <div className="shrink" onClick={handleShrinkHeader}>
+      <div className="shrink" onClick={toggleShrinkHeader}>
         {isShrinkHeaderActive ? 'Grow' : 'Shrink'} <br /> Header
       </div>
 </div>
 
       <div className='settingsTabCogwheel' onClick={handleSettingsTabClick}></div>
-      <div className={`settingsTabMinimizeHeader ${isShrinkHeaderActive ? '' : 'settingsTabMinimizeHeaderClose'}`} onClick={handleShrinkHeader}><img src="./assets/images/headerarrow.png" alt="" /></div>
+      <div className={`settingsTabMinimizeHeader ${isShrinkHeaderActive ? '' : 'settingsTabMinimizeHeaderClose'}`} onClick={toggleShrinkHeader}><img src="./assets/images/headerarrow.png" alt="" /></div>
+      <div id="toggle" className="displayModeMini" onClick={toggleDarkMode}>
+        {!isDarkMode ?
+          <img src="/assets/images/moon.webp" alt="Moon" />
+            :
+          <img src="/assets/images/sun.webp" alt="Sun" />
+        }
+      </div>
+      <div className="flags">
+      {languages.map(({ code }) => (
+        <button
+          key={code}
+          className={`translator-button-mini ${code === currentLanguageCode ? 'nocursor' : ''}`}
+          onClick={(event) => {
+            event.stopPropagation();
+            i18n.changeLanguage(code);
+          }}
+        >
+          <span className="languageCode">
+            {code}
+          </span>
+        </button>
+      ))}
+      </div>
+
+    {/* ? */}
+
     </div>
   );
 }
+
+export default SettingsTab;

@@ -5,9 +5,10 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
+import { SettingsProvider } from './SettingsContext';
 
-import { App } from './App.jsx';
-import { SettingsTab } from './SettingsTab';
+import App from './App.jsx';
+import SettingsTab from './SettingsTab';
 
 i18n
   .use(initReactI18next)
@@ -32,18 +33,14 @@ const loadingMarkup = (
 );
 
 const AppWrapper = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const handleModeToggle = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
   return (
     <Suspense fallback={loadingMarkup}>
       <React.StrictMode>
         <HashRouter>
-          <SettingsTab isDarkMode={isDarkMode} handleModeToggle={handleModeToggle} />
-          <App isDarkMode={isDarkMode} />
+          <SettingsProvider>
+            <SettingsTab />
+            <App />
+          </SettingsProvider>
         </HashRouter>
       </React.StrictMode>
     </Suspense>

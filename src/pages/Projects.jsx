@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, Route, Routes } from "react-router-dom";
+import { useSettings } from '../SettingsContext';
 import { Page } from "./Page";
 import { Project } from "./Project";
 import { PageNotFound } from "./PageNotFound";
@@ -14,9 +15,10 @@ function HomePage({ t }) {
 }
 
 export function Projects({ t }) {
+  const { isShrinkHeaderActive } = useSettings();
   return (
     <>
-      <div id="projectsBar" className="projectsBar">
+      <div id="projectsBar" className={`projectsBar ${isShrinkHeaderActive ? 'projectsBarShrink' : ""}`}>
         <div className="ProjectsLayout">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/react-routes/RNG">RNG</NavLink>

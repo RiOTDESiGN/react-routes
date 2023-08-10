@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSettings } from '../SettingsContext';
 
-const Badge = ({ name, image, isDarkMode }) => {
+const Badge = ({ name, image }) => {
+  const { isDarkMode } = useSettings();
   const shouldApplyFilter = name === 'GitHUB' && isDarkMode;
 
   return (
