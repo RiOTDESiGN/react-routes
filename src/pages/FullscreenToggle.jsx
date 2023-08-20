@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import exitfullscreen from '/assets/images/exitfullscreen.png';
-import enterfullscreen from '/assets/images/enterfullscreen.png';
+import exitfullscreen from '../assets/images/exitfullscreen.png';
+import enterfullscreen from '../assets/images/enterfullscreen.png';
 
 const FullscreenIcon = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);

@@ -3,7 +3,8 @@ import { useSettings } from '../SettingsContext';
 import { Badges } from './Badges';
 import { Page } from './Page';
 
-import headerarrow from '/assets/images/headerarrow.png';
+import headerarrow from '../assets/images/headerarrow.png';
+import about from '../assets/images/about_icon.webp';
 
 export function About({ t }) {
   const { isDarkMode } = useSettings();
@@ -37,7 +38,7 @@ export function About({ t }) {
   }, []);
 
   return (
-    <Page title={t('About.title')} icon="/assets/images/about_icon.webp" alt="About">
+    <Page title={t('About.title')} icon={about} alt="About">
       <div>
         <section className="collapse">
           <input

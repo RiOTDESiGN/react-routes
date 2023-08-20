@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 import { useSettings } from './SettingsContext';
 
-import './assets/App2.css';
+import './assets/App.css';
 import './assets/splide-default.min.css';
 
 const carouselOptions = {

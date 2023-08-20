@@ -6,9 +6,9 @@ import 'flag-icons/css/flag-icons.min.css'
 
 import cookies from 'js-cookie'
 import FullscreenIcon from './pages/FullscreenToggle';
-import globe from '/assets/images/globe.png';
-import sun from '/assets/images/sun.webp';
-import moon from '/assets/images/moon.webp';
+import globe from './assets/images/globe.png';
+import sun from './assets/images/sun.webp';
+import moon from './assets/images/moon.webp';
 
 const languages = [
   { code: 'en', name: 'English', country_code: 'gb' },

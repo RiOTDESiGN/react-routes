@@ -2,8 +2,9 @@ import { useState, useRef, useEffect } from "react";
 import { useSettings } from '../SettingsContext';
 import { Page } from './Page'
 
-import recycle from '/assets/images/recycle.png';
-import sendform from '/assets/images/sendform.png';
+import recycle from '../assets/images/recycle.png';
+import sendform from '../assets/images/sendform.png';
+import contact from '../assets/images/contact_icon.webp';
 
 export function Contact({ t }) {
     const { isDarkMode } = useSettings();
@@ -43,7 +44,7 @@ export function Contact({ t }) {
     };
 
   return (
-    <Page title={t('Contact.title')} icon="/assets/images/contact_icon.webp" alt="Contact">
+    <Page title={t('Contact.title')} icon={contact} alt="Contact">
       {/* <h3>{t('Contact.contact_title_1')}</h3>
       <p>{t('Contact.contact_content_1')}</p> */}
         <div className="form-box">

@@ -5,6 +5,8 @@ import { Page } from "./Page";
 import { Project } from "./Project";
 import { PageNotFound } from "./PageNotFound";
 
+import projects from '../assets/images/projects_icon.webp'
+
 const overviews = [
   { path: "/", label: "Overview" },
 ];
@@ -23,7 +25,7 @@ const websites = [
 
 function HomePage({ t }) {
   return (
-    <Page title={t("Projects.title")} icon="/assets/images/projects_icon.webp" alt="Projects">
+    <Page title={t("Projects.title")} icon={projects} alt="Projects">
       <h3>{t("Projects.projects_title_1")}</h3>
       <p>{t("Projects.projects_content_1")}</p>
     </Page>
