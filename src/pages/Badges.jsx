@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Badge from './Badge';
-import badgesData from '../assets/badges.json';
+import badgesData from './src/assets/badges.json';
 
 export function Badges() {
   useEffect(() => {

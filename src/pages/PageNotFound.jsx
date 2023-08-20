@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Page } from './Page'
 
+import pagenotfound from '../assets/images/404.webp'
+
 export function PageNotFound() {
   const navigate = useNavigate();
   const [count, setCount] = useState(5);
@@ -21,7 +23,7 @@ export function PageNotFound() {
   }, [count, navigate]);
 
   return (
-    <Page title="Project not found" icon="/assets/images/404.webp" alt="ProjectNotFound">
+    <Page title="Project not found" icon={pagenotfound} alt="ProjectNotFound">
     <h2>Re-directing to landingpage in {count} seconds.</h2>
     </Page>
   );
