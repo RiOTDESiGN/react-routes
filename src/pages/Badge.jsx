@@ -7,7 +7,7 @@ const Badge = ({ name, image }) => {
 
   return (
     <div className="badgeContainer">
-      <span className="badgeText">{name}</span>
+      <span className="badgeText vertical-text">{name}</span>
       <img
         src={image}
         className={`badgeFloat ${shouldApplyFilter ? 'invert-filter' : ''}`}

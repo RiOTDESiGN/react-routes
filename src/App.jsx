@@ -14,10 +14,10 @@ const carouselOptions = {
   type: 'slide',
   perPage: 1,
   keyboard: true,
-  autoWidth: true,
   wheel: true,
   pagination: false,
   snap: true,
+  noDrag: '.no-drag',
 };
 
 export function App() {

@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from "react-i18next";
-import { useSettings } from './SettingsContext'; // Import the useSettings hook
+import { useSettings } from './SettingsContext';
 
 import 'flag-icons/css/flag-icons.min.css'
 
 import cookies from 'js-cookie'
 import FullscreenIcon from './pages/FullscreenToggle';
+import globe from '/assets/images/globe.png';
+import sun from '/assets/images/sun.webp';
+import moon from '/assets/images/moon.webp';
 
 const languages = [
   { code: 'en', name: 'English', country_code: 'gb' },
@@ -77,7 +80,7 @@ export function SettingsTab() {
   }, [t])
 
   const GlobeIcon = () => (
-    <img src="./assets/images/globe.png" className={`bi bi-globe2 translator-globe ${isDarkMode ? 'invert-filter' : ''}`} />
+    <img src={globe} className={`bi bi-globe2 translator-globe ${isDarkMode ? 'invert-filter' : ''}`} />
   )
 
   useEffect(() => {
@@ -93,7 +96,7 @@ export function SettingsTab() {
 
 <div className="settingsColumn1">
       <div id="toggle" className="displayMode" onClick={toggleDarkMode}>
-        {!isDarkMode ? <img src="/assets/images/moon.webp" alt="Moon" /> : <img className={`${isDarkMode ? 'invert-filter' : ''}`} src="/assets/images/sun.webp" alt="Sun" />}
+        {!isDarkMode ? <img src={sun} alt="Sun" /> : <img className={`${isDarkMode ? 'invert-filter' : ''}`} src={moon} alt="Moon" />}
       </div>
       <button className="translator-button" onClick={(event) => handleTranslatorToggle(event)}>
         <GlobeIcon />
@@ -126,13 +129,9 @@ export function SettingsTab() {
 </div>
 
       <div className='settingsTabCogwheel' onClick={handleSettingsTabClick}></div>
-      <div className={`settingsTabMinimizeHeader ${isShrinkHeaderActive ? '' : 'settingsTabMinimizeHeaderClose'}`} onClick={toggleShrinkHeader}><img src="./assets/images/headerarrow.png" alt="" /></div>
+      <div className={`settingsTabMinimizeHeader ${isShrinkHeaderActive ? '' : 'settingsTabMinimizeHeaderClose'}`} onClick={toggleShrinkHeader}></div>
       <div id="toggle" className="displayModeMini" onClick={toggleDarkMode}>
-        {!isDarkMode ?
-          <img src="/assets/images/moon.webp" alt="Moon" />
-            :
-          <img src="/assets/images/sun.webp" alt="Sun" />
-        }
+        {!isDarkMode ? <img src={sun} alt="Sun" /> :  <img src={moon} alt="Moon" />}
       </div>
       <div className="flags">
       {languages.map(({ code }) => (

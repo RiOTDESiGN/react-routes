@@ -21,17 +21,16 @@ export function ProjectContent({ id }) {
   return (
     <>
     <div className={`page ${isShrinkHeaderActive ? 'pageContentAdapt' : ""}`}>
-      <div className={`projectContent ${isShrinkHeaderActive ? 'projectContentGrow' : ""}`}>
+      <div className={`projectContent ${isShrinkHeaderActive ? 'projectContentShrink' : ""}`}>
         <div className="projectTitle">
-          <h1>Project: {id}</h1>
+          <h2>{project.name}</h2>
           <div className="badges">
-            {renderBadge(project.badgeHTML, project.badgeNameHTML)}
-            {renderBadge(project.badgeCSS, project.badgeNameCSS)}
-            {renderBadge(project.badgeJS, project.badgeNameJS)}
-            {renderBadge(project.badgeR, project.badgeNameR)}
+              {renderBadge(project.badgeHTML, project.badgeNameHTML)}
+              {renderBadge(project.badgeCSS, project.badgeNameCSS)}
+              {renderBadge(project.badgeJS, project.badgeNameJS)}
+              {renderBadge(project.badgeR, project.badgeNameR)}
           </div>
         </div>
-        <h2>{project.name}</h2>
         <p>Type: {project.type}</p>
         <p>Description: {project.description}</p>
         <p>Synopsis: {project.synopsis}</p>

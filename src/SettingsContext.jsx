@@ -25,19 +25,27 @@ export function SettingsProvider({ children }) {
   };
 
   useEffect(() => {
-    // Apply class to pageContent elements
     const pageContentElements = document.querySelectorAll(".pageContent");
     applyClassToElements(pageContentElements, "pageContentGrow", isShrinkHeaderActive);
 
-    // Apply class to page elements
     const pageElements = document.querySelectorAll(".page");
     applyClassToElements(pageElements, "pageContentAdapt", isShrinkHeaderActive);
 
-    // Apply class to projectContent elements
-    const projectContentElements = document.querySelectorAll(".projectContent");
-    applyClassToElements(projectContentElements, "projectContentGrow", isShrinkHeaderActive);
+    const projectContent = document.querySelectorAll(".projectContent");
+    applyClassToElements(projectContent, "projectContentShrink", isShrinkHeaderActive);
 
-    // Apply class to iframe element
+    const projectsBarHeaderElement = document.getElementById("projectsBar");
+    applyClassToElements(projectsBarHeaderElement, "projectsBarShrink", isShrinkHeaderActive);
+
+    const headerElement = document.getElementById("header");
+    applyClassToElements(headerElement, "headerShrink", isShrinkHeaderActive);
+
+    const projectsMenu = document.querySelectorAll(".projectsMenu");
+    applyClassToElements(projectsMenu, "projectsMenuShrink", isShrinkHeaderActive);
+
+    const menuSpacerBottom = document.querySelectorAll(".menuSpacerBottom");
+    applyClassToElements(menuSpacerBottom, "menuSpacerBottomGrow", isShrinkHeaderActive);
+
     const iframeElement = document.getElementById("iframe");
     if (iframeElement) {
       if (isShrinkHeaderActive) {
@@ -46,14 +54,6 @@ export function SettingsProvider({ children }) {
         iframeElement.classList.remove("iframeGrow");
       }
     }
-
-    // Apply class to projectsBar header element
-    const projectsBarHeaderElement = document.getElementById("projectsBar");
-    applyClassToElements(projectsBarHeaderElement, "projectsBarShrink", isShrinkHeaderActive);
-
-    // Apply class to header element
-    const headerElement = document.getElementById("header");
-    applyClassToElements(headerElement, "headerShrink", isShrinkHeaderActive);
   }, [isShrinkHeaderActive]);
 
   return (

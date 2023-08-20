@@ -1,8 +1,13 @@
 import { useState, useRef, useEffect } from "react";
+import { useSettings } from '../SettingsContext';
 import { Page } from './Page'
 
-export function Contact({ t }) {
+import recycle from '/assets/images/recycle.png';
+import sendform from '/assets/images/sendform.png';
 
+export function Contact({ t }) {
+    const { isDarkMode } = useSettings();
+    const [isAnimating, setIsAnimating] = useState(false);
     const [placeholder, setPlaceholder] = useState("");
     const firstnameRef = useRef(null);
     const lastnameRef = useRef(null);
@@ -31,82 +36,91 @@ export function Contact({ t }) {
       textareaRef.current.value = "";
       const enterText = t('Contact.form_entertext');
       setPlaceholder(enterText);
+      setIsAnimating(true);
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 300);
     };
 
   return (
     <Page title={t('Contact.title')} icon="/assets/images/contact_icon.webp" alt="Contact">
-      <h3>{t('Contact.contact_title_1')}</h3>
-      <p>{t('Contact.contact_content_1')}</p>
-
-
-
-
+      {/* <h3>{t('Contact.contact_title_1')}</h3>
+      <p>{t('Contact.contact_content_1')}</p> */}
         <div className="form-box">
-          <div className="form">
-            <div className="col">
-              <div className="input-container ic1">
+          <form action="https://formsubmit.co/b25719bfc1f7531b25f9664ebaa92ec9" method="POST">
+              <div className="input-container firstname">
                 <input
                   ref={firstnameRef}
                   id="firstname"
-                  className="input"
+                  className="no-drag"
                   type="text"
+                  name="firstname"
                   placeholder=" "
+                  required
                 />
                 <div className="cut"></div>
-                <label htmlFor="firstname" className="placeholder">{t('Contact.form_firstname')}</label>
+                <label htmlFor="firstname" className="placeholder">
+                  {t('Contact.form_firstname')}
+                </label>
               </div>
-              <div className="input-container ic2">
+              <div className="input-container lastname">
                 <input
                   ref={lastnameRef}
                   id="lastname"
-                  className="input"
+                  className="no-drag"
                   type="text"
+                  name="lastname"
                   placeholder=" "
+                  required
                 />
                 <div className="cut"></div>
                 <label htmlFor="lastname" className="placeholder">
-                {t('Contact.form_lastname')}
+                  {t('Contact.form_lastname')}
                 </label>
               </div>
-              <div className="input-container ic2">
+              <div className="input-container email">
                 <input
                   ref={emailRef}
                   id="email"
-                  className="input"
-                  type="text"
+                  className="no-drag"
+                  type="email"
+                  name="email"
                   placeholder=" "
+                  required
                 />
                 <div className="cut cut-short"></div>
                 <label htmlFor="email" className="placeholder">
-                {t('Contact.form_email')}
+                  {t('Contact.form_email')}
                 </label>
               </div>
-              <div className="space"></div>
-              <button id="clearForm" type="button" className="submit" onClick={handleClearForm}>
-              {t('Contact.form_clear')}
-              </button>
-            </div>
-            <div className="space"></div>
-            <div className="col2">
-              <form>
-                <textarea
+              <textarea
                   ref={textareaRef}
                   id="textarea"
+                  className="no-drag"
+                  name="message"
                   placeholder={placeholder}
                   onFocus={handleFocus}
                   onBlur={handleBlur}
-                ></textarea>
-              </form>
-              <button type="submit" className="submit">
-              {t('Contact.form_submit')}
+                  required
+              ></textarea>
+              <button id="clearForm" type="button" className="submit clear no-drag" onClick={handleClearForm}>
+                {t('Contact.form_clear')}
+                <img
+                      src={recycle}
+                      alt="clear form"
+                      className={`clearFormImg ${isDarkMode ? '' : 'invert-filter'} ${isAnimating ? 'rotate-animation' : ''}`}
+                />
               </button>
-            </div>
-          </div>
+              <button type="submit" className="submit no-drag">
+                {t('Contact.form_submit')}
+                <img
+                      src={sendform}
+                      alt="send form"
+                      className={`sendFormImg ${isDarkMode ? '' : 'invert-filter'}`}
+                />
+              </button>
+          </form>
         </div>
-
-
-
-
     </Page>
   );
 }
