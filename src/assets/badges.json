@@ -9,7 +9,7 @@
     },
     {
       "name": "Javascript",
-      "image": "./images/Javascript.webp"
+      "image": "./src/assets/images/Javascript.webp"
     },
     {
       "name": "React",
