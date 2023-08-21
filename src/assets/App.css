@@ -1099,7 +1099,18 @@ a:hover::after {
     transition: .5s;
   }
   .submit:hover .sendFormImg {
-    transform: translateX(10px);
+    animation: send 1s linear infinite;
+  }
+  @keyframes send {
+    0% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
   }
   
   textarea {
