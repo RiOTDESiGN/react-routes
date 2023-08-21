@@ -384,7 +384,7 @@ a:hover::after {
     gap: 12px;
     margin: 9px;
     font-weight: 700;
-    cursor: url('/images/Hand.png'), pointer;
+    cursor: url('./images/Hand.png'), pointer;
     background-color: transparent;
     color: var(--t);
   }
