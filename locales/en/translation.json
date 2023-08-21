@@ -1,0 +1,44 @@
+{
+    "Settings": {
+        "language": "English",
+        "app_title": "PRD Portfolio"
+    },
+    "Home": {
+        "title": "Home",
+        "home_title_1": "Introduction :)",
+        "home_content_1": "Home content."
+    },
+    "About": {
+        "title": "About",
+        "about_title_1": "WHO am I",
+        "about_content_1": "My name is Erik, and I am a curious and focused individual currently learning front-end development through KodeHode. I enjoy working in the IT field and find design and functionality fascinating. In my personal life, I am a Jack of All Trades, engaging in various activities such as music, photography, gaming, dog ownership, and mechanical work on cars, among others.",
+        "about_title_2": "WHAT can I do",
+        "about_content_2": "I have knowledge across multiple fields, but primarily, I have worked extensively with HTML, CSS, Photoshop, and web design. I have also worked with Wordpress to a considerable extent.",
+        "about_title_3": "WHERE do I want to go",
+        "about_content_3": "In the future, I envision myself working with design and functionality in the context of website or application development. I also aim to enhance my back-end skills with the intention of becoming a full-stack developer."
+    },
+    "Projects": {
+        "title": "Projects",
+        "projects_title_1": "These are my projects.",
+        "projects_content_1": "What I have been working on.",
+        "project_1": {
+            "title": "Project 1",
+            "description": "This is project 1."
+        },
+        "project_2": {
+            "title": "Project 2",
+            "description": "This is project 2."
+        }
+    },
+    "Contact": {
+        "title": "Contact",
+        "contact_title_1": "Contact me",
+        "contact_content_1": "Feel free to kontakt me about anything! :)",
+        "form_firstname": "First name",
+        "form_lastname": "Last name",
+        "form_email": "Email",
+        "form_entertext": "Write your message here..",
+        "form_clear": "Clear form",
+        "form_submit": "Submit"
+    }
+}
