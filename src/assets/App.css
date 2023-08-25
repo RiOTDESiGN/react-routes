@@ -433,7 +433,7 @@ a:hover::after {
 .exitfullscreen:hover {transform: scale(0.9) translateX(-1px) translateY(1px);}
 
   header {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     display: flex;
