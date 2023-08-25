@@ -43,6 +43,9 @@ export function SettingsProvider({ children }) {
     const projectsMenu = document.querySelectorAll(".projectsMenu");
     applyClassToElements(projectsMenu, "projectsMenuShrink", isShrinkHeaderActive);
 
+    const projects = document.querySelectorAll(".projects");
+    applyClassToElements(projects, "projectsMinimized", isShrinkHeaderActive);
+
     const menuSpacerBottom = document.querySelectorAll(".menuSpacerBottom");
     applyClassToElements(menuSpacerBottom, "menuSpacerBottomGrow", isShrinkHeaderActive);
 

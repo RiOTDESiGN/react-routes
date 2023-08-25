@@ -19,6 +19,13 @@
     },
     "Projects": {
         "title": "Prosjekter",
+        "menu_item_0": "Oversikt",
+        "menu_item_1": "Apper",
+        "menu_item_2": "Nettsider",
+        "menu_apps_1": "TNG",
+        "menu_apps_2": "Trommemaskin",
+        "menu_apps_3": "Hundemat",
+        "menu_apps_4": "Kalkulator",
         "projects_title_1": "Dette er mine prosjekter.",
         "projects_content_1": "Litt om hva jeg har jobbet med.",
         "project_1": {
@@ -38,7 +45,7 @@
         "form_lastname": "Etternavn",
         "form_email": "Epost",
         "form_entertext": "Skriv din beskjed her..",
-        "form_clear": "Tøm skjema",
+        "form_clear": "Slett",
         "form_submit": "Send"
     }
 }

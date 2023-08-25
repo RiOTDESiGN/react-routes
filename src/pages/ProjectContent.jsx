@@ -1,7 +1,7 @@
 import React from "react";
 import { useSettings } from '../SettingsContext';
 import { PageNotFound } from "./PageNotFound";
-import projectsData from "../assets/projects.json";
+import projectsData from "../projects.json";
 
 export function ProjectContent({ id }) {
   const { isShrinkHeaderActive } = useSettings();
@@ -21,7 +21,7 @@ export function ProjectContent({ id }) {
   return (
     <>
     <div className={`page ${isShrinkHeaderActive ? 'pageContentAdapt' : ""}`}>
-      <div className={`projectContent ${isShrinkHeaderActive ? 'projectContentShrink' : ""}`}>
+      <div className={`projectContent ${isShrinkHeaderActive ? 'projectContentGrow projectContentShrink' : ""}`}>
         <div className="projectTitle">
           <h2>{project.name}</h2>
           <div className="badges">

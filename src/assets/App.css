@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
 
+@font-face {
+  font-family: 'ThePortologo';
+  src: url('./fonts/ThePortologo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GraphikArts';
+  src: url('./fonts/GraphikArts.ttf') format('truetype');
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -13,6 +23,7 @@
   --tip: #999;
   --video: url('./videos/intro.mp4');
   --glass: blur(10px);
+  --pageTransition: all .5s ease-in-out;
 }
 
 *, *::before, *::after {
@@ -42,6 +53,7 @@ html, body {
   --formbg: #000;
   --negativeText: #111;
   --settings: invert(34%) sepia(41%) saturate(466%) hue-rotate(155deg) brightness(96%) contrast(87%);
+  --invert: invert();
 }
 
 .light-mode {
@@ -69,7 +81,7 @@ h3 {
 .collapse {
   position: relative;
   margin: 0 auto;
-  padding: 0 0 20px 0;
+  padding: 0 0 10px 0;
 }
 
 .inputAbout {
@@ -82,7 +94,7 @@ h3 {
 }
 
 .pAbout {
-  transition: .2s ease-in;
+  /* transition: .2s ease-in; */
   width: 100%;
   height: 0;
   overflow: hidden;
@@ -175,179 +187,203 @@ a:hover::after {
 .invert-filter {
     filter: invert();
   }
+
+  .invert-filter-arrows button {
+    filter: invert();
+  }
   
   .settings {
     position: fixed;
-    top: -122px;
-    right: -110px;
+    top: 3px;
+    right: -90px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 9px;
+    gap: 7px;
+    padding: 0 8px 3px 8px;
     background-color: var(--cta);
     border-bottom-left-radius: 6px;
-    border: 2px solid var(--cta);
     z-index: 300;
-    transition: all 0.5s ease-in;
+    transition: var(--pageTransition);
     user-select: none;
   }
-  
-  .settingsColumn1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100px;
-    margin-bottom: 4px;
-  }
-
-  .settingsColumn2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 22px;
-    width: 100px;
-    margin-bottom: 12px;
-  }
+  .settingsTabSlideOut {
+    transform: translateX(-90px);
+    transition: var(--pageTransition);
+}
 
   .settingsTabCogwheel {
-    position: absolute;
-    bottom: 2px;
-    left: 6px;
-    width: 20px;
+    width: 23px;
     height: 20px;
-    background-size: cover;
-    background-image: url('./images/cogwheel.png');
     cursor: pointer;
-    transition: .3s;
+    /* transition: transform .3s; */
 }
-.settingsTabCogwheel:hover {
-  filter: invert();
+
+.settingsTabSlideOut .settingsTabCogwheel {
+  /* transform: rotate(180deg); */
+}
+
+.settingsTabCogwheel::after {
+  position: absolute;
+  top: 3px;
+  right: 125px;
+  display: none;
+  place-content: center;
+  content: 'Open settings';
+  width: 190px;
+  height: 25px;
+  padding-bottom: 2px;
+  border-radius: 6px;
+  color: var(--negativeText);
+  background-color: var(--menu);
+  pointer-events: none;
+}
+.settingsTabCogwheel:hover::after {
+  display: grid;
+}
+
+.settingsTabSlideOut .settingsTabCogwheel::after {
+  content: 'Close settings';
 }
 
 .settingsTabMinimizeHeader {
-  position: absolute;
-  bottom: 0;
-  left: 82px;
-  width: 20px;
-  height: 11px;
-  margin-bottom: 6px;
-  background-image: url('./images/headerarrow.png');
+  position: relative;
   cursor: pointer;
-  transition: .3s;
+  /* transition: .3s; */
 }
-.settingsTabMinimizeHeader:hover {
-  filter: invert();
+.settingsTabMinimizeHeader::after {
+  position: absolute;
+  top: 2.5px;
+  right: 117px;
+  display: none;
+  place-content: center;
+  content: 'Maximize header';
+  width: 190px;
+  height: 25px;
+  padding-bottom: 2px;
+  border-radius: 6px;
+  color: var(--negativeText);
+  background-color: var(--menu);
+  pointer-events: none;
+}
+.settingsTabMinimizeHeader:hover::after {
+  display: grid;
 }
 
 .settingsTabMinimizeHeaderClose {
-  bottom: 0px;
+  position: relative;
   transform: rotate(180deg);
 }
-.settingsTabMinimizeHeaderClose:hover {
-  filter: invert();
-}
-
-.settingsTabSlideOut {
-    transform: translateY(115px) translateX(-110px);
-    border: 2px solid var(--cta);
-    background-color: var(--formbg);
-    transition: all .5s;
-}
-.settingsTabSlideOut .settingsTabCogwheel {
-  transform: rotate(180deg);
-  filter: var(--invert);
-  bottom: 4px;
-}
-.settingsTabSlideOut .settingsTabCogwheel:hover {
-  filter: var(--settings);
-}
-
-.settingsTabSlideOut .settingsTabMinimizeHeader {
+.settingsTabMinimizeHeaderClose::after {
+  position: absolute;
+  top: -3.5px;
+  left: 117px;
   display: none;
+  place-content: center;
+  content: 'Minimize header';
+  width: 190px;
+  height: 25px;
+  padding-bottom: 2px;
+  border-radius: 6px;
+  color: var(--negativeText);
+  background-color: var(--menu);
+  pointer-events: none;
+  transform: rotate(180deg);
+}
+.settingsTabMinimizeHeaderClose:hover::after {
+  display: grid;
 }
 
-  .displayMode {
-    cursor: pointer;
-    margin-bottom: 10px;
-    transition: .3s;
-  }
-  .displayMode:hover {
-    transform: translateX(-2px) translateY(-1px) rotate(45deg);
-  }
+
 
   .displayModeMini {
-    position: absolute;
-    bottom: -12px;
-    left: 19px;
+    position: relative;
     cursor: pointer;
     transition: .3s;
-    transform: scale(.5);
+    display: grid;
   }
-  .displayModeMini:hover {
-    filter: invert();
-    transform: translateX(-1px) translateY(-0.5px) rotate(45deg) scale(.5);
-  }
-  .settingsTabSlideOut .displayModeMini {
+  .displayModeMini::after {
+    position: absolute;
+    top: 3px;
+    right: 63px;
     display: none;
+    place-content: center;
+    content: 'Toggle light/dark-mode';
+    width: 190px;
+    height: 25px;
+    padding-bottom: 2px;
+    border-radius: 6px;
+    color: var(--negativeText);
+    background-color: var(--menu);
+    pointer-events: none;
+    transition: var(--pageTransition);
+  }
+  .displayModeMini:hover::after {
+    display: grid;
   }
 
-  .translator-globe {
-    width: 30px;
+.translator-button {
+    position: relative;
     cursor: pointer;
+    width: 20px;
+    height: 20px;
     transition: .3s;
   }
-  .translator-globe:hover {
-    transform: rotate(22.5deg);
+  .translator-button::after {
+    position: absolute;
+    top: 0.5px;
+    right: 90px;
+    display: none;
+    place-content: center;
+    content: 'Toggle language';
+    width: 190px;
+    height: 25px;
+    padding-bottom: 2px;
+    border-radius: 6px;
+    color: var(--negativeText);
+    background-color: var(--menu);
+    pointer-events: none;
+  }
+  .translator-button:hover::after {
+    display: grid;
   }
   
   .translator {
     position: absolute;
-    top: 61px;
-    right: 80px;
+    top: 35px;
+    right: 16px;
     display: flex;
     flex-direction: column;
-    gap: 0px;
+    gap: 10px;
     list-style-type: none;
     background-color: var(--bgcsolid);
-    padding: 10px 10px 14px 10px;
-    border: 2px solid var(--cta);
-    border-radius: 10px;
+    padding: 8px 8px;
+    border: 2px solid var(--t);
+    border-radius: 6px;
   }
   .translator::before {
     position: absolute;
-    top: 21px;
-    right: -14px;
+    top: -14px;
+    right: 21px;
     content: "";
     border-width: 6px;
     border-style: solid;
-    border-color: transparent transparent transparent var(--cta);
-  }
-
-  .translator-button {
-    transition: .5s;
-    cursor: pointer;
-    pointer-events: all;
-    background-color: transparent;
+    border-color: transparent transparent var(--t) transparent;
   }
 
   .translator-button-mini {
-    position: absolute;
-    bottom: 1px;
-    left: 48px;
-    opacity: 0;
     transition: .3s;
     cursor: pointer;
     pointer-events: all;
     background-color: transparent;
   }
 
-.languageCode {
+/* .languageCode {
   display: grid;
   width: 34px;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 18px;
-}
+} */
 
   .flags {
     background-color: var(--cta);
@@ -367,24 +403,20 @@ a:hover::after {
     pointer-events: none;
     opacity: 1;
   }
-  
-  .langTitle {
-    pointer-events: none;
-    color: var(--t);
-    padding-bottom: 14px;
-  }
+
   
   .hidden {
     display: none;
   }
 
-  .langOption {
+.langOption {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin: 9px;
+    gap: 2px;
+    margin: 0px;
     font-weight: 700;
-    cursor: url('./images/Hand.png'), pointer;
+    text-transform: uppercase;
+    cursor: pointer;
     background-color: transparent;
     color: var(--t);
   }
@@ -400,39 +432,16 @@ a:hover::after {
 .exitfullscreen {transition: .3s;}
 .exitfullscreen:hover {transform: scale(0.9) translateX(-1px) translateY(1px);}
 
-  .shrink {
-    cursor: pointer;
-    transition: .3s;
-  }
-
-  .shrink:hover {
-    color: var(--cta);
-    font-weight: 700;
-    transform: translateX(-3px);
-    animation: pulsate 1s infinite;
-  }
-  @keyframes pulsate {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(0.9);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
   header {
     position: absolute;
     top: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 20px 30px;
     background-color: var(--cta);
     border-bottom: 2px solid var(--cta);
-    transition: all 0.5s ease-in;
+    transition: var(--pageTransition);
     z-index: 4;
   }
 
@@ -444,25 +453,55 @@ a:hover::after {
 .logoWrapper {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
 }
 
 .PRDlogo {
   height: 100px;
   width: 100px;
-  border-radius: 6px;
-  background-image: url('./images/PivotRiotLogo.png');
+  background-image: url('./images/prdlogoWolftransparent.png');
   background-size: cover;
+  transition: var(--pageTransition);
   cursor: pointer;
-  transition: all 0.5s ease-in;
-}
-.PRDlogo:hover {
-  background-image: url('./images/PivotRiotLogo2.png');
+  border: 2px solid var(--t);
+  background-color: var(--t);
+  border-radius: 50%;
 }
 
-.PRDlogoTitle {
-  font-size: clamp(10px, 26px, 40px);
-  font-family: 'Staatliches', cursive;
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 68px;
+}
+.PRDlogoTitleRiot {
+  grid-area: riot;
+  text-transform: uppercase;
+  font-family: 'GraphikArts';
+  font-size: 40px;
+  padding-left: 2px;
+  line-height: 20px;
+}
+.PRDlogoTitleDesign {
+  position: relative;
+  grid-area: design;
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 8px;
+  line-height: 34px;
+}
+.PRDlogoTitleDesign::after {
+  position: absolute;
+  bottom: -6px;
+  right: -20px;
+  content: '.no';
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--negativeText);
+  transition: var(--pageTransition);
 }
 
   nav {
@@ -475,7 +514,7 @@ a:hover::after {
     padding: 10px 0;
     background-color: var(--cta);
     z-index: 3;
-    transition: all 0.5s ease-in;
+    transition: var(--pageTransition);
   }
 
   nav ul {
@@ -499,7 +538,7 @@ a:hover::after {
   border-bottom: 2px solid transparent;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  transition: all .5s ease-in;
+  transition: var(--pageTransition);
 
 }
 
@@ -590,6 +629,9 @@ a:hover::after {
   border-color: var(--cta) transparent transparent transparent;
 }
 
+.projectsMenu .projectsMinimized::before {top: 14px;}
+.projectsMenu .projectsMinimized::after {top: 16px;}
+
   .projectsMenu .menuCategory {
     position: relative;
     padding-top: 12px;
@@ -678,7 +720,7 @@ a:hover::after {
   place-content: center;
   width: 100vw;
   margin-top: 144px;
-  transition: all 0.5s ease-in;
+  transition: var(--pageTransition);
 }
 .pageContentAdapt {
   margin-top: 0px;
@@ -704,17 +746,18 @@ a:hover::after {
     place-self: center;
     width: 100vw;
     max-width: 1000px;
+    max-height: 100vh;
     padding: 20px 40px 14px 40px;
-    transition: all .5s ease-in;
+    transition: padding .5s ease-in-out, max-height .5s ease-in-out;
   }
   .projectContentShrink {
     padding: 6px 40px 14px 40px;
   }
 
-  .projectContentGrow {
-    height: calc(100vh - 868px);
-    transition: all .5s ease-in;
-  }
+  /* .projectContentGrow {
+    max-height: calc(100vh - 805px);
+    transition: var(--pageTransition);
+  } */
 
 .wrapper {
   position: relative;
@@ -726,7 +769,7 @@ a:hover::after {
     overflow-x: hidden;
     width: 100vw;
     height: calc(100vh - 382px);
-    transition: all 0.5s ease-in;
+    transition: var(--pageTransition);
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
   }
@@ -751,7 +794,7 @@ a:hover::after {
     cursor: none;
     opacity: 1;
     z-index: 999;
-    transition: all 0.5s ease-in;
+    transition: var(--pageTransition);
   }
   .wonder::before {
     position: absolute;
@@ -827,14 +870,92 @@ a:hover::after {
     cursor: pointer;
     display: none;
   }
+  
+  .badgesContainer {
 
-  .sectionRight {
+  }
+  
+  .categorySection {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--menu);
+    border-radius: 8px;
+    border: 2px solid var(--menu);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    transition: background-color .5s ease-in-out;
+  }
+
+  .categories {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 14px;
+    padding: 2px 20px;
+    border-radius: 6px;
+    background-color: var(--cta);
+    transition: background-color .5s ease-in-out;
+  }
+
+  .badgeCategory {
+    cursor: pointer;
+    color: var(--negativeText);
+  }
+  .badgeCategory:hover {
+    color: var(--t);
+  }
+  .badgeCategoryActive {
+    cursor: default;
+    color: var(--t);
+  }
+  
+  .badgesSectionItem {
     display: flex;
     justify-content: space-around;
-    align-items: top;
-    /* margin-top: 50px; */
-    height: 100%;
   }
+  
+  .badgesSectionCode {
+    display: flex;
+  }
+  .badgesSectionPrograms,
+  .badgesSectionTools {
+    display: none;
+  }
+  
+  /* No need to modify this part */
+  [data-target]:hover + .badgesSection[data-target],
+  [data-target]:hover + .badgesSectionItem {
+    display: flex;
+  }
+  
+
+  /* .sectionRight::before {
+    position: absolute;
+    content: 'My skills:';
+    font-weight: 700;
+    top: -15px;
+    left: 0px;
+    width: 105px;
+    display: flex;
+    place-content: center;
+    padding: 2px 0;
+    background-color: var(--cta);
+    border-radius: 6px;
+  }
+  .sectionRight::after {
+    position: absolute;
+    content: 'Coding';
+    top: -15px;
+    right: 0;
+    width: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 0;
+    background-color: var(--cta);
+    border-radius: 6px;
+  } */
   
   .badgeContainer {
     position: relative;
@@ -945,7 +1066,7 @@ a:hover::after {
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 3px 5px var(--formboxshadow);
-    transition: all 0.5s ease-in;
+    transition: var(--pageTransition);
   }
   
   form {
@@ -959,7 +1080,7 @@ a:hover::after {
     gap: 20px;
     height: 100%;
     width: 100%;
-    transition: all 0.5s ease-in;
+    transition: var(--pageTransition);
   }  
   
   .input-container {
@@ -1065,53 +1186,42 @@ a:hover::after {
     outline: 0;
     text-align: center;
     width: 100%;
-    transition: .1s;
   }
+  
   @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
-  .rotate-animation {
-    animation: spin 0.3s linear 1;
-  }
-
+  
+  .rotate-animation { animation: spin 0.3s linear 1; }
+  
   .submit:hover {
     color: var(--t);
     background-color: var(--cta);
+    transition: all 0.1s linear;
   }
-  .submit:active {
-    transform: scale(0.99);
+  
+  .submit:active { transform: scale(0.99); }
+  
+  .submit .clearFormImg,
+  .submit .sendFormImg {
+    filter: var(--settings);
   }
-
-  .clear {
-    grid-area: clear;
-  }
-
-  .clearFormImg {
-    transition: .5s;
-  }
-
-  .sendFormImg {
-    transition: .5s;
+  .submit:hover .clearFormImg,
+  .submit:hover .sendFormImg {
+    filter: var(--invert);
   }
   .submit:hover .sendFormImg {
     animation: send 1s linear infinite;
   }
   @keyframes send {
-    0% {
-      transform: translateX(0px);
-    }
-    50% {
-      transform: translateX(10px);
-    }
-    100% {
-      transform: translateX(0px);
-    }
+    0% { transform: translateX(0px); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(0px); }
   }
+  
+  .clear { grid-area: clear; }
+  
   
   textarea {
     grid-area: textarea;
@@ -1128,7 +1238,7 @@ a:hover::after {
 .projectsBar {
   position: relative;
   top: 142px;
-  transition: all 0.5s ease-in;
+  transition: var(--pageTransition);
 }
 
 .projectsBarShrink {

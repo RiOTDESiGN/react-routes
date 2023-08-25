@@ -38,7 +38,7 @@
         "form_lastname": "Last name",
         "form_email": "Email",
         "form_entertext": "Write your message here..",
-        "form_clear": "Clear form",
+        "form_clear": "Clear",
         "form_submit": "Submit"
     }
 }

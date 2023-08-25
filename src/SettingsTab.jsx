@@ -9,6 +9,8 @@ import FullscreenIcon from './pages/FullscreenToggle';
 import globe from './assets/images/globe.png';
 import sun from './assets/images/sun.webp';
 import moon from './assets/images/moon.webp';
+import arrow from './assets/images/headerarrow.png';
+import cogwheel from './assets/images/cogwheel.png';
 
 const languages = [
   { code: 'en', name: 'English', country_code: 'gb' },
@@ -94,7 +96,7 @@ export function SettingsTab() {
   return (
     <div id="settingsTab" className={`settings ${isSettingsTabActive ? 'settingsTabSlideOut' : ''}`}>
 
-<div className="settingsColumn1">
+{/* <div className="settingsColumn1">
       <div id="toggle" className="displayMode" onClick={toggleDarkMode}>
         {!isDarkMode ? <img src={sun} alt="Sun" /> : <img className={`${isDarkMode ? 'invert-filter' : ''}`} src={moon} alt="Moon" />}
       </div>
@@ -126,13 +128,15 @@ export function SettingsTab() {
       <div className="shrink" onClick={toggleShrinkHeader}>
         {isShrinkHeaderActive ? 'Grow' : 'Shrink'} <br /> Header
       </div>
-</div>
+</div> */}
 
-      <div className='settingsTabCogwheel' onClick={handleSettingsTabClick}></div>
-      <div className={`settingsTabMinimizeHeader ${isShrinkHeaderActive ? '' : 'settingsTabMinimizeHeaderClose'}`} onClick={toggleShrinkHeader}></div>
-      <div id="toggle" className="displayModeMini" onClick={toggleDarkMode}>
-        {!isDarkMode ? <img src={sun} alt="Sun" /> :  <img src={moon} alt="Moon" />}
+      <div className="settingsTabCogwheel" onClick={handleSettingsTabClick}>
+        <img className={`${isDarkMode ? 'invert-filter' : ''}`} src={cogwheel} alt="Settings" />
       </div>
+      <div id="toggle" className={`displayModeMini`} onClick={toggleDarkMode}>
+        {!isDarkMode ? <img src={sun} alt="Sun" /> :  <img className="invert-filter" src={moon} alt="Moon" />}
+      </div>
+      {/* <GlobeIcon />
       <div className="flags">
       {languages.map(({ code }) => (
         <button
@@ -148,10 +152,35 @@ export function SettingsTab() {
           </span>
         </button>
       ))}
+      </div> */}
+
+{/* {t('Settings.language')} */}
+
+<div className="translator-button" onClick={(event) => handleTranslatorToggle(event)}>
+        <GlobeIcon />
       </div>
+      <ul className={translatorVisible ? 'translator' : 'hidden'}>
+        {languages.map(({ code, name, country_code }) => (
+          <li key={country_code}>
+            <button
+              className='langOption'
+              onClick={(event) => {
+                event.stopPropagation();
+                i18n.changeLanguage(code);
+                handleTranslatorToggle();
+              }}
+              disabled={code === currentLanguageCode}
+            >
+              <span className={`fi fi-${country_code}`} style={{ opacity: code === currentLanguageCode ? 0.5 : 1 }}></span>
+              {code}
+            </button>
+          </li>
+        ))}
+      </ul>
 
-    {/* ? */}
-
+      <div className={`settingsTabMinimizeHeader ${isShrinkHeaderActive ? '' : 'settingsTabMinimizeHeaderClose'}`} onClick={toggleShrinkHeader}>
+      <img className={`${isDarkMode ? 'invert-filter' : ''}`} src={arrow} alt="" />
+      </div>
     </div>
   );
 }

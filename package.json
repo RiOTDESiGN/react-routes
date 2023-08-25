@@ -1,5 +1,6 @@
 {
-  "name": "react-routes-project",
+  "name": "pivot-riot-portfolio",
+  "homepage": "http://pivotriot.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",

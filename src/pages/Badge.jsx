@@ -3,7 +3,7 @@ import { useSettings } from '../SettingsContext';
 
 const Badge = ({ name, image }) => {
   const { isDarkMode } = useSettings();
-  const shouldApplyFilter = name === 'GitHUB' && isDarkMode;
+  const shouldApplyFilter = (name === 'GitHUB' || name === 'Midjourney') && isDarkMode;
 
   return (
     <div className="badgeContainer">

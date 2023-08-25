@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense } from 'react';
 import { HashRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import i18n from "i18next";
@@ -22,7 +22,7 @@ i18n
       caches: ['cookie'],
     },
     backend: {
-      loadPath: '/react-routes/locales/{{lng}}/translation.json',
+      loadPath: './locales/{{lng}}/translation.json',
     }
   });
 

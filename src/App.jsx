@@ -12,9 +12,11 @@ import './assets/splide-default.min.css';
 
 const carouselOptions = {
   type: 'slide',
-  perPage: 1,
   keyboard: true,
   wheel: true,
+  perPage: 1,
+  perMove: 1,
+  wheelMinThreshold: 50,
   pagination: false,
   snap: true,
   noDrag: '.no-drag',
@@ -38,6 +40,7 @@ export function App() {
   }, []);
 
   const onSlideChanged = (newIndex) => {
+    window.location.hash = '';
     setActiveLinkIndex(newIndex);
   };
 
@@ -52,8 +55,11 @@ export function App() {
     <div className="app">
       <header id="header" className={`${isShrinkHeaderActive ? 'headerShrink' : ""}`}>
         <div className="logoWrapper">
-        <div className={`PRDlogo ${isDarkMode ? 'invert-filter' : ''}`} onClick={() => handleNavClick(0)}></div>
-        <div className="PRDlogoTitle">Pivot Riot<br />Design</div>
+        <div className="PRDlogo" onClick={() => handleNavClick(0)}></div>
+        <div className="titleContainer">
+          <div className="PRDlogoTitleRiot">Riot</div>
+          <div className="PRDlogoTitleDesign">Design</div>
+        </div>
         </div>
       </header>
       <Splide hasTrack={false} aria-label="..." options={carouselOptions} ref={splideRef}>
@@ -72,7 +78,7 @@ export function App() {
           </SplideSlide>
         </SplideTrack>
         <nav>
-          <div className="splide__arrows" />
+          <div className={`splide__arrows ${isDarkMode ? 'invert-filter-arrows' : ''}`} />
           <ul>
             <li>
               <a
