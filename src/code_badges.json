@@ -1,19 +1,19 @@
 [
   {
     "name": "CSS3",
-    "image": "/badges/CSS3.webp"
+    "image": "./badges/CSS3.webp"
   },
   {
     "name": "HTML5",
-    "image": "/badges/HTML5.webp"
+    "image": "./badges/HTML5.webp"
   },
 
   {
     "name": "Javascript",
-    "image": "/badges/Javascript.webp"
+    "image": "./badges/Javascript.webp"
   },
   {
     "name": "React",
-    "image": "/badges/React.webp"
+    "image": "./badges/React.webp"
   }
 ]

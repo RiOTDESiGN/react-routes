@@ -1,14 +1,14 @@
 [
     {
       "name": "Figma",
-      "image": "/badges/Figma.webp"
+      "image": "./badges/Figma.webp"
     },
     {
       "name": "Photoshop",
-      "image": "/badges/Ps.webp"
+      "image": "./badges/Ps.webp"
     },
     {
       "name": "VS Code",
-      "image": "/badges/VSCode.webp"
+      "image": "./badges/VSCode.webp"
     }
   ]

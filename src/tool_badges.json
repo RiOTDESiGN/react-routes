@@ -1,14 +1,14 @@
 [
   {
     "name": "ChatGPT",
-    "image": "/badges/ChatGPT.webp"
+    "image": "./badges/ChatGPT.webp"
   },
   {
     "name": "GitHUB",
-    "image": "/badges/GitHUB.webp"
+    "image": "./badges/GitHUB.webp"
   },
   {
     "name": "Midjourney",
-    "image": "/badges/Midjourney.webp"
+    "image": "./badges/Midjourney.webp"
   }
 ]
