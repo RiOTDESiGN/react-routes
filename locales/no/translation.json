@@ -6,7 +6,8 @@
     "Home": {
         "title": "Hjem",
         "home_title_1": "Introduksjon :)",
-        "home_content_1": "Innhold."
+        "home_content_1": "Innhold.",
+        "home_traits_personality": ["Confident", "Creative", "Funny"]
     },
     "About": {
         "title": "Om ",
