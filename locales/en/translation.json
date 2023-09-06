@@ -10,7 +10,7 @@
         "home_hobbies": ["Gaming", "Computers", "Dogs", "Photography", "Composing", "Bodybuilding", "Cooking"],
         "home_interests": ["Psychology", "Music", "Home Renovation", "Health"],
         "home_favourites": ["Steak, fries and peppersauce", "The Prodigy", "BMW", "The Witcher III", "Mango IPA"],
-        "home_quote": "My imaginary friend used to play with the kid across the street."
+        "home_quote": "When I was little, my imaginary friend used to play with the kid across the street."
     },
     "About": {
         "title": "About",
@@ -23,22 +23,59 @@
     },
     "Projects": {
         "title": "Projects",
-        "menu_item_0": "Overview",
-        "menu_item_1": "Apps",
-        "menu_item_2": "Websites",
+
+        "menu_overview": "Case Study",
+        "menu_liveview": "Live View",
+        "menu_category_1": "Apps",
+        "menu_category_2": "Websites",
         "menu_apps_1": "RNG",
         "menu_apps_2": "Retro Drumpad",
         "menu_apps_3": "Dogfood Calculator",
         "menu_apps_4": "Calculator",
-        "projects_title_1": "These are my projects.",
-        "projects_content_1": "What I have been working on.",
-        "project_1": {
-            "title": "Project 1",
-            "description": "This is project 1."
+        "menu_websites_1": "Mars",
+        "menu_websites_2": "Newsfeed",
+
+        "project_RNG": {
+            "name": "Random Number Generator",
+            "description": "An application designed to produce random numbers when the user clicks a button, with the ability to highlight those numbers based on type.",
+            "goals": "I was tasked with using the Javascript we had just learned to create something, and I really liked the random math logic in Javascript and all the fun ways I could implement it. I also wanted to see how I could sort and target the results, and let the user manipulate those results visually.",
+            "challenges": "Some of the biggest challenges in the Javascript aspect of the project was handling the numbers when creating the logic, as I needed to be aware of the difference between strings and numbers. The CSS also proved to be a bit challenging when handling the logic for displaying the results.",
+            "reflection": "This project became sort of my Javascript baby as I worked quite a bit with it, polishing and improving it."
         },
-        "project_2": {
-            "title": "Project 2",
-            "description": "This is project 2."
+        "project_Mars": {
+            "name": "Mars, the red planet",
+            "description": "Description of Project 2",
+            "goals": "",
+            "challenges": "",
+            "reflection": ""
+        },
+        "project_Drumpad": {
+            "name": "Retro Drumpad",
+            "description": "Description of Project 3",
+            "goals": "",
+            "challenges": "",
+            "reflection": ""
+        },
+        "project_Dogfood": {
+            "name": "Dogfood Calculator",
+            "description": "Description of Project 4",
+            "goals": "",
+            "challenges": "",
+            "reflection": ""
+        },
+        "project_Newsfeed": {
+            "name": "Article Newsfeed",
+            "description": "Description of Project 5",
+            "goals": "",
+            "challenges": "",
+            "reflection": ""
+        },
+        "project_Calculator": {
+            "name": "Simple React Calculator",
+            "description": "Description of Project 6",
+            "goals": "",
+            "challenges": "",
+            "reflection": ""
         }
     },
     "Contact": {
