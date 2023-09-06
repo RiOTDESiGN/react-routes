@@ -1,56 +1,64 @@
 {
     "Settings": {
-        "language": "Norsk",
+        "language": "Engelsk",
         "app_title": "PRD Portefølje"
     },
     "Home": {
         "title": "Hjem",
         "home_title_1": "Introduksjon :)",
         "home_personality": ["Selvsikker", "Kreativ", "Morsom", "Troværdig", "Sexy"],
-        "home_hobbies": ["Gaming", "Datamaskiner", "Hunder", "Fotografering", "Komponering", "Kroppsbygging", "Matlaging"],
+        "home_hobbies": ["Spill", "Datamaskiner", "Hunder", "Fotografering", "Sammensetning", "Kroppsbygging", "Matlaging"],
         "home_interests": ["Psykologi", "Musikk", "Hjemmeoppussing", "Helse"],
         "home_favourites": ["Biff, pommesfrites & peppersaus", "The Prodigy", "BMW", "The Witcher III", "Mango IPA"],
-        "home_quote": "Da jeg var liten, pleide den imaginære vennen min å leke med nabobarnet."
+        "home_quote": "Da jeg var liten, pleide min oppdiktede venn å leke med barnet over gaten."
     },
     "About": {
         "title": "Om",
         "about_title_1": "HVEM er jeg",
-        "about_content_1": "Jeg heter Erik, og jeg er en nysgjerrig og fokusert person som for øyeblikket lærer front-end-utvikling gjennom KodeHode. Jeg liker å jobbe i IT-bransjen og finner design og funksjonalitet fascinerende. På fritiden engasjerer jeg meg i ulike aktiviteter som musikk, fotografering, gaming, hundeomsorg og mekanisk arbeid på biler, blant annet.",
+        "about_content_1": "Mitt navn er Erik, og jeg er en nysgjerrig og fokusert person som for øyeblikket lærer front-end-utvikling gjennom KodeHode. Jeg trives i IT-bransjen og finner design og funksjonalitet fascinerende. I mitt personlige liv er jeg en Jack of All Trades og deltar i ulike aktiviteter som musikk, fotografering, spill, hundeomsorg og mekanisk arbeid på biler, blant annet.",
         "about_title_2": "HVA kan jeg gjøre",
-        "about_content_2": "Jeg har kunnskap innenfor flere felt, men primært har jeg jobbet mye med HTML, CSS, Photoshop og webdesign. Jeg har også jobbet betydelig med Wordpress.",
-        "about_title_3": "HVOR vil jeg gå",
-        "about_content_3": "I fremtiden ser jeg for meg å jobbe med design og funksjonalitet innenfor nettside- eller applikasjonsutvikling. Jeg har også som mål å forbedre mine back-end-ferdigheter med tanke på å bli en full-stack-utvikler."
+        "about_content_2": "Jeg har kunnskap innen flere felt, men primært har jeg jobbet grundig med HTML, CSS, Photoshop og webdesign. Jeg har også jobbet ganske mye med Wordpress.",
+        "about_title_3": "HVOR vil jeg",
+        "about_content_3": "I fremtiden ser jeg for meg å jobbe med design og funksjonalitet innenfor web- eller applikasjonsutvikling. Jeg har også som mål å styrke mine back-end-ferdigheter med intensjonen om å bli en full-stack-utvikler."
     },
     "Projects": {
         "title": "Prosjekter",
+        "path": "prosjekter",
 
-        "menu_overview": "Case-studie",
+        "menu_overview": "Innblikk",
         "menu_liveview": "Live visning",
         "menu_category_1": "Apper",
         "menu_category_2": "Nettsteder",
-        "menu_apps_1": "Tilfeldig tallgenerator",
-        "menu_apps_2": "Retro Drumpad",
-        "menu_apps_3": "Hundefôrkalkulator",
-        "menu_apps_4": "Kalkulator",
-        "menu_websites_1": "Mars",
-        "menu_websites_2": "Nyhetsstrøm",
+
+        "casestudy_title": "Innblikk",
+        "description_title": "Beskrivelse",
+        "goals_title": "Mål",
+        "challenges_title": "Utfordringer",
+        "reflection_title": "Refleksjon",
+        "code_title": "Kode",
 
         "project_RNG": {
-            "name": "Tilfeldig Tallgenerator",
-            "description": "En applikasjon designet for å produsere tilfeldige tall når brukeren klikker på en knapp, med muligheten til å markere de tallene basert på type.",
-            "goals": "Jeg ble utfordret til å bruke Javascript som vi nettopp hadde lært for å lage noe, og jeg likte virkelig den tilfeldige matematikklogikken i Javascript og alle de morsomme måtene jeg kunne implementere den på. Jeg ønsket også å se hvordan jeg kunne sortere og målrette resultatene, og la brukeren manipulere resultatene visuelt.",
-            "challenges": "Noen av de største utfordringene i Javascript-delen av prosjektet var håndtering av tallene når jeg opprettet logikken, da jeg måtte være oppmerksom på forskjellen mellom strenger og tall. CSS viste seg også å være litt utfordrende når jeg håndterte logikken for visning av resultatene.",
-            "reflection": "Dette prosjektet ble på en måte mitt Javascript-barn da jeg jobbet ganske mye med det, pusset det opp og forbedret det."
+            "name": "Tilfeldig tallgenerator",
+            "app_path": "/prosjekter/RNG",
+            "app_menu_name": "RNG",
+            "description": "En applikasjon designet for å produsere tilfeldige tall når brukeren klikker på en knapp, med muligheten til å fremheve tallene basert på type.",
+            "goals": "Jeg ble oppfordret til å bruke Javascript vi nettopp hadde lært for å lage noe, og jeg likte virkelig den tilfeldige matematikklogikken i Javascript og alle de morsomme måtene jeg kunne implementere den på. Jeg ønsket også å se hvordan jeg kunne sortere og målrette resultatene og la brukeren manipulere disse visuelt.",
+            "challenges": "Noen av de største utfordringene i Javascript-delen av prosjektet var å håndtere tallene når jeg opprettet logikken, da jeg måtte være klar over forskjellen mellom strenger og tall. CSS viste seg også å være litt utfordrende når det gjaldt logikken for å vise resultatene.",
+            "reflection": "Dette prosjektet ble på en måte mitt Javascript-barn ettersom jeg jobbet ganske mye med det, pusset det opp og forbedret det."
         },
         "project_Mars": {
             "name": "Mars, den røde planeten",
+            "website_path": "/prosjekter/Mars",
+            "website_menu_name": "Mars",
             "description": "Beskrivelse av prosjekt 2",
             "goals": "",
             "challenges": "",
             "reflection": ""
         },
         "project_Drumpad": {
-            "name": "Retro Trommemaskin",
+            "name": "Retro Drumpad",
+            "app_path": "/prosjekter/Drumpad",
+            "app_menu_name": "Retro Trommemaskin",
             "description": "Beskrivelse av prosjekt 3",
             "goals": "",
             "challenges": "",
@@ -58,20 +66,26 @@
         },
         "project_Dogfood": {
             "name": "Hundefôrkalkulator",
+            "app_path": "/prosjekter/Dogfood",
+            "app_menu_name": "Hundefôrkalkulator",
             "description": "Beskrivelse av prosjekt 4",
             "goals": "",
             "challenges": "",
             "reflection": ""
         },
         "project_Newsfeed": {
-            "name": "Artikkel Nyhetsstrøm",
+            "name": "Artikkel Nyhetssamling",
+            "website_path": "/prosjekter/Newsfeed",
+            "website_menu_name": "Nyhetssamling",
             "description": "Beskrivelse av prosjekt 5",
             "goals": "",
             "challenges": "",
             "reflection": ""
         },
         "project_Calculator": {
-            "name": "Enkel React Kalkulator",
+            "name": "Enkel React-kalkulator",
+            "app_path": "/prosjekter/Calculator",
+            "app_menu_name": "Kalkulator",
             "description": "Beskrivelse av prosjekt 6",
             "goals": "",
             "challenges": "",

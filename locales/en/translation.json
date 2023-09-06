@@ -23,20 +23,24 @@
     },
     "Projects": {
         "title": "Projects",
+        "path": "projects",
 
         "menu_overview": "Case Study",
         "menu_liveview": "Live View",
         "menu_category_1": "Apps",
         "menu_category_2": "Websites",
-        "menu_apps_1": "RNG",
-        "menu_apps_2": "Retro Drumpad",
-        "menu_apps_3": "Dogfood Calculator",
-        "menu_apps_4": "Calculator",
-        "menu_websites_1": "Mars",
-        "menu_websites_2": "Newsfeed",
+
+        "casestudy_title": "Case Study",
+        "description_title": "Description",
+        "goals_title": "Goals",
+        "challenges_title": "Challenges",
+        "reflection_title": "Reflection",
+        "code_title": "Code",
 
         "project_RNG": {
             "name": "Random Number Generator",
+            "app_path": "/projects/RNG",
+            "app_menu_name": "RNG",
             "description": "An application designed to produce random numbers when the user clicks a button, with the ability to highlight those numbers based on type.",
             "goals": "I was tasked with using the Javascript we had just learned to create something, and I really liked the random math logic in Javascript and all the fun ways I could implement it. I also wanted to see how I could sort and target the results, and let the user manipulate those results visually.",
             "challenges": "Some of the biggest challenges in the Javascript aspect of the project was handling the numbers when creating the logic, as I needed to be aware of the difference between strings and numbers. The CSS also proved to be a bit challenging when handling the logic for displaying the results.",
@@ -44,6 +48,8 @@
         },
         "project_Mars": {
             "name": "Mars, the red planet",
+            "website_path": "/projects/Mars",
+            "website_menu_name": "Mars",
             "description": "Description of Project 2",
             "goals": "",
             "challenges": "",
@@ -51,6 +57,8 @@
         },
         "project_Drumpad": {
             "name": "Retro Drumpad",
+            "app_path": "/projects/Drumpad",
+            "app_menu_name": "Drumpad",
             "description": "Description of Project 3",
             "goals": "",
             "challenges": "",
@@ -58,6 +66,8 @@
         },
         "project_Dogfood": {
             "name": "Dogfood Calculator",
+            "app_path": "/projects/Dogfood",
+            "app_menu_name": "Dogfood",
             "description": "Description of Project 4",
             "goals": "",
             "challenges": "",
@@ -65,6 +75,8 @@
         },
         "project_Newsfeed": {
             "name": "Article Newsfeed",
+            "website_path": "/projects/Newsfeed",
+            "website_menu_name": "Newsfeed",
             "description": "Description of Project 5",
             "goals": "",
             "challenges": "",
@@ -72,6 +84,8 @@
         },
         "project_Calculator": {
             "name": "Simple React Calculator",
+            "app_path": "/projects/Calculator",
+            "app_menu_name": "Calculator",
             "description": "Description of Project 6",
             "goals": "",
             "challenges": "",
