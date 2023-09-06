@@ -6,7 +6,11 @@
     "Home": {
         "title": "Home",
         "home_title_1": "Introduction :)",
-        "home_content_1": "Home content."
+        "home_personality": ["Confident", "Creative", "Funny", "Loyal", "Sexy"],
+        "home_hobbies": ["Gaming", "Computers", "Dogs", "Photography", "Composing", "Bodybuilding", "Cooking"],
+        "home_interests": ["Psychology", "Music", "Home Renovation", "Health"],
+        "home_favourites": ["Steak, fries and peppersauce", "The Prodigy", "BMW", "The Witcher III", "Mango IPA"],
+        "home_quote": "My imaginary friend used to play with the kid across the street."
     },
     "About": {
         "title": "About",
@@ -19,6 +23,13 @@
     },
     "Projects": {
         "title": "Projects",
+        "menu_item_0": "Overview",
+        "menu_item_1": "Apps",
+        "menu_item_2": "Websites",
+        "menu_apps_1": "RNG",
+        "menu_apps_2": "Retro Drumpad",
+        "menu_apps_3": "Dogfood Calculator",
+        "menu_apps_4": "Calculator",
         "projects_title_1": "These are my projects.",
         "projects_content_1": "What I have been working on.",
         "project_1": {

@@ -6,12 +6,27 @@ import { Project } from "./Project";
 import { PageNotFound } from "./PageNotFound";
 
 import projects from '../assets/images/projects_icon.webp'
+import projectsData from "../projects.json";
 
-function HomePage({ t }) {
+function ProjectsHome({ t }) {
   return (
-    <Page title={t("Projects.title")} icon={projects} alt="Projects">
-      <h4>{t("Projects.projects_title_1")}</h4>
-      <p>{t("Projects.projects_content_1")}</p>
+<Page title={t("Projects.title")} icon={projects} alt="Projects">
+      <div className="cardContainer">
+        {projectsData.map((project, index) => (
+          <div key={index} className={`projectCard ${index % 2 === 0 ? 'projectCardsLeft' : 'projectCardsRight'}`}>
+            <h4 className="projectCardTitle">{project.name}</h4>
+            <div className="cardContent" style={{ backgroundImage: `url(${project.image})`, backgroundRepeat: 'no-repeat' }}>
+            </div>
+            <div className={`projectSynopsis ${index % 2 === 0 ? 'projectSynopsisRight' : 'projectSynopsisLeft'}`}>
+              <h4 className="projectCardTitleSynopsis">{project.name}: Case Study</h4>
+              <p>Description: {project.description}</p>
+              <p>Challenges:</p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae voluptatum saepe, est necessitatibus, inventore reprehenderit ea quo deleniti natus accusamus dolores explicabo? Officiis doloremque aperiam aspernatur quis eaque placeat, ipsa nesciunt perspiciatis optio assumenda ducimus quia repudiandae qui veritatis dolorem quisquam dolore officia odit inventore adipisci ullam? Laboriosam dignissimos officia quasi? Sequi, dolores quisquam. Exercitationem quas aperiam vero at. Vero laborum, consequatur libero perferendis itaque reprehenderit eos modi eaque adipisci aperiam officia a dignissimos hic et ad qui at ab sint numquam sunt suscipit impedit. Ipsum officia, earum fugiat architecto neque minus, vero facilis omnis, aperiam animi autem atque? Eaque.
+              <p className="projectCardTechnologies">{project.type}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </Page>
   );
 }
@@ -82,7 +97,7 @@ export function Projects({ t }) {
         </div>
       </div>
       <Routes>
-        <Route path="/" element={<HomePage t={t} />} />
+        <Route path="/" element={<ProjectsHome t={t} />} />
         <Route path="/projects/:id" element={<Project />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
