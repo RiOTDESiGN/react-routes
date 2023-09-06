@@ -36,13 +36,13 @@ function ProjectsHome({ t }) {
           {projectsData.map((project, index) => (
             <div key={index} className={`projectSynopsis ${index % 2 === 0 ? 'projectSynopsisRight' : 'projectSynopsisLeft'} ${selectedCardIndex === index ? 'selectedProjectCard' : ''}`}>
               <div className="projectSummary">
-                <h4 className="projectSynopsisTitle">Case Study</h4>
-                <span><h3>Description</h3>{t(`Projects.project_${project.id}.description`)}</span>
-                <span><h3>Goals</h3>{t(`Projects.project_${project.id}.goals`)}</span>
-                <span><h3>Challenges</h3>{t(`Projects.project_${project.id}.challenges`)}</span>
-                <span><h3>Reflection</h3>{t(`Projects.project_${project.id}.reflection`)}</span>
+                <h4 className="projectSynopsisTitle">{t(`Projects.casestudy_title`)}</h4>
+                <span><h3>{t(`Projects.description_title`)}</h3>{t(`Projects.project_${project.id}.description`)}</span>
+                <span><h3>{t(`Projects.goals_title`)}</h3>{t(`Projects.project_${project.id}.goals`)}</span>
+                <span><h3>{t(`Projects.challenges_title`)}</h3>{t(`Projects.project_${project.id}.challenges`)}</span>
+                <span><h3>{t(`Projects.reflection_title`)}</h3>{t(`Projects.project_${project.id}.reflection`)}</span>
               </div>
-              <div className="codeSpace">Code:<span className="projectSynopsisTechnologies">{project.code}</span></div>
+              <div className="codeSpace">{t(`Projects.code_title`)}:<span className="projectSynopsisTechnologies">{project.code}</span></div>
             </div>
           ))}
         </div>
@@ -53,22 +53,6 @@ function ProjectsHome({ t }) {
 export function Projects({ t }) {
     const { isShrinkHeaderActive } = useSettings();
 
-    const overviews = [
-      { path: "/", label: t("Projects.menu_overview") },
-    ];
-    
-    const apps = [
-      { path: "/projects/RNG", label: t("Projects.menu_apps_1") },
-      { path: "/projects/Drumpad", label: t("Projects.menu_apps_2") },
-      { path: "/projects/Dogfood", label: t("Projects.menu_apps_3") },
-      { path: "/projects/Calculator", label: t("Projects.menu_apps_4") },
-    ];
-    
-    const websites = [
-      { path: "/projects/Mars", label: t("Projects.menu_websites_1") },
-      { path: "/projects/Newsfeed", label: t("Projects.menu_websites_2") },
-    ];
-
   return (
     <>
       <div id="projectsBar" className={`projectsBar ${isShrinkHeaderActive ? 'projectsBarShrink' : ""}`}>
@@ -76,37 +60,57 @@ export function Projects({ t }) {
         <div className="projectsMenu">
           <ul>
             <li>
-              {overviews.map((overview, index) => (
-              <span key={index}>
-                <NavLink className="overView" to={overview.path}>{overview.label}</NavLink>
+              <span>
+                <NavLink className="overView" to="/">{t("Projects.menu_overview")}</NavLink>
               </span>
-              ))}
             </li>
             <li><span className="projects">{t("Projects.menu_liveview")} <div className="arrowDown"></div></span>
               <ul>
                 <li><span className="menuSpacerTop"></span></li>
                 <li><span className="menuCategory apps">{t("Projects.menu_category_1")}</span>
                 <ul className="horizontalMenu">
-                  {apps.map((app, index) => (
-                    <li key={index}>
-                      <NavLink className="menuItem" to={app.path}>
-                        <span>{app.label}</span>
-                      </NavLink>
-                    </li>
-                  ))}
+                {projectsData.map((project, index) => {
+                  if (project.category === "Apps") {
+                    const appPath = t(`Projects.project_${project.id}.app_path`);
+                    const appMenuName = t(`Projects.project_${project.id}.app_menu_name`);
+
+                    if (appPath && appMenuName) {
+                      return (
+                        <li key={index}>
+                          <NavLink className="menuItem" to={appPath}>
+                            <span>{appMenuName}</span>
+                          </NavLink>
+                        </li>
+                      );
+                    }
+                  }
+
+                  return null;
+                })}
                 </ul>
                 </li>
                 
                 <li><span className="menuCategory websites">{t("Projects.menu_category_2")}</span>
-                  <ul className="horizontalMenu">
-                  {websites.map((website, index) => (
-                    <li key={index}>
-                      <NavLink className="menuItem" to={website.path}>
-                        <span>{website.label}</span>
-                      </NavLink>
-                    </li>
-                  ))}
-                  </ul>
+                <ul className="horizontalMenu">
+                {projectsData.map((project, index) => {
+                  if (project.category === "Websites") {
+                    const path = t(`Projects.project_${project.id}.website_path`);
+                    const menuName = t(`Projects.project_${project.id}.website_menu_name`);
+
+                    if (path && menuName) {
+                      return (
+                        <li key={index}>
+                          <NavLink className="menuItem" to={path}>
+                            <span>{menuName}</span>
+                          </NavLink>
+                        </li>
+                      );
+                    }
+                  }
+
+                  return null;
+                })}
+                </ul>
                 </li>
                 <li><span className="menuSpacerBottom"></span></li>
               </ul>

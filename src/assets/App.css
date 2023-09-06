@@ -875,7 +875,7 @@ a:hover::after {
   border-style: solid;
   border-color: var(--formbg) transparent transparent transparent;
   top: 20px;
-  right: 11px;
+  right: 10px;
   transition: var(--pageTransition);
 }
 .projectsMenu .projects:hover::after {

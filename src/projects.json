@@ -1,5 +1,6 @@
 [
   {
+    "category": "Apps",
     "id": "RNG",
     "name": "Random Number Generator",
     "code": "HTML, CSS, Javascript",
@@ -13,6 +14,7 @@
     "badgeNameJS": "Javascript"
   },
   {
+    "category": "Websites",
     "id": "Mars",
     "name": "Mars, the red planet",
     "code": "HTML, CSS, Javascript",
@@ -26,6 +28,7 @@
     "badgeNameJS": "Javascript"
   },
   {
+    "category": "Apps",
     "id": "Drumpad",
     "name": "Retro Drumpad",
     "code": "HTML, CSS, Javascript",
@@ -39,6 +42,7 @@
     "badgeNameJS": "Javascript"
   },
   {
+    "category": "Apps",
     "id": "Dogfood",
     "name": "Dogfood Calculator",
     "code": "HTML, CSS, Javascript",
@@ -52,6 +56,7 @@
     "badgeNameJS": "Javascript"
   },
   {
+    "category": "Websites",
     "id": "Newsfeed",
     "name": "Article Newsfeed",
     "code": "HTML, CSS, Javascript, React",
@@ -67,6 +72,7 @@
     "badgeNameR": "React"
   },
   {
+    "category": "Apps",
     "id": "Calculator",
     "name": "Simple React Calculator",
     "code": "HTML, CSS, Javascript, React",
