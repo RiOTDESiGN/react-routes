@@ -1,9 +1,11 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useSettings } from '../SettingsContext';
 import { PageNotFound } from "./PageNotFound";
 import projectsData from "../projects.json";
 
 export function ProjectContent({ id }) {
+  const { t } = useTranslation();
   const { isShrinkHeaderActive } = useSettings();
   const project = projectsData.find((project) => project.id === id);
 
@@ -21,9 +23,9 @@ export function ProjectContent({ id }) {
   return (
     <>
     <div className={`page ${isShrinkHeaderActive ? 'pageContentAdapt' : ""}`}>
-      <div className={`projectContent ${isShrinkHeaderActive ? 'projectContentGrow projectContentShrink' : ""}`}>
+      <div className={`projectContent ${isShrinkHeaderActive ? 'projectContentShrink' : ""}`}>
         <div className="projectTitle">
-          <h2>{project.name}</h2>
+          <h2>{t(`Projects.project_${project.id}.name`)}</h2>
           <div className="badges">
               {renderBadge(project.badgeHTML, project.badgeNameHTML)}
               {renderBadge(project.badgeCSS, project.badgeNameCSS)}
@@ -31,12 +33,8 @@ export function ProjectContent({ id }) {
               {renderBadge(project.badgeR, project.badgeNameR)}
           </div>
         </div>
-        <p>Type: {project.type}</p>
-        <p>Description: {project.description}</p>
-        <p>Synopsis: {project.synopsis}</p>
       </div>
       <div className="wrapper">
-      <div className="wonder">LIVE VIEW</div>
       <iframe className={`${isShrinkHeaderActive ? 'iframeGrow' : ""}`} id="iframe" src={project.url} title={project.name}></iframe>
       </div>
     </div>
