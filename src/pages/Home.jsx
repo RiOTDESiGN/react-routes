@@ -5,8 +5,8 @@ import home from '../assets/images/home_icon.webp';
 import eruDark from '../assets/images/eru-dark.png';
 import eruLight from '../assets/images/eru-light.png';
 
-export function Home({ t }) {
-  const { isDarkMode } = useSettings();
+export function Home() {
+  const { isDarkMode, t } = useSettings();
   const eruImg = !isDarkMode ? eruDark : eruLight;
   const personality = t('Home.home_personality', { returnObjects: true });
   const hobbies = t('Home.home_hobbies', { returnObjects: true });

@@ -38,8 +38,8 @@ function AboutSection({ t, sectionIndex, selectedSection, setSelectedSection, is
   );
 }
 
-export function About({ t }) {
-  const { isDarkMode } = useSettings();
+export function About() {
+  const { isDarkMode, t } = useSettings();
   const [selectedSection, setSelectedSection] = useState(0);
   const [isWideScreen, setIsWideScreen] = useState(
     window.innerWidth >= 461 && window.innerHeight >= 801

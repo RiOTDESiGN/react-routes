@@ -3,7 +3,7 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Projects } from './pages/Projects';
 import { Contact } from './pages/Contact';
-import { useTranslation } from "react-i18next";
+
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 import { useSettings } from './SettingsContext';
 
@@ -23,8 +23,8 @@ const carouselOptions = {
 };
 
 export function App() {
-  const { t } = useTranslation();
-  const { isDarkMode, isShrinkHeaderActive } = useSettings();
+
+  const { isDarkMode, isShrinkHeaderActive, t } = useSettings();
   const [activeLinkIndex, setActiveLinkIndex] = useState(0);
 
   const splideRef = useRef(null);
@@ -65,16 +65,16 @@ export function App() {
       <Splide hasTrack={false} aria-label="..." options={carouselOptions} ref={splideRef}>
         <SplideTrack>
           <SplideSlide>
-            <Home t={t} />
+            <Home />
           </SplideSlide>
           <SplideSlide>
-            <About t={t} />
+            <About />
           </SplideSlide>
           <SplideSlide>
-            <Projects t={t} />
+            <Projects />
           </SplideSlide>
           <SplideSlide>
-            <Contact t={t} />
+            <Contact />
           </SplideSlide>
         </SplideTrack>
         <nav>

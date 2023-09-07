@@ -50,8 +50,8 @@ function ProjectsHome({ t }) {
     );
   }
 
-export function Projects({ t }) {
-    const { isShrinkHeaderActive } = useSettings();
+export function Projects() {
+    const { isShrinkHeaderActive, t } = useSettings();
 
   return (
     <>
@@ -121,7 +121,7 @@ export function Projects({ t }) {
       </div>
       <Routes>
         <Route path="/" element={<ProjectsHome t={t} />} />
-        <Route path="/projects/:id" element={<Project />} />
+        <Route path={`/${t(`Projects.path`)}/:id`} element={<Project />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>

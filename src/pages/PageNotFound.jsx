@@ -23,8 +23,8 @@ export function PageNotFound() {
   }, [count, navigate]);
 
   return (
-    <Page title="Project not found" icon={pagenotfound} alt="ProjectNotFound">
-    <h2>Re-directing to landingpage in {count} seconds.</h2>
+    <Page title="Translation in progress" icon={pagenotfound} alt="ProjectNotFound">
+    <h2>Re-directing to Case Study overview in {count} seconds.</h2>
     </Page>
   );
 }

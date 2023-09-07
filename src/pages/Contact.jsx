@@ -6,8 +6,8 @@ import recycle from '../assets/images/recycle.png';
 import sendform from '../assets/images/sendform.png';
 import contact from '../assets/images/contact_icon.webp';
 
-export function Contact({ t }) {
-    const { isDarkMode } = useSettings();
+export function Contact() {
+    const { isDarkMode, t } = useSettings();
     const [isAnimating, setIsAnimating] = useState(false);
     const [placeholder, setPlaceholder] = useState("");
     const firstnameRef = useRef(null);
