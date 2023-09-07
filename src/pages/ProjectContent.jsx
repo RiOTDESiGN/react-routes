@@ -1,12 +1,10 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { useSettings } from '../SettingsContext';
 import { PageNotFound } from "./PageNotFound";
 import projectsData from "../projects.json";
 
 export function ProjectContent({ id }) {
-  const { t } = useTranslation();
-  const { isShrinkHeaderActive } = useSettings();
+  const { isShrinkHeaderActive, t } = useSettings();
   const project = projectsData.find((project) => project.id === id);
 
   if (!project) {
