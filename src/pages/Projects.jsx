@@ -24,7 +24,7 @@ function ProjectsHome({ t }) {
   };
   
     return (
-      <Page title={t("Projects.title")} icon={projects} alt="Projects">
+      <Page title={t("Projects.title")} icon={projects} alt="Projects" className="title_projects">
         <div className="cardContainer">
           {projectsData.map((project, index) => (
             <div key={index} className={`projectCard ${index % 2 === 0 ? 'projectCardLeft' : 'projectCardRight'}`} onClick={() => handleCardClick(index)} onMouseLeave={handleCardMouseLeave}>

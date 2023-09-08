@@ -76,8 +76,8 @@ html, body {
   grid-template-areas:
   'stats img info'
   'quote quote quote';
-  grid-template-columns: 25% 1fr 25%;
-  grid-template-rows: 1fr 100px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 .traits {
@@ -123,13 +123,14 @@ html, body {
   grid-area: stats;
   gap: 40px;
   text-align: justify;
+  padding-right: 20px;
   & h2 {
     padding: 2px 0;
   }
 }
 .facecardright {
   grid-area: info;
-
+  padding-left: 20px;
 }
 
 .stats {
@@ -159,10 +160,7 @@ html, body {
 .eru {
   position: relative;
   grid-area: img;
-  object-fit: contain;
-  place-self: center;
-  border-radius: 6px;
-  margin: 0 20px;
+  border-radius: 60px;
   background-color: var(--cta);
   transition: var(--pageTransition)
 }
@@ -178,6 +176,7 @@ html, body {
 .eruImg {
   width: 100%;
   max-width: 357px;
+  border-radius: 60px;
   transition: var(--pageTransition)
 }
 
@@ -190,6 +189,7 @@ html, body {
   font-family: Staatliches;
   font-size: 24px;
   padding-top: 20px;
+  margin-top: 40px;
 }
 .home-quote::before {
   position: absolute;
@@ -1066,15 +1066,15 @@ a:hover::after {
     align-items: center;
     justify-content: space-between;
     margin-top: 30px;
-    padding: 0  30px 0 40px;
+    padding: 40px  30px 0 40px;
     width: 100%;
     font-family: 'Niconne', cursive;
-    z-index: -4;
+    line-height: 40px;
   }
 
   .title img {
     position: absolute;
-    top: 4px;
+    top: 10px;
     right: 40px;
   }
   
@@ -1082,7 +1082,7 @@ a:hover::after {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 7px 0;
+    padding: 31px 0 7px 0;
     width: 100%;
     margin-top: 0px;
   }
@@ -1141,7 +1141,7 @@ a:hover::after {
     align-items: center;
     gap: 18px;
     font-size: 14px;
-    padding: 2px 20px;
+    padding: 2px 20px 4px 20px;
     border-radius: 6px;
     background-color: var(--cta);
     transition: background-color .5s ease-in-out;
@@ -1172,39 +1172,10 @@ a:hover::after {
     display: none;
   }
   
-  /* No need to modify this part */
   [data-target]:hover + .badgesSection[data-target],
   [data-target]:hover + .badgesSectionItem {
     display: flex;
   }
-  
-
-  /* .sectionRight::before {
-    position: absolute;
-    content: 'My skills:';
-    font-weight: 700;
-    top: -15px;
-    left: 0px;
-    width: 105px;
-    display: flex;
-    place-content: center;
-    padding: 2px 0;
-    background-color: var(--cta);
-    border-radius: 6px;
-  }
-  .sectionRight::after {
-    position: absolute;
-    content: 'Coding';
-    top: -15px;
-    right: 0;
-    width: 105px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2px 0;
-    background-color: var(--cta);
-    border-radius: 6px;
-  } */
   
   .badgeContainer {
     position: relative;
@@ -1486,8 +1457,10 @@ a:hover::after {
   }
 
 .projectsBar {
-  position: relative;
+  position: fixed;
   top: 142px;
+  width: 100%;
+  z-index: 3;
   transition: var(--pageTransition);
 }
 
@@ -1506,6 +1479,7 @@ a:hover::after {
     }
     .pageContent {
       font-size: 14px;
+      padding: 14px 40px 65px 40px;
     }
     .home-container {
       grid-template-areas:
@@ -1559,6 +1533,9 @@ a:hover::after {
     }
     .iframeGrow {
       height: calc(100vh - 216px);
+    }
+    .cardContainer {
+      padding: 40px 0 0 0;
     }
     .aboutArrowClose {
       display: block;
