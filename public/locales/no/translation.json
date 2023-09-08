@@ -50,7 +50,7 @@
 
         "project_RNG": {
             "name": "Tilfeldig tallgenerator",
-            "app_path": "/prosjekter/Tilfeldig-tallgenerator",
+            "app_path": "/prosjekter/RNG",
             "app_menu_name": "Tallgenerator",
             "description": "En applikasjon designet for å produsere tilfeldige tall når brukeren klikker på en knapp, med muligheten til å markere tallene basert på type.",
             "goals": "Jeg fikk i oppgave å bruke JavaScript som vi nettopp hadde lært for å lage noe, og jeg likte virkelig den tilfeldige matematikklogikken i JavaScript og alle de morsomme måtene jeg kunne implementere den på. Jeg ønsket også å se hvordan jeg kunne sortere og målrette resultatene, og la brukeren manipulere resultatene visuelt.",
@@ -59,7 +59,7 @@
         },
         "project_MRS": {
             "name": "Mars, den røde planeten",
-            "website_path": "/prosjekter/Mars-den-rode-planeten",
+            "website_path": "/prosjekter/MRS",
             "website_menu_name": "Mars",
             "description": "En nettside dedikert til planeten Mars og vår utforskning av den.",
             "goals": "Vi fikk i oppgave å lage en nettside for en planet, og min gruppe ble tildelt planeten Mars. Vi måtte implementere HTML og CSS vi hadde lært så langt, samt kunne lage et rammeverk basert på Flex og Grid. Nettsiden måtte ha et ikke-responsivt design.",
@@ -68,7 +68,7 @@
         },
         "project_DPD": {
             "name": "Retro Drumpad",
-            "app_path": "/prosjekter/Retro-Drumpad",
+            "app_path": "/prosjekter/DPD",
             "app_menu_name": "Drumpad",
             "description": "Beskrivelse av prosjekt 3",
             "goals": "",
@@ -77,7 +77,7 @@
         },
         "project_DGD": {
             "name": "Hundematkalkulator",
-            "app_path": "/prosjekter/Hundematkalkulator",
+            "app_path": "/prosjekter/DGD",
             "app_menu_name": "Hundemat",
             "description": "Beskrivelse av prosjekt 4",
             "goals": "",
@@ -86,7 +86,7 @@
         },
         "project_NFD": {
             "name": "Artikkel Nyhetsstrøm",
-            "website_path": "/prosjekter/Artikkel-Nyhetsstrom",
+            "website_path": "/prosjekter/NFD",
             "website_menu_name": "Nyhetsstrøm",
             "description": "Beskrivelse av prosjekt 5",
             "goals": "",
@@ -95,7 +95,7 @@
         },
         "project_CLC": {
             "name": "Enkel React-kalkulator",
-            "app_path": "/prosjekter/Enkel-React-kalkulator",
+            "app_path": "/prosjekter/CLC",
             "app_menu_name": "Kalkulator",
             "description": "Beskrivelse av prosjekt 6",
             "goals": "",
