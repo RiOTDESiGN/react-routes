@@ -5,11 +5,19 @@
     },
     "Home": {
         "title": "Home",
-        "home_title_1": "Introduction :)",
-        "home_personality": ["Confident", "Creative", "Funny", "Loyal", "Sexy"],
-        "home_hobbies": ["Gaming", "Computers", "Dogs", "Photography", "Composing", "Bodybuilding", "Cooking"],
-        "home_interests": ["Psychology", "Music", "Home Renovation", "Health"],
-        "home_favourites": ["Steak, fries and peppersauce", "The Prodigy", "BMW", "The Witcher III", "Mango IPA"],
+        "home_stats_name": "Name",
+        "home_stats_level": "Level",
+        "home_stats_progress": "Progress",
+        "home_goals_title": "Goals",
+        "home_goals": "I will one day be a frontend developer and work fulltime with creative and exciting projects.",
+        "home_traits_personality_title": "Personality",
+        "home_traits_personality": ["Confident", "Creative", "Funny", "Loyal", "Sexy"],
+        "home_traits_hobbies_title": "Hobbies",
+        "home_traits_hobbies": ["Gaming", "Computers", "Dogs", "Photography", "Composing", "Bodybuilding", "Cooking"],
+        "home_traits_interests_title": "Interests",
+        "home_traits_interests": ["Psychology", "Music", "Home Renovation", "Health"],
+        "home_traits_favourites_title": "Favourite things",
+        "home_traits_favourites": ["Steak, fries and peppersauce", "The Prodigy", "BMW", "The Witcher III", "Mango IPA"],
         "home_quote": "When I was little, my imaginary friend used to play with the kid across the street."
     },
     "About": {
@@ -19,13 +27,16 @@
         "about_title_2": "WHAT can I do",
         "about_content_2": "I have knowledge across multiple fields, but primarily, I have worked extensively with HTML, CSS, Photoshop, and web design. I have also worked with Wordpress to a considerable extent.",
         "about_title_3": "WHERE do I want to go",
-        "about_content_3": "In the future, I envision myself working with design and functionality in the context of website or application development. I also aim to enhance my back-end skills with the intention of becoming a full-stack developer."
+        "about_content_3": "In the future, I envision myself working with design and functionality in the context of website or application development. I also aim to enhance my back-end skills with the intention of becoming a full-stack developer.",
+        "about_code": "Code",
+        "about_programs": "Programs",
+        "about_tools": "Tools"
     },
     "Projects": {
         "title": "Projects",
         "path": "projects",
 
-        "menu_overview": "Case Study",
+        "menu_overview": "Case Studies",
         "menu_liveview": "Live View",
         "menu_category_1": "Apps",
         "menu_category_2": "Websites",
@@ -46,45 +57,45 @@
             "challenges": "Some of the biggest challenges in the Javascript aspect of the project was handling the numbers when creating the logic, as I needed to be aware of the difference between strings and numbers. The CSS also proved to be a bit challenging when handling the logic for displaying the results.",
             "reflection": "This project became sort of my Javascript baby as I worked quite a bit with it, polishing and improving it."
         },
-        "project_Mars": {
+        "project_MRS": {
             "name": "Mars, the red planet",
-            "website_path": "/projects/Mars",
+            "website_path": "/projects/MRS",
             "website_menu_name": "Mars",
-            "description": "Description of Project 2",
-            "goals": "",
-            "challenges": "",
-            "reflection": ""
+            "description": "A website dedicated to the planet Mars and our exploration of it.",
+            "goals": "We were tasked with creating a website for a planet, and my group was assigned the planert Mars. We had to implement the HTML and CSS we had learned so far, as well as be able to create Flex- and Grid-based framework. The website had to be a non-responsive design.",
+            "challenges": "The biggest challenge for me on this project was to chose what ideas to implement into the site, and which ideas to scrap. I had many creative moments where I needed to reign myself in as to not make the project to complex for my partner to participate in the coding. Luckily, we found common ground fast and decided that I would take charge of the design aspect, and she would work on sourcing and placing the text content.",
+            "reflection": "This was a fun project to do, especially when I started on the color-scheme. I quickly fell in love with custom CSS variables during this task."
         },
-        "project_Drumpad": {
+        "project_DPD": {
             "name": "Retro Drumpad",
-            "app_path": "/projects/Drumpad",
+            "app_path": "/projects/DPD",
             "app_menu_name": "Drumpad",
             "description": "Description of Project 3",
             "goals": "",
             "challenges": "",
             "reflection": ""
         },
-        "project_Dogfood": {
+        "project_DGD": {
             "name": "Dogfood Calculator",
-            "app_path": "/projects/Dogfood",
+            "app_path": "/projects/DGD",
             "app_menu_name": "Dogfood",
             "description": "Description of Project 4",
             "goals": "",
             "challenges": "",
             "reflection": ""
         },
-        "project_Newsfeed": {
+        "project_NFD": {
             "name": "Article Newsfeed",
-            "website_path": "/projects/Newsfeed",
+            "website_path": "/projects/NFD",
             "website_menu_name": "Newsfeed",
             "description": "Description of Project 5",
             "goals": "",
             "challenges": "",
             "reflection": ""
         },
-        "project_Calculator": {
+        "project_CLC": {
             "name": "Simple React Calculator",
-            "app_path": "/projects/Calculator",
+            "app_path": "/projects/CLC",
             "app_menu_name": "Calculator",
             "description": "Description of Project 6",
             "goals": "",
@@ -94,13 +105,17 @@
     },
     "Contact": {
         "title": "Contact",
-        "contact_title_1": "Contact me",
-        "contact_content_1": "Feel free to kontakt me about anything! :)",
         "form_firstname": "First name",
         "form_lastname": "Last name",
         "form_email": "Email",
         "form_entertext": "Write your message here..",
         "form_clear": "Clear",
         "form_submit": "Submit"
+    },
+    "PNF": {
+        "title": "Translation",
+        "header": "Translating projects to Norwegian, please stand by.",
+        "description": "Re-directing to Case Study overview in ",
+        "seconds": " seconds."
     }
 }
