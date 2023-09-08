@@ -5,6 +5,7 @@
     },
     "Home": {
         "title": "Home",
+        "home_stats_title": "Details",
         "home_stats_name": "Name",
         "home_stats_level": "Level",
         "home_stats_progress": "Progress",
@@ -17,7 +18,7 @@
         "home_traits_interests_title": "Interests",
         "home_traits_interests": ["Psychology", "Music", "Home Renovation", "Health"],
         "home_traits_favourites_title": "Favourite things",
-        "home_traits_favourites": ["Steak, fries and peppersauce", "The Prodigy", "BMW", "The Witcher III", "Mango IPA"],
+        "home_traits_favourites": ["Steak, fries & peppersauce", "The Prodigy", "BMW", "The Witcher III", "Mango IPA"],
         "home_quote": "When I was little, my imaginary friend used to play with the kid across the street."
     },
     "About": {
@@ -70,7 +71,7 @@
             "name": "Retro Drumpad",
             "app_path": "/projects/DPD",
             "app_menu_name": "Drumpad",
-            "description": "Description of Project 3",
+            "description": "An application that simulates an old MIDI drumpad, with playable light-up pads and a volume slider.",
             "goals": "",
             "challenges": "",
             "reflection": ""
@@ -79,7 +80,7 @@
             "name": "Dogfood Calculator",
             "app_path": "/projects/DGD",
             "app_menu_name": "Dogfood",
-            "description": "Description of Project 4",
+            "description": "An application I made for the Norwegian dogfood brand LABB, that lets the customers calculate how much dogfood they should feed their dog each day.",
             "goals": "",
             "challenges": "",
             "reflection": ""
@@ -88,7 +89,7 @@
             "name": "Article Newsfeed",
             "website_path": "/projects/NFD",
             "website_menu_name": "Newsfeed",
-            "description": "Description of Project 5",
+            "description": "A website made for the display of news articles, with the ability to sort and favourite them.",
             "goals": "",
             "challenges": "",
             "reflection": ""
@@ -97,7 +98,7 @@
             "name": "Simple React Calculator",
             "app_path": "/projects/CLC",
             "app_menu_name": "Calculator",
-            "description": "Description of Project 6",
+            "description": "A simple calculator application with the ability to change color-themes.",
             "goals": "",
             "challenges": "",
             "reflection": ""

@@ -121,12 +121,19 @@ html, body {
 }
 .facecardleft {
   grid-area: stats;
-  place-content: space-between;
+  gap: 40px;
   text-align: justify;
+  & h2 {
+    padding: 2px 0;
+  }
 }
 .facecardright {
   grid-area: info;
 
+}
+
+.stats {
+  display: grid;
 }
 
 .progress {

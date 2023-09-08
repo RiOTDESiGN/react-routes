@@ -17,16 +17,16 @@ export function Home() {
       <div className="home-container">
 
           <div className="facecard facecardleft">
-            <div>
-            <h2><span>{t('Home.home_stats_name')}:</span><span>Erik</span></h2>
-            <h2><span>{t('Home.home_stats_level')}:</span><span>43</span></h2>
-            <h2>{t('Home.home_stats_progress')}:</h2>
-            <progress className="progress" value="75" max="100" />
+            <div className="stats">
+              <h3>{t('Home.home_stats_title')}:</h3>
+              <h2><span>{t('Home.home_stats_name')}:</span><span>Erik</span></h2>
+              <h2><span>{t('Home.home_stats_level')}:</span><span>43</span></h2>
+              <h2>{t('Home.home_stats_progress')}:</h2>
+              <progress className="progress" value="75" max="100" />
             </div>
-            <div>
-            <h3 />
-            <h2>{t('Home.home_goals_title')}</h2>
-            {t('Home.home_goals')}
+            <div className="">
+              <h3>{t('Home.home_goals_title')}</h3>
+              {t('Home.home_goals')}
             </div>
           </div>
 
