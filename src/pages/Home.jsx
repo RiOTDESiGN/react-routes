@@ -7,11 +7,10 @@ import eruLight from '../assets/images/eru-light.png';
 
 export function Home() {
   const { isDarkMode, t } = useSettings();
-  const eruImg = !isDarkMode ? eruDark : eruLight;
-  const personality = t('Home.home_personality', { returnObjects: true });
-  const hobbies = t('Home.home_hobbies', { returnObjects: true });
-  const interests = t('Home.home_interests', { returnObjects: true });
-  const favourites = t('Home.home_favourites', { returnObjects: true });
+  const personality = t('Home.home_traits_personality', { returnObjects: true });
+  const hobbies = t('Home.home_traits_hobbies', { returnObjects: true });
+  const interests = t('Home.home_traits_interests', { returnObjects: true });
+  const favourites = t('Home.home_traits_favourites', { returnObjects: true });
 
   return (
     <Page title={t('Home.title')} icon={home} alt="Home">
@@ -19,22 +18,25 @@ export function Home() {
 
           <div className="facecard facecardleft">
             <div>
-            <h2><span>Name:</span><span>Erik</span></h2>
-            <h2><span>Level:</span><span>43</span></h2>
-            <h2>Progress :</h2>
+            <h2><span>{t('Home.home_stats_name')}:</span><span>Erik</span></h2>
+            <h2><span>{t('Home.home_stats_level')}:</span><span>43</span></h2>
+            <h2>{t('Home.home_stats_progress')}:</h2>
             <progress className="progress" value="75" max="100" />
             </div>
             <div>
             <h3 />
-            <h2>Goals :</h2>
-            I will one day be a frontend developer and work fulltime with creative and exciting projects.
+            <h2>{t('Home.home_goals_title')}</h2>
+            {t('Home.home_goals')}
             </div>
           </div>
 
-          <img className="eru" src={eruImg} alt="" />
+          <div className="eru">
+          <img className="eruDark eruImg" src={eruDark} alt="" style={{ opacity: isDarkMode ? 1 : 0 }} />
+          <img className="eruLight eruImg" src={eruLight} alt="" />
+          </div>
 
           <div className="facecard facecardright">
-            <h3>Personality :</h3>
+            <h3>{t('Home.home_traits_personality_title')}:</h3>
               <div className="traits">
                 {personality.map((trait, index) => (
                   <div className="trait" key={index}>
@@ -42,7 +44,7 @@ export function Home() {
                   </div>
                 ))}
               </div>
-            <h3>Hobbies :</h3>
+              <h3>{t('Home.home_traits_hobbies_title')}:</h3>
               <div className="traits">
                 {hobbies.map((entry, index) => (
                   <div className="trait" key={index}>
@@ -50,7 +52,7 @@ export function Home() {
                   </div>
                 ))}
               </div>
-            <h3>Interests :</h3>
+              <h3>{t('Home.home_traits_interests_title')}:</h3>
               <div className="traits">
                 {interests.map((entry, index) => (
                   <div className="trait" key={index}>
@@ -58,7 +60,7 @@ export function Home() {
                   </div>
                 ))}
               </div>
-            <h3>Favourite Things :</h3>
+              <h3>{t('Home.home_traits_favourites_title')}:</h3>
               <div className="traits">
                 {favourites.map((entry, index) => (
                   <div className="trait" key={index}>

@@ -45,14 +45,14 @@ html, body {
 }
 
 .dark-mode {
-  --cta: #3f677b;
+  --cta: #294451;
   --t: #ddd;
   --bgc: linear-gradient(to bottom, #000, #111, #111, #111);
   --bgcsolid: #111;
   --menu: #ddd;
   --formbg: #000;
   --negativeText: #111;
-  --settings: invert(34%) sepia(41%) saturate(466%) hue-rotate(155deg) brightness(96%) contrast(87%);
+  --settings: invert(24%) sepia(22%) saturate(827%) hue-rotate(155deg) brightness(92%) contrast(92%);
   --invert: invert();
   --backdrop: #ffffffcf;
 }
@@ -150,13 +150,27 @@ html, body {
 }
 
 .eru {
+  position: relative;
   grid-area: img;
-  width: 100%;
-  max-width: 357px;
   object-fit: contain;
   place-self: center;
   border-radius: 6px;
+  margin: 0 20px;
   background-color: var(--cta);
+  transition: var(--pageTransition)
+}
+.eruLight {
+  opacity: 1;
+}
+.eruDark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+.eruImg {
+  width: 100%;
+  max-width: 357px;
   transition: var(--pageTransition)
 }
 
@@ -680,7 +694,9 @@ a:hover::after {
 }
 
 .cardContainer:hover > :not(:hover, .projectSynopsis) {
-  opacity: 0.5;
+  opacity: 0.7;
+  border: 2px solid var(--bgcsolid);
+  border-radius: 8px;
 }
 
 .projectCard {
@@ -709,13 +725,14 @@ a:hover::after {
 
 .projectCardTitle {
   grid-area: title;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-bottom: 2px solid var(--cta);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 .cardContent {
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .projectSynopsis {

@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
+import { useSettings } from '../SettingsContext';
 import Badge from './Badge';
 import codeBadgesData from '../code_badges.json';
 import programBadgesData from '../program_badges.json';
 import toolBadgesData from '../tool_badges.json';
 
 export function Badges() {
+  const { t } = useSettings();
+
   useEffect(() => {
     const badgeContainers = document.querySelectorAll('.badgeContainer');
 
@@ -38,111 +41,41 @@ export function Badges() {
 
   return (
     <>
-
-<div className="badgesContainer">
-  <div className="categorySection">
-    <div className="categories">
-      <div className="badgeCategory badgeCategoryActive" data-target="Code" onClick={handleItemClick}>Code</div>
-      <div className="categorySpace">|</div>
-      <div className="badgeCategory" data-target="Programs" onClick={handleItemClick}>Programs</div>
-      <div className="categorySpace">|</div>
-      <div className="badgeCategory" data-target="Tools" onClick={handleItemClick}>Tools</div>
-    </div>
-  </div>
-  <div className="badgesSectionCode badgesSectionItem">
-    {codeBadgesData.map((badge) => (
-            <Badge 
-                key={badge.name} 
-                name={badge.name} 
-                image={badge.image}
-            />
-          ))} </div>
-  <div className="badgesSectionPrograms badgesSectionItem">
-    {programBadgesData.map((badge) => (
-            <Badge 
-                key={badge.name} 
-                name={badge.name} 
-                image={badge.image}
-            />
-          ))}</div>
-  <div className="badgesSectionTools badgesSectionItem">
-    {toolBadgesData.map((badge) => (
-            <Badge 
-                key={badge.name} 
-                name={badge.name} 
-                image={badge.image}
-            />
-          ))}</div>
-</div>
-
-
-
-{/* <div className="badgesContainer">
-  <div className="badgesSection">
-    <div className="badgesSectionItem">Code</div>
-    <div className="badgesSectionCode">
-
-  </div>
-    <div className="badgesSectionItem">Programs</div>
-    <div className="badgesSectionItem">Tools</div>
-  </div>
-
-  <div className="badgesSectionPrograms">
-
-  </div>
-  <div className="badgesSectionTools">
-
-  </div>
-</div> */}
-
-      {/* <div className="badgesContainer">
-        <div className="badgesSection">
-          <div data-target="Code">Code</div>
-          <div data-target="Programs">Programs</div>
-          <div data-target="Tools">Tools</div>
+      <div className="badgesContainer">
+        <div className="categorySection">
+          <div className="categories">
+            <div className="badgeCategory badgeCategoryActive" data-target="Code" onClick={handleItemClick}>{t('About.about_code')}</div>
+            <div className="categorySpace">|</div>
+            <div className="badgeCategory" data-target="Programs" onClick={handleItemClick}>{t('About.about_programs')}</div>
+            <div className="categorySpace">|</div>
+            <div className="badgeCategory" data-target="Tools" onClick={handleItemClick}>{t('About.about_tools')}</div>
+          </div>
         </div>
-        <div className="badgesSectionCode">
-
-        </div>
-        <div className="badgesSectionPrograms">
-
-        </div>
-        <div className="badgesSectionTools">
-
-        </div>
-      </div> */}
-
-      {/* <div className="badgesContainer">
-        <div className="badgesSection badgesSectionCode">
+        <div className="badgesSectionCode badgesSectionItem">
           {codeBadgesData.map((badge) => (
-            <Badge 
-                key={badge.name} 
-                name={badge.name} 
-                image={badge.image}
-            />
-          ))}
-        </div>
-
-        <div className="badgesSectionPrograms">
+                  <Badge 
+                      key={badge.name} 
+                      name={badge.name} 
+                      image={badge.image}
+                  />
+                ))} </div>
+        <div className="badgesSectionPrograms badgesSectionItem">
           {programBadgesData.map((badge) => (
-            <Badge 
-                key={badge.name} 
-                name={badge.name} 
-                image={badge.image}
-            />
-          ))}
-        </div>
-
-        <div className="badgesSectionTools">
+                  <Badge 
+                      key={badge.name} 
+                      name={badge.name} 
+                      image={badge.image}
+                  />
+                ))}</div>
+        <div className="badgesSectionTools badgesSectionItem">
           {toolBadgesData.map((badge) => (
-            <Badge 
-                key={badge.name} 
-                name={badge.name} 
-                image={badge.image}
-            />
-          ))}
-        </div>
-      </div> */}
+                  <Badge 
+                      key={badge.name} 
+                      name={badge.name} 
+                      image={badge.image}
+                  />
+                ))}</div>
+      </div>
     </>
   );
 }

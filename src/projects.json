@@ -15,7 +15,7 @@
   },
   {
     "category": "Websites",
-    "id": "Mars",
+    "id": "MRS",
     "name": "Mars, the red planet",
     "code": "HTML, CSS, Javascript",
     "image": "./thumbnails/mars.png",
@@ -29,7 +29,7 @@
   },
   {
     "category": "Apps",
-    "id": "Drumpad",
+    "id": "DPD",
     "name": "Retro Drumpad",
     "code": "HTML, CSS, Javascript",
     "image": "./thumbnails/drumpad.png",
@@ -43,7 +43,7 @@
   },
   {
     "category": "Apps",
-    "id": "Dogfood",
+    "id": "DGD",
     "name": "Dogfood Calculator",
     "code": "HTML, CSS, Javascript",
     "image": "./thumbnails/dogfood.png",
@@ -57,7 +57,7 @@
   },
   {
     "category": "Websites",
-    "id": "Newsfeed",
+    "id": "NFD",
     "name": "Article Newsfeed",
     "code": "HTML, CSS, Javascript, React",
     "image": "./thumbnails/newsfeed.png",
@@ -73,7 +73,7 @@
   },
   {
     "category": "Apps",
-    "id": "Calculator",
+    "id": "CLC",
     "name": "Simple React Calculator",
     "code": "HTML, CSS, Javascript, React",
     "image": "./thumbnails/calculator.png",

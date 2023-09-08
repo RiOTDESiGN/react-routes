@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSettings } from '../SettingsContext';
 import { Page } from './Page'
 
-import pagenotfound from '../assets/images/404.webp'
+import pagenotfound from '../assets/images/translation.png'
 
 export function PageNotFound() {
+  const { t } = useSettings();
   const navigate = useNavigate();
-  const [count, setCount] = useState(5);
+  const [count, setCount] = useState(60);
 
   useEffect(() => {
     const countdownInterval = setInterval(() => {
@@ -23,8 +25,9 @@ export function PageNotFound() {
   }, [count, navigate]);
 
   return (
-    <Page title="Translation in progress" icon={pagenotfound} alt="ProjectNotFound">
-    <h2>Re-directing to Case Study overview in {count} seconds.</h2>
+    <Page title={t("PNF.title")} icon={pagenotfound} alt="ProjectNotFound">
+    <h2>{t("PNF.header")}</h2>
+    <h2>{t("PNF.description")}{count}{t("PNF.seconds")}</h2>
     </Page>
   );
 }
