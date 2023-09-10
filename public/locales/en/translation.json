@@ -72,36 +72,36 @@
             "app_path": "/projects/DPD",
             "app_menu_name": "Drumpad",
             "description": "An application that simulates an old MIDI drumpad, with playable light-up pads and a volume slider.",
-            "goals": "",
-            "challenges": "",
-            "reflection": ""
+            "goals": "We were tasked with creating a drum machine in Javascript, where we had to implement what we had learned about importing soundfiles and creating the logic to let a user play them back.",
+            "challenges": "The most challenging thing in this project was to assign the numpad keys to the drumpads, so that the user could play the pad using the keyboard. I also learned how to create a volume slider so that the user could adjust the volume as desired.",
+            "reflection": "This was a very fun task to do, and I especially enjoyed making the glow-up CSS pads."
         },
         "project_DGD": {
             "name": "Dogfood Calculator",
             "app_path": "/projects/DGD",
             "app_menu_name": "Dogfood",
             "description": "An application I made for the Norwegian dogfood brand LABB, that lets the customers calculate how much dogfood they should feed their dog each day.",
-            "goals": "",
-            "challenges": "",
-            "reflection": ""
+            "goals": "We were tasked with creating an application that would let the user add and remove content to a list, and then be able to manipulate that content. ",
+            "challenges": "There were several challenging things I stumbled upon in this project, but most of them were due to my own desire to make a fully functioning application that the user could download to a device and use offline. It was very interesting to work with json files and fetch data from them.",
+            "reflection": "During this experience I got a whole new respect for the efforts behind proper Quality Assurance, and how tedious yet rewarding that work can be. I really worked hard to safeguard the application from errors."
         },
         "project_NFD": {
             "name": "Article Newsfeed",
             "website_path": "/projects/NFD",
             "website_menu_name": "Newsfeed",
             "description": "A website made for the display of news articles, with the ability to sort and favourite them.",
-            "goals": "",
-            "challenges": "",
-            "reflection": ""
+            "goals": "In this task, we had to use the things we learned about React to create a website that showcased articles, let the user sort- and favourite them.",
+            "challenges": "Being new to the React Framework, I found it very challenging to understand the logic at first, and there were several times I met a wall due to errors or functions simply not doing what I wanted them to. It was slow learning process.",
+            "reflection": "Looking back on this projet, I am grateful that I didn't give up as I have come to really love React. I will revisit this project in the future, as I really liked some of the design choices I made."
         },
         "project_CLC": {
             "name": "Simple React Calculator",
             "app_path": "/projects/CLC",
             "app_menu_name": "Calculator",
             "description": "A simple calculator application with the ability to change color-themes.",
-            "goals": "",
-            "challenges": "",
-            "reflection": ""
+            "goals": "We were tasked with creating a simple calculator using React, and we were given a template design to work from and a set of functions that the calculator had to be able to perform.",
+            "challenges": "The most hallenging thing on this project, and when working with Javascript math in general, is to keep track of strings and numbers. When the number has a comma due to decimals, the calculations started returning wrong answers due to the number actually being a string.",
+            "reflection": "I quickly learned that even though the logic handling the math is very concise and simple to work with, the ammount of quality assurance needed to make a calculator completely error-free is surprisingly large."
         }
     },
     "Contact": {
@@ -115,7 +115,7 @@
     },
     "PNF": {
         "title": "Translation",
-        "header": "Translating projects to Norwegian, please stand by.",
+        "header": "Translating to English, please stand by.",
         "description": "Re-directing to Case Study overview in ",
         "seconds": " seconds."
     }

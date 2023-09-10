@@ -31,43 +31,43 @@ export function Home() {
           </div>
 
           <div className="eru">
-          <img className="eruDark eruImg" src={eruDark} alt="" style={{ opacity: isDarkMode ? 1 : 0 }} />
-          <img className="eruLight eruImg" src={eruLight} alt="" />
+            <img className="eruDark eruImg" src={eruDark} alt="" style={{ opacity: isDarkMode ? 1 : 0 }} />
+            <img className="eruLight eruImg" src={eruLight} alt="" />
           </div>
 
           <div className="facecard facecardright">
             <h3>{t('Home.home_traits_personality_title')}:</h3>
-              <div className="traits">
-                {personality.map((trait, index) => (
-                  <div className="trait" key={index}>
-                    {trait}
-                  </div>
-                ))}
-              </div>
-              <h3>{t('Home.home_traits_hobbies_title')}:</h3>
-              <div className="traits">
-                {hobbies.map((entry, index) => (
-                  <div className="trait" key={index}>
-                    {entry}
-                  </div>
-                ))}
-              </div>
-              <h3>{t('Home.home_traits_interests_title')}:</h3>
-              <div className="traits">
-                {interests.map((entry, index) => (
-                  <div className="trait" key={index}>
-                    {entry}
-                  </div>
-                ))}
-              </div>
-              <h3>{t('Home.home_traits_favourites_title')}:</h3>
-              <div className="traits">
-                {favourites.map((entry, index) => (
-                  <div className="trait" key={index}>
-                    {entry}
-                  </div>
-                ))}
-              </div>
+            <div className="traits">
+              {personality.map((trait, index) => (
+                <div className="trait" key={index}>
+                  {trait}
+                </div>
+              ))}
+            </div>
+            <h3>{t('Home.home_traits_hobbies_title')}:</h3>
+            <div className="traits">
+              {hobbies.map((entry, index) => (
+                <div className="trait" key={index}>
+                  {entry}
+                </div>
+              ))}
+            </div>
+            <h3>{t('Home.home_traits_interests_title')}:</h3>
+            <div className="traits">
+              {interests.map((entry, index) => (
+                <div className="trait" key={index}>
+                  {entry}
+                </div>
+              ))}
+            </div>
+            <h3>{t('Home.home_traits_favourites_title')}:</h3>
+            <div className="traits">
+              {favourites.map((entry, index) => (
+                <div className="trait" key={index}>
+                  {entry}
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="home-quote-container"><p className="home-quote">{t('Home.home_quote')}</p></div>

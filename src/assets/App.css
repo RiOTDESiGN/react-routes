@@ -72,12 +72,13 @@ html, body {
 
 .home-container {
   display: grid;
-  place-content: center;
   grid-template-areas:
   'stats img info'
   'quote quote quote';
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 50px;
+  row-gap: 20px;
+  padding-top: 10px;
 }
 
 .traits {
@@ -90,7 +91,7 @@ html, body {
 .trait {
   display: grid;
   place-content: center;
-  flex-grow: 2;
+  flex-grow: 1;
   border: 1px solid var(--menu);
   border-radius: 6px;
   margin: 2px;
@@ -108,13 +109,6 @@ html, body {
   cursor: pointer;
 }
 
-.dot {
-  height: 6px;
-  width: 6px;
-  border-radius: 50%;
-  background-color: var(--cta);
-}
-
 .facecard {
   display: grid;
   place-content: center;
@@ -123,14 +117,12 @@ html, body {
   grid-area: stats;
   gap: 40px;
   text-align: justify;
-  padding-right: 20px;
   & h2 {
     padding: 2px 0;
   }
 }
 .facecardright {
   grid-area: info;
-  padding-left: 20px;
 }
 
 .stats {
@@ -160,8 +152,16 @@ html, body {
 .eru {
   position: relative;
   grid-area: img;
-  border-radius: 60px;
+  display: flex;
+  align-items: end;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
   background-color: var(--cta);
+  overflow: hidden;
+  height: 100%;
+  max-height: 526px;
   transition: var(--pageTransition)
 }
 .eruLight {
@@ -175,21 +175,18 @@ html, body {
 }
 .eruImg {
   width: 100%;
-  max-width: 357px;
-  border-radius: 60px;
   transition: var(--pageTransition)
 }
 
 .home-quote-container {
   grid-area: quote;
   place-self: center;
+  padding-top: 40px;
 }
 .home-quote {
   position: relative;
   font-family: Staatliches;
   font-size: 24px;
-  padding-top: 20px;
-  margin-top: 40px;
 }
 .home-quote::before {
   position: absolute;
@@ -242,6 +239,10 @@ h4 {
   border-bottom: 2px solid var(--cta);
   width: 100%;
   transition: background-color .3s linear, border-bottom .3s linear;
+}
+
+.aboutContainer {
+  
 }
 
 .collapse {
@@ -693,8 +694,8 @@ a:hover::after {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   height: 100%;
-  padding: 20px 0 26px 0;
   visibility: hidden;
+  overflow: hidden;
 }
 .cardContainer > * {
   visibility: visible;
@@ -706,12 +707,16 @@ a:hover::after {
   border-radius: 8px;
 }
 
+.cardContainerFade:hover > :not(:hover, .projectSynopsis) {
+  opacity: 0.1;
+  border: 2px solid var(--cta);
+}
+
 .projectCard {
-  cursor: pointer;
   display: grid;
   grid-template-areas: 
     'title'
-    'space';
+    'buttons';
   grid-template-rows: 26px 1fr;
   background-color: var(--menu);
   border: 2px solid var(--cta);
@@ -725,9 +730,9 @@ a:hover::after {
     background-color: var(--menu);
     color: var(--cta);
   }
-  &:active {
-    transform: scale(0.994);
-  }
+}
+.projectCard:hover .cardButton {
+  opacity: 1;
 }
 
 .projectCardTitle {
@@ -738,30 +743,60 @@ a:hover::after {
 }
 
 .cardContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+}
+.cardButton {
+  opacity: 0;
+  display: grid;
+  place-content: center;
+  background-color: var(--menu);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  transition: all .3s linear, transform .1s linear;
+}
+.cardButton:hover {
+  background-color: var(--cta);
+  cursor: pointer;
+  & img {
+    filter: none;
+  }
+}
+.cardButton:active {
+  transform: scale(0.95);
+}
+.cardButton a {
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+  font-weight: inherit;
+}
+.cardButton a::after {
+  border: none;
 }
 
 .projectSynopsis {
   position: absolute;
-  opacity: 0;
-  top: 20px;
-  right: 0;
+  opacity: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: justify;
-  height: calc(100% - 46px);
   width: calc(50% - 10px);
-  border: 2px solid var(--cta);
+  height: 100%;
+  transform: translateY(100%);
+  border: 2px solid var(--menu);
   border-radius: 6px;
   background-color: var(--bgcsolid);
   font-size: 14px;
   font-weight: 700;
-  z-index: 9;
   pointer-events: none;
   padding: 10px 10px 3px 10px;
-  transition: all .3s linear;
+  transition: all .2s linear;
   & .codeSpace {
     display: flex;
     justify-content: space-between;
@@ -781,6 +816,7 @@ a:hover::after {
 
 .selectedProjectCard {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .projectSynopsisTitle {
@@ -1013,12 +1049,11 @@ a:hover::after {
 .pageContent {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    place-self: center;
     width: 100vw;
     max-width: 1000px;
     height: calc(100vh - 295px);
-    padding: 14px 40px 35px 40px;
+    max-height: 850px;
+    padding: 34px 40px;
     transition: height .5s ease-in-out;
   }
 
@@ -1283,7 +1318,6 @@ a:hover::after {
     width: 100%;
     max-width: 1000px;
     height: 100vh;
-    margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 3px 5px var(--formboxshadow);
     transition: var(--pageTransition);
@@ -1466,6 +1500,27 @@ a:hover::after {
 
 .projectsBarShrink {
   top: 0px;
+}
+
+.translation {
+  display: grid;
+  place-items: center;
+}
+
+.translationAnimation {
+  width: 102px;
+  height: 101px;
+  margin-bottom: 40px;
+  animation: flagspin 2s ease-in-out infinite;
+}
+
+@keyframes flagspin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
   @media only screen and (max-width: 750px) {

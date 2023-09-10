@@ -1,33 +1,34 @@
 {
     "Settings": {
-        "language": "Engelsk",
+        "language": "Norsk",
         "app_title": "PRD Portefølje"
     },
     "Home": {
         "title": "Hjem",
+        "home_stats_title": "Detaljer",
         "home_stats_name": "Navn",
         "home_stats_level": "Nivå",
         "home_stats_progress": "Fremgang",
         "home_goals_title": "Mål",
-        "home_goals": "Jeg vil en dag bli en frontend-utvikler og jobbe fulltid med kreative og spennende prosjekter.",
+        "home_goals": "En dag vil jeg være en frontend-utvikler og jobbe fulltid med kreative og spennende prosjekter.",
         "home_traits_personality_title": "Personlighet",
-        "home_traits_personality": ["Selvsikker", "Kreativ", "Morsom", "Lojal", "Sexy"],
+        "home_traits_personality": ["Selvsikker", "Kreativ", "Morsom", "Loyal", "Sexy"],
         "home_traits_hobbies_title": "Hobbyer",
-        "home_traits_hobbies": ["Spill", "Datamaskiner", "Hunder", "Fotografering", "Komponering", "Bodybuilding", "Matlaging"],
+        "home_traits_hobbies": ["Spill", "Datamaskiner", "Hunder", "Fotografi", "Sammensetning", "Kroppsbygging", "Matlaging"],
         "home_traits_interests_title": "Interesser",
         "home_traits_interests": ["Psykologi", "Musikk", "Hjemmeoppussing", "Helse"],
-        "home_traits_favourites_title": "Favoritt ting",
+        "home_traits_favourites_title": "Favoritter",
         "home_traits_favourites": ["Biff, pommesfrites & peppersaus", "The Prodigy", "BMW", "The Witcher III", "Mango IPA"],
         "home_quote": "Da jeg var liten, pleide min imaginære venn å leke med nabobarnet."
     },
     "About": {
         "title": "Om",
         "about_title_1": "HVEM er jeg",
-        "about_content_1": "Mitt navn er Erik, og jeg er en nysgjerrig og fokusert person som for øyeblikket lærer front-end-utvikling gjennom KodeHode. Jeg trives i IT-bransjen og finner design og funksjonalitet fascinerende. På fritiden er jeg en Jack of All Trades og deltar i ulike aktiviteter som musikk, fotografering, spill, hundeoppdrett og mekanisk arbeid på biler, blant annet.",
+        "about_content_1": "Jeg heter Erik, og jeg er en nysgjerrig og fokusert person som for øyeblikket lærer front-end-utvikling gjennom KodeHode. Jeg liker å jobbe i IT-bransjen og finner design og funksjonalitet fascinerende. På fritiden driver jeg med mange forskjellige aktiviteter som musikk, fotografi, spill, hundeeierskap og mekanisk arbeid på biler, blant annet.",
         "about_title_2": "HVA kan jeg gjøre",
-        "about_content_2": "Jeg har kunnskap innenfor flere felt, men primært har jeg jobbet mye med HTML, CSS, Photoshop og webdesign. Jeg har også jobbet en god del med Wordpress.",
-        "about_title_3": "HVOR vil jeg gå",
-        "about_content_3": "I fremtiden ser jeg for meg å jobbe med design og funksjonalitet innenfor web- eller applikasjonsutvikling. Jeg har også som mål å styrke mine back-end-ferdigheter med intensjonen om å bli en full-stack-utvikler.",
+        "about_content_2": "Jeg har kunnskap innenfor flere felt, men primært har jeg jobbet mye med HTML, CSS, Photoshop og webdesign. Jeg har også jobbet mye med Wordpress.",
+        "about_title_3": "HVOR vil jeg",
+        "about_content_3": "I fremtiden ser jeg for meg å jobbe med design og funksjonalitet innenfor web- eller applikasjonsutvikling. Jeg har også som mål å forbedre mine back-end-ferdigheter med intensjonen om å bli en full-stack-utvikler.",
         "about_code": "Kode",
         "about_programs": "Programmer",
         "about_tools": "Verktøy"
@@ -37,7 +38,7 @@
         "path": "prosjekter",
 
         "menu_overview": "Case-studier",
-        "menu_liveview": "Live visning",
+        "menu_liveview": "Live Visning",
         "menu_category_1": "Apper",
         "menu_category_2": "Nettsteder",
 
@@ -49,58 +50,58 @@
         "code_title": "Kode",
 
         "project_RNG": {
-            "name": "Tilfeldig tallgenerator",
+            "name": "Tilfeldig Nummergenerator",
             "app_path": "/prosjekter/RNG",
-            "app_menu_name": "Tallgenerator",
+            "app_menu_name": "RNG",
             "description": "En applikasjon designet for å produsere tilfeldige tall når brukeren klikker på en knapp, med muligheten til å markere tallene basert på type.",
-            "goals": "Jeg fikk i oppgave å bruke JavaScript som vi nettopp hadde lært for å lage noe, og jeg likte virkelig den tilfeldige matematikklogikken i JavaScript og alle de morsomme måtene jeg kunne implementere den på. Jeg ønsket også å se hvordan jeg kunne sortere og målrette resultatene, og la brukeren manipulere resultatene visuelt.",
-            "challenges": "Noen av de største utfordringene i JavaScript-aspektet av prosjektet var å håndtere tallene når jeg laget logikken, da jeg måtte være oppmerksom på forskjellen mellom strenger og tall. CSS viste seg også å være litt utfordrende når jeg håndterte logikken for å vise resultatene.",
-            "reflection": "Dette prosjektet ble liksom mitt JavaScript-barn, da jeg jobbet ganske mye med det, pusset det opp og forbedret det."
+            "goals": "Jeg fikk i oppgave å bruke JavaScript som vi nettopp hadde lært for å lage noe, og jeg likte virkelig den tilfeldige matte-logikken i JavaScript og alle de morsomme måtene jeg kunne implementere den på. Jeg ville også se hvordan jeg kunne sortere og målrette resultatene og la brukeren manipulere dem visuelt.",
+            "challenges": "Noen av de største utfordringene i JavaScript-delen av prosjektet var å håndtere tallene når jeg lagde logikken, siden jeg måtte være oppmerksom på forskjellen mellom strenger og tall. CSS viste seg også å være litt utfordrende når det gjaldt å håndtere logikken for visning av resultatene.",
+            "reflection": "Dette prosjektet ble litt som min JavaScript-baby da jeg jobbet mye med det, polerte og forbedret det."
         },
         "project_MRS": {
             "name": "Mars, den røde planeten",
             "website_path": "/prosjekter/MRS",
             "website_menu_name": "Mars",
             "description": "En nettside dedikert til planeten Mars og vår utforskning av den.",
-            "goals": "Vi fikk i oppgave å lage en nettside for en planet, og min gruppe ble tildelt planeten Mars. Vi måtte implementere HTML og CSS vi hadde lært så langt, samt kunne lage et rammeverk basert på Flex og Grid. Nettsiden måtte ha et ikke-responsivt design.",
-            "challenges": "Den største utfordringen for meg i dette prosjektet var å velge hvilke ideer jeg skulle implementere på nettsiden, og hvilke ideer jeg skulle forkaste. Jeg hadde mange kreative øyeblikk der jeg måtte temme meg selv for å ikke gjøre prosjektet for komplekst for min partner å delta i kodingen. Heldigvis fant vi raskt felles grunn og bestemte oss for at jeg skulle ta ansvar for designaspektet, mens hun skulle jobbe med å finne og plassere tekstmaterialet.",
-            "reflection": "Dette var et morsomt prosjekt å gjøre, spesielt når jeg begynte på fargeskjemaet. Jeg forelsket meg raskt i egendefinerte CSS-variabler under denne oppgaven."
+            "goals": "Vi fikk i oppgave å lage en nettside for en planet, og min gruppe fikk tildelt planeten Mars. Vi måtte implementere HTML og CSS vi hadde lært så langt, samt kunne lage et Flex- og Grid-basert rammeverk. Nettsiden måtte ha et ikke-responsivt design.",
+            "challenges": "Den største utfordringen for meg på dette prosjektet var å velge hvilke ideer jeg skulle implementere på nettsiden, og hvilke ideer jeg skulle forkaste. Jeg hadde mange kreative øyeblikk der jeg måtte dempe meg selv for å ikke gjøre prosjektet for komplekst for partneren min å delta i kodingen. Heldigvis fant vi felles grunn raskt, og vi bestemte at jeg skulle ta ansvar for designaspektet, og hun skulle jobbe med å finne og plassere tekstinnholdet.",
+            "reflection": "Dette var et morsomt prosjekt å gjøre, spesielt da jeg begynte på fargeskjemaet. Jeg ble raskt forelsket i tilpassede CSS-variabler under denne oppgaven."
         },
         "project_DPD": {
             "name": "Retro Drumpad",
             "app_path": "/prosjekter/DPD",
-            "app_menu_name": "Drumpad",
-            "description": "Beskrivelse av prosjekt 3",
-            "goals": "",
-            "challenges": "",
-            "reflection": ""
+            "app_menu_name": "Trommemaskin",
+            "description": "En applikasjon som simulerer en gammel MIDI-drumpad, med spillbare lysende pads og en volumskyve.",
+            "goals": "Vi fikk i oppgave å lage en trommemaskin i JavaScript, der vi måtte implementere det vi hadde lært om import av lydfiler og lage logikken for at en bruker kunne spille dem tilbake.",
+            "challenges": "Det mest utfordrende med dette prosjektet var å tilordne tastene på tastaturet til drumpadene, slik at brukeren kunne spille paden med tastaturet. Jeg lærte også hvordan jeg kunne lage en volumskyve slik at brukeren kunne justere volumet etter ønske.",
+            "reflection": "Dette var en veldig morsom oppgave å gjøre, og jeg likte spesielt å lage de opplyste CSS-padene."
         },
         "project_DGD": {
-            "name": "Hundematkalkulator",
+            "name": "Hundefôrkalkulator",
             "app_path": "/prosjekter/DGD",
             "app_menu_name": "Hundemat",
-            "description": "Beskrivelse av prosjekt 4",
-            "goals": "",
-            "challenges": "",
-            "reflection": ""
+            "description": "En applikasjon jeg laget for det norske hundefôrmerket LABB, som lar kundene beregne hvor mye hundefôr de skal gi hunden sin hver dag.",
+            "goals": "Vi fikk i oppgave å lage en applikasjon som lar brukeren legge til og fjerne innhold i en liste, og deretter kunne manipulere det innholdet.",
+            "challenges": "Det var flere utfordrende ting jeg støtte på i dette prosjektet, men de fleste av dem skyldtes min egen lyst til å lage en fullt fungerende applikasjon som brukeren kunne laste ned til en enhet og bruke offline. Det var veldig interessant å jobbe med JSON-filer og hente data fra dem.",
+            "reflection": "Gjennom denne opplevelsen fikk jeg en helt ny respekt for innsatsen bak skikkelig kvalitetssikring og hvor tidkrevende, men givende, det arbeidet kan være. Jeg jobbet virkelig hardt for å beskytte applikasjonen mot feil."
         },
         "project_NFD": {
             "name": "Artikkel Nyhetsstrøm",
             "website_path": "/prosjekter/NFD",
             "website_menu_name": "Nyhetsstrøm",
-            "description": "Beskrivelse av prosjekt 5",
-            "goals": "",
-            "challenges": "",
-            "reflection": ""
+            "description": "En nettside laget for visning av nyhetsartikler, med muligheten til å sortere og favorisere dem.",
+            "goals": "I denne oppgaven måtte vi bruke det vi hadde lært om React for å lage en nettside som viste artikler og lot brukeren sortere og favorisere dem.",
+            "challenges": "Som nybegynner med React-rammeverket fant jeg det veldig utfordrende å forstå logikken i begynnelsen, og det var flere ganger jeg støtte på veggen på grunn av feil eller funksjoner som rett og slett ikke gjorde det jeg ønsket. Det var en langsom læringsprosess.",
+            "reflection": "Når jeg ser tilbake på dette prosjektet, er jeg takknemlig for at jeg ikke ga opp, for jeg har virkelig kommet til å elske React. Jeg vil gjerne komme tilbake til dette prosjektet i fremtiden, da jeg virkelig likte noen av designvalgene jeg tok."
         },
         "project_CLC": {
-            "name": "Enkel React-kalkulator",
+            "name": "Enkel React Kalkulator",
             "app_path": "/prosjekter/CLC",
             "app_menu_name": "Kalkulator",
-            "description": "Beskrivelse av prosjekt 6",
-            "goals": "",
-            "challenges": "",
-            "reflection": ""
+            "description": "En enkel kalkulatorapplikasjon med muligheten til å endre fargetemaer.",
+            "goals": "Vi fikk i oppgave å lage en enkel kalkulator ved hjelp av React, og vi fikk en mal å jobbe ut ifra samt en rekke funksjoner som kalkulatoren måtte kunne utføre.",
+            "challenges": "Det mest utfordrende med dette prosjektet, og når man jobber med JavaScript-matematikk generelt, er å holde styr på strenger og tall. Når tallet har et komma på grunn av desimaler, begynte beregningene å gi feil svar på grunn av at tallet faktisk var en streng.",
+            "reflection": "Jeg lærte raskt at selv om logikken som håndterer matematikken er veldig kortfattet og enkel å jobbe med, kreves det overraskende mye kvalitetssikring for å gjøre en kalkulator helt feilfri."
         }
     },
     "Contact": {
@@ -114,8 +115,8 @@
     },
     "PNF": {
         "title": "Oversettelse",
-        "header": "Oversetter prosjekter til norsk, vennligst vent.",
-        "description": "Omdirigerer til oversikten over case-studier om ",
+        "header": "Oversetter til Norsk, vennligst vent.",
+        "description": "Videresender til oversikt over case-studier om ",
         "seconds": " sekunder."
     }
 }

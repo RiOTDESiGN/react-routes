@@ -8,7 +8,7 @@ import pagenotfound from '../assets/images/translation.png'
 export function PageNotFound() {
   const { t } = useSettings();
   const navigate = useNavigate();
-  const [count, setCount] = useState(60);
+  const [count, setCount] = useState(5);
 
   useEffect(() => {
     const countdownInterval = setInterval(() => {
@@ -25,9 +25,12 @@ export function PageNotFound() {
   }, [count, navigate]);
 
   return (
-    <Page title={t("PNF.title")} icon={pagenotfound} alt="ProjectNotFound">
-    <h2>{t("PNF.header")}</h2>
-    <h2>{t("PNF.description")}{count}{t("PNF.seconds")}</h2>
+    <Page>
+      <div className="translation">
+        <img className="translationAnimation" src={pagenotfound} alt="" />
+        <h2>{t("PNF.header")}</h2>
+        <h2>{t("PNF.description")}{count}{t("PNF.seconds")}</h2>
+      </div>
     </Page>
   );
 }

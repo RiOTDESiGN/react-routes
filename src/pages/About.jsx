@@ -61,7 +61,7 @@ export function About() {
 
   return (
     <Page title={t('About.title')} icon={about} alt="About">
-      <div>
+      <div className="aboutContainer">
         {[0, 1, 2].map((sectionIndex) => (
           <AboutSection
             key={sectionIndex}

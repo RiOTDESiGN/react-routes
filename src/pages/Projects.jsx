@@ -9,27 +9,46 @@ import projects from '../assets/images/projects_icon.webp'
 import projectsData from "../projects.json";
 
 function ProjectsHome({ t }) {
+  const { isDarkMode } = useSettings();
   const [selectedCardIndex, setSelectedCardIndex] = useState(null);
+  const cardFade = document.querySelector(".cardContainer");
 
   const handleCardClick = (index) => {
     if (selectedCardIndex === index) {
       setSelectedCardIndex(null);
+      if (cardFade && cardFade.classList.contains("cardContainerFade")) {
+        cardFade.classList.remove("cardContainerFade");
+      }
     } else {
       setSelectedCardIndex(index);
+      if (cardFade && !cardFade.classList.contains("cardContainerFade")) {
+        cardFade.classList.add("cardContainerFade");
+      }
     }
   };
-
+  
   const handleCardMouseLeave = () => {
+    if (cardFade) {
+      if (cardFade.classList.contains("cardContainerFade")) {
+        cardFade.classList.remove("cardContainerFade");
+      }
+    }
     setSelectedCardIndex(null);
-  };
+  };  
   
     return (
       <Page title={t("Projects.title")} icon={projects} alt="Projects" className="title_projects">
         <div className="cardContainer">
           {projectsData.map((project, index) => (
-            <div key={index} className={`projectCard ${index % 2 === 0 ? 'projectCardLeft' : 'projectCardRight'}`} onClick={() => handleCardClick(index)} onMouseLeave={handleCardMouseLeave}>
+            <div key={index} className={`projectCard ${index % 2 === 0 ? 'projectCardLeft' : 'projectCardRight'}`} onMouseLeave={handleCardMouseLeave}>
               <h4 className="projectCardTitle">{t(`Projects.project_${project.id}.name`)}</h4>
               <div className="cardContent" style={{ backgroundImage: `url(${project.image})`, backgroundRepeat: 'no-repeat' }}>
+                <div className="cardButton">
+                  <a href={project.GHurl} target="_blank" rel="noopener noreferrer">
+                    <img className={isDarkMode ? '' : 'invert-filter'} src="./badges/GitHUB.webp" alt="" />
+                  </a>
+                </div>
+                <div className="cardButton" onClick={() => handleCardClick(index)}><img className={isDarkMode ? '' : 'invert-filter'} src="./badges/CaseStudy.webp" alt="" /></div>
               </div>
             </div>
           ))}
@@ -51,7 +70,7 @@ function ProjectsHome({ t }) {
   }
 
 export function Projects() {
-    const { isShrinkHeaderActive, t } = useSettings();
+  const { isShrinkHeaderActive, t } = useSettings();
 
   return (
     <>
