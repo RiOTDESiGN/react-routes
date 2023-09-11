@@ -20,6 +20,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   --tip: #999;
   --video: url('./videos/intro.mp4');
   --glass: blur(10px);
@@ -37,7 +38,7 @@
 body {
   background-image: var(--bgc);
   color: var(--t);
-  height: 100vh;
+  height: 100dvh;
 }
 
 html, body {
@@ -132,18 +133,18 @@ html, body {
 .progress {
   width: 100%;
   height: 18px;
-  appearance: none;
-  border: none;
   background-color: var(--menu);
   border-radius: 6px;
   border: 2px solid var(--menu);
 }
-
+.progress::-moz-progress-bar {
+  background-color: var(--cta);
+  border-radius: 4px;
+}
 .progress::-webkit-progress-bar {
   background-color: var(--menu);
   border-radius: 4px;
 }
-
 .progress::-webkit-progress-value {
   background-color: var(--cta);
   border-radius: 4px;
@@ -191,9 +192,9 @@ html, body {
 .home-quote::before {
   position: absolute;
   content: '"';
-  top: 38px;
+  top: 16px;
   left: -20px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 50px;
   line-height: 0;
 }
@@ -201,8 +202,8 @@ html, body {
   position: absolute;
   content: '"';
   bottom: -8px;
-  right: -22px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  right: -20px;
+  font-family: Arial, sans-serif;
   font-size: 50px;
   line-height: 0;
 }
@@ -239,10 +240,6 @@ h4 {
   border-bottom: 2px solid var(--cta);
   width: 100%;
   transition: background-color .3s linear, border-bottom .3s linear;
-}
-
-.aboutContainer {
-  
 }
 
 .collapse {
@@ -349,7 +346,6 @@ a:hover::after {
 .app {
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
 
 .invert-filter {
@@ -372,6 +368,7 @@ a:hover::after {
     border-bottom-left-radius: 6px;
     z-index: 300;
     transition: var(--pageTransition);
+    -webkit-user-select: none;
     user-select: none;
   }
   .settingsTabSlideOut {
@@ -541,14 +538,6 @@ a:hover::after {
     background-color: transparent;
   }
 
-/* .languageCode {
-  display: grid;
-  width: 34px;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 18px;
-} */
-
   .flags {
     background-color: var(--cta);
       & :hover {filter: invert();}
@@ -694,6 +683,7 @@ a:hover::after {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   height: 100%;
+  max-height: 850px;
   visibility: hidden;
   overflow: hidden;
 }
@@ -1049,16 +1039,15 @@ a:hover::after {
 .pageContent {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100dvw;
     max-width: 1000px;
-    height: calc(100vh - 295px);
-    max-height: 850px;
+    height: calc(100dvh - 295px);
     padding: 34px 40px;
     transition: height .5s ease-in-out;
   }
 
 .pageContentGrow {
-    height: calc(100vh - 151px);
+    height: calc(100dvh - 151px);
   }
 
   .projectContent {
@@ -1066,13 +1055,13 @@ a:hover::after {
     place-self: center;
     width: 100vw;
     max-width: 1000px;
-    max-height: 100vh;
+    max-height: 100dvh;
     padding: 20px 40px 4px 40px;
     transition: padding .5s ease-in-out, max-height .5s ease-in-out;
   }
   .projectContentShrink {
     padding: 6px 40px 4px 40px;
-    max-height: calc(100vh - 802px);
+    max-height: calc(100dvh - 802px);
     transition: padding .5s ease-in-out, max-height .5s ease-in-out;
   }
 
@@ -1085,13 +1074,13 @@ a:hover::after {
     scroll-behavior: smooth;
     overflow-x: hidden;
     width: 100vw;
-    height: calc(100vh - 306px);
+    height: calc(100dvh - 306px);
     transition: var(--pageTransition);
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
   }
   .iframeGrow {
-    height: calc(100vh - 148px);
+    height: calc(100dvh - 148px);
     transition: max-height 380ms ease-in-out;
   }
 
@@ -1153,10 +1142,6 @@ a:hover::after {
     transform: rotate(0deg);
     cursor: pointer;
     display: none;
-  }
-  
-  .badgesContainer {
-
   }
   
   .categorySection {
@@ -1251,7 +1236,7 @@ a:hover::after {
     top: 0px;
     transform: scaleX(0.1);
     width: 91px;
-    height: 100vh;
+    height: 100dvh;
     text-align: center;
     content: '';
     opacity: 1;
@@ -1317,7 +1302,8 @@ a:hover::after {
     background-color: var(--formbox);
     width: 100%;
     max-width: 1000px;
-    height: 100vh;
+    height: 100%;
+    max-height: 850px;
     border-radius: 10px;
     box-shadow: 0 3px 5px var(--formboxshadow);
     transition: var(--pageTransition);
@@ -1370,33 +1356,26 @@ a:hover::after {
   .cut {
     background-color: transparent;
     border-radius: 6px;
-    height: 0px;
     left: 20px;
     position: absolute;
     top: -12px;
     transform: translateY(0);
     transition: all .2s linear;
-    width: 0px;
     opacity: 0;
-  }
-  
-  .cut-short {
-    height: 0px;
-    width: 0px;
+    font-size: 0px;
+    line-height: 3px;
+    padding: 10px 0;
+    color: transparent;
   }
   
   input:not([type="checkbox"]):focus ~ .cut,
   input:not([type="checkbox"]):not(:placeholder-shown) ~ .cut {
     background-color: var(--cta);
-    width: 76px;
-    height: 20px;
+    padding: 0 10px 1px 10px;
     opacity: 1;
-  }
-  
-  input:not([type="checkbox"]):focus ~ .cut-short,
-  input:not([type="checkbox"]):not(:placeholder-shown) ~ .cut-short {
-    width: 50px;
-    height: 20px;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--formbg);
   }
 
   .placeholder {
@@ -1413,15 +1392,15 @@ a:hover::after {
   
   input:not([type="checkbox"]):focus ~ .placeholder,
   input:not([type="checkbox"]):not(:placeholder-shown) ~ .placeholder {
-    transform: translateY(-29px) translateX(10px) scale(0.75);
+    transform: translateY(-24px) translateX(14px) scale(0);
   }
   
-  input:not([type="checkbox"]):not(:placeholder-shown) ~ .placeholder {
-    color: var(--formbg);
+  input:not([type="checkbox"]):not(:placeholder-shown) ~ .cut {
+    color: var(--t);
   }
   
   input:not([type="checkbox"]):focus ~ .placeholder {
-    color: var(--t);
+    color: transparent;
   }
   
   .submit {
@@ -1504,7 +1483,9 @@ a:hover::after {
 
 .translation {
   display: grid;
+  place-content: center;
   place-items: center;
+  height: 100%;
 }
 
 .translationAnimation {
@@ -1534,7 +1515,7 @@ a:hover::after {
     }
     .pageContent {
       font-size: 14px;
-      padding: 14px 40px 65px 40px;
+      padding: 34px 40px 65px 40px;
     }
     .home-container {
       grid-template-areas:
@@ -1545,25 +1526,24 @@ a:hover::after {
     }
     form {
       row-gap: 0px;
+      font-size: 12px;
     }
     .input-container {
       height: 32px;
     }
+    input:not([type="checkbox"]) {
+      font-size: 16px;
+      padding: 4px 0 2px 12px;
+  }
     input:not([type="checkbox"]):focus ~ .cut,
     input:not([type="checkbox"]):not(:placeholder-shown) ~ .cut {
-      height: 18px;
+      padding: 0 10px 2px 10px;
+      font-size: 12px;
+      line-height: 16px;
     }
-    input:not([type="checkbox"]):focus ~ .cut-short,
-    input:not([type="checkbox"]):not(:placeholder-shown) ~ .cut-short {
-      height: 18px;
-    }    
     .placeholder {
       left: 14px;
-      top: 8px;
-    }
-    input:not([type="checkbox"]):focus ~ .placeholder,
-    input:not([type="checkbox"]):not(:placeholder-shown) ~ .placeholder {
-      transform: translateY(-18px) translateX(19px) scale(0.75);
+      top: 9px;
     }
     .submit {
       margin-top: 18px;
@@ -1584,10 +1564,10 @@ a:hover::after {
       transition: var(--pageTransition);
     }
     iframe {
-      height: calc(100vh - 360px);
+      height: calc(100dvh - 360px);
     }
     .iframeGrow {
-      height: calc(100vh - 216px);
+      height: calc(100dvh - 216px);
     }
     .cardContainer {
       padding: 40px 0 0 0;
@@ -1605,6 +1585,7 @@ a:hover::after {
       padding: 10px;
       display: flex;
       z-index: 3;
+      -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       border-radius: 6px;
     }
@@ -1612,6 +1593,3 @@ a:hover::after {
       display: none;
     }
   }
-
-
-  /* MARS AND NEWSFEED BREAKPOINTS: 1200PX */

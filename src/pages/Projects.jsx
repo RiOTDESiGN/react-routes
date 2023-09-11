@@ -7,6 +7,7 @@ import { PageNotFound } from "./PageNotFound";
 
 import projects from '../assets/images/projects_icon.webp'
 import projectsData from "../projects.json";
+import GitHUB from "../tool_badges.json";
 
 function ProjectsHome({ t }) {
   const { isDarkMode } = useSettings();
@@ -37,7 +38,7 @@ function ProjectsHome({ t }) {
   };  
   
     return (
-      <Page title={t("Projects.title")} icon={projects} alt="Projects" className="title_projects">
+      <Page title={t("Projects.title")} icon={projects} alt="Projects Icon" className="title_projects">
         <div className="cardContainer">
           {projectsData.map((project, index) => (
             <div key={index} className={`projectCard ${index % 2 === 0 ? 'projectCardLeft' : 'projectCardRight'}`} onMouseLeave={handleCardMouseLeave}>
@@ -45,10 +46,10 @@ function ProjectsHome({ t }) {
               <div className="cardContent" style={{ backgroundImage: `url(${project.image})`, backgroundRepeat: 'no-repeat' }}>
                 <div className="cardButton">
                   <a href={project.GHurl} target="_blank" rel="noopener noreferrer">
-                    <img className={isDarkMode ? '' : 'invert-filter'} src="./badges/GitHUB.webp" alt="" />
+                    <img className={isDarkMode ? '' : 'invert-filter'} src="./badges/GitHUB.webp" alt="GitHUB Icon" />
                   </a>
                 </div>
-                <div className="cardButton" onClick={() => handleCardClick(index)}><img className={isDarkMode ? '' : 'invert-filter'} src="./badges/CaseStudy.webp" alt="" /></div>
+                <div className="cardButton" onClick={() => handleCardClick(index)}><img className={isDarkMode ? '' : 'invert-filter'} src="./badges/CaseStudy.webp" alt="Case Study Icon" /></div>
               </div>
             </div>
           ))}

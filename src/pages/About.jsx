@@ -6,7 +6,7 @@ import { Page } from './Page';
 import headerarrow from '../assets/images/headerarrow.png';
 import about from '../assets/images/about_icon.webp';
 
-function AboutSection({ t, sectionIndex, selectedSection, setSelectedSection, isDarkMode, isWideScreen }) {
+function AboutSection({ t, sectionIndex, selectedSection, setSelectedSection, isDarkMode, isWideScreen, uniqueId }) {
   const handleCheckboxChange = () => {
     setSelectedSection(sectionIndex);
   };
@@ -20,6 +20,7 @@ function AboutSection({ t, sectionIndex, selectedSection, setSelectedSection, is
   return (
     <section className="collapse">
       <input
+        id={`arrow${uniqueId}`}
         className="inputAbout"
         type="checkbox"
         checked={isWideScreen || selectedSection === sectionIndex}
@@ -30,7 +31,7 @@ function AboutSection({ t, sectionIndex, selectedSection, setSelectedSection, is
         <img
           className={`${selectedSection === sectionIndex ? 'aboutArrowClose' : (isDarkMode ? 'invert-filter aboutArrowOpen' : 'aboutArrowOpen')}`}
           src={headerarrow}
-          alt="collapse"
+          alt="Collapse Section Arrow Icon"
         />
       </h3>
       <p className="pAbout">{t(`About.about_content_${sectionIndex + 1}`)}</p>
@@ -60,7 +61,7 @@ export function About() {
   }, []);
 
   return (
-    <Page title={t('About.title')} icon={about} alt="About">
+    <Page title={t('About.title')} icon={about} alt="About Icon">
       <div className="aboutContainer">
         {[0, 1, 2].map((sectionIndex) => (
           <AboutSection
@@ -71,6 +72,7 @@ export function About() {
             setSelectedSection={setSelectedSection}
             isDarkMode={isDarkMode}
             isWideScreen={isWideScreen}
+            uniqueId={sectionIndex}
           />
         ))}
       </div>

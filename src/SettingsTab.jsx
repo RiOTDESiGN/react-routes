@@ -5,7 +5,6 @@ import { useSettings } from './SettingsContext';
 import 'flag-icons/css/flag-icons.min.css'
 
 import cookies from 'js-cookie'
-import FullscreenIcon from './pages/FullscreenToggle';
 import globe from './assets/images/globe.png';
 import sun from './assets/images/sun.webp';
 import moon from './assets/images/moon.webp';
@@ -82,7 +81,7 @@ export function SettingsTab() {
   }, [t])
 
   const GlobeIcon = () => (
-    <img src={globe} className={`bi bi-globe2 translator-globe ${isDarkMode ? 'invert-filter' : ''}`} />
+    <img src={globe} className={`bi bi-globe2 translator-globe ${isDarkMode ? 'invert-filter' : ''}`} alt="Translate" />
   )
 
   useEffect(() => {
@@ -96,71 +95,18 @@ export function SettingsTab() {
   return (
     <div id="settingsTab" className={`settings ${isSettingsTabActive ? 'settingsTabSlideOut' : ''}`}>
 
-{/* <div className="settingsColumn1">
-      <div id="toggle" className="displayMode" onClick={toggleDarkMode}>
-        {!isDarkMode ? <img src={sun} alt="Sun" /> : <img className={`${isDarkMode ? 'invert-filter' : ''}`} src={moon} alt="Moon" />}
-      </div>
-      <button className="translator-button" onClick={(event) => handleTranslatorToggle(event)}>
-        <GlobeIcon />
-      </button>
-      <span className='langTitle'>{t('Settings.language')}</span>
-      <ul className={translatorVisible ? 'translator' : 'hidden'}>
-        {languages.map(({ code, name, country_code }) => (
-          <li key={country_code}>
-            <button
-              className='langOption'
-              onClick={(event) => {
-                event.stopPropagation();
-                i18n.changeLanguage(code);
-                handleTranslatorToggle();
-              }}
-              disabled={code === currentLanguageCode}
-            >
-              <span className={`fi fi-${country_code}`} style={{ opacity: code === currentLanguageCode ? 0.5 : 1 }}></span>
-              {name}
-            </button>
-          </li>
-        ))}
-      </ul>
-</div>
-<div className="settingsColumn2">
-      <FullscreenIcon />
-      <div className="shrink" onClick={toggleShrinkHeader}>
-        {isShrinkHeaderActive ? 'Grow' : 'Shrink'} <br /> Header
-      </div>
-</div> */}
-
       <div className="settingsTabCogwheel" onClick={handleSettingsTabClick}>
         <img className={`${isDarkMode ? 'invert-filter' : ''}`} src={cogwheel} alt="Settings" />
       </div>
       <div id="toggle" className={`displayModeMini`} onClick={toggleDarkMode}>
         {!isDarkMode ? <img src={sun} alt="Sun" /> :  <img className="invert-filter" src={moon} alt="Moon" />}
       </div>
-      {/* <GlobeIcon />
-      <div className="flags">
-      {languages.map(({ code }) => (
-        <button
-          key={code}
-          className={`translator-button-mini ${code === currentLanguageCode ? 'nocursor' : ''}`}
-          onClick={(event) => {
-            event.stopPropagation();
-            i18n.changeLanguage(code);
-          }}
-        >
-          <span className="languageCode">
-            {code}
-          </span>
-        </button>
-      ))}
-      </div> */}
-
-{/* {t('Settings.language')} */}
 
 <div className="translator-button" onClick={(event) => handleTranslatorToggle(event)}>
         <GlobeIcon />
       </div>
       <ul className={translatorVisible ? 'translator' : 'hidden'}>
-        {languages.map(({ code, name, country_code }) => (
+        {languages.map(({ code, country_code }) => (
           <li key={country_code}>
             <button
               className='langOption'
@@ -179,7 +125,7 @@ export function SettingsTab() {
       </ul>
 
       <div className={`settingsTabMinimizeHeader ${isShrinkHeaderActive ? '' : 'settingsTabMinimizeHeaderClose'}`} onClick={toggleShrinkHeader}>
-      <img className={`${isDarkMode ? 'invert-filter' : ''}`} src={arrow} alt="" />
+      <img className={`${isDarkMode ? 'invert-filter' : ''}`} src={arrow} alt={isShrinkHeaderActive ? 'Grow Header' : 'Shrink Header'} />
       </div>
     </div>
   );

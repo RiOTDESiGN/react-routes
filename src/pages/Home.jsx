@@ -13,7 +13,7 @@ export function Home() {
   const favourites = t('Home.home_traits_favourites', { returnObjects: true });
 
   return (
-    <Page title={t('Home.title')} icon={home} alt="Home">
+    <Page title={t('Home.title')} icon={home} alt="Home Icon">
       <div className="home-container">
 
           <div className="facecard facecardleft">
@@ -31,8 +31,8 @@ export function Home() {
           </div>
 
           <div className="eru">
-            <img className="eruDark eruImg" src={eruDark} alt="" style={{ opacity: isDarkMode ? 1 : 0 }} />
-            <img className="eruLight eruImg" src={eruLight} alt="" />
+            <img className="eruDark eruImg" src={eruDark} alt="Profile picture of Erik" style={{ opacity: isDarkMode ? 1 : 0 }} />
+            <img className="eruLight eruImg" src={eruLight} alt="Profile picture of Erik" />
           </div>
 
           <div className="facecard facecardright">

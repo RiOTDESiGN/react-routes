@@ -27,7 +27,7 @@ export function PageNotFound() {
   return (
     <Page>
       <div className="translation">
-        <img className="translationAnimation" src={pagenotfound} alt="" />
+        <img className="translationAnimation" src={pagenotfound} alt="Translation Icon" />
         <h2>{t("PNF.header")}</h2>
         <h2>{t("PNF.description")}{count}{t("PNF.seconds")}</h2>
       </div>

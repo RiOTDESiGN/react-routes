@@ -44,84 +44,82 @@ export function Contact() {
     };
 
   return (
-    <Page title={t('Contact.title')} icon={contact} alt="Contact">
-      {/* <h3>{t('Contact.contact_title_1')}</h3>
-      <p>{t('Contact.contact_content_1')}</p> */}
-        <div className="form-box">
-          <form action="https://formsubmit.co/b25719bfc1f7531b25f9664ebaa92ec9" method="POST">
-              <div className="input-container firstname">
-                <input
-                  ref={firstnameRef}
-                  id="firstname"
-                  className="no-drag"
-                  type="text"
-                  name="firstname"
-                  placeholder=" "
-                  required
-                />
-                <div className="cut"></div>
-                <label htmlFor="firstname" className="placeholder">
-                  {t('Contact.form_firstname')}
-                </label>
-              </div>
-              <div className="input-container lastname">
-                <input
-                  ref={lastnameRef}
-                  id="lastname"
-                  className="no-drag"
-                  type="text"
-                  name="lastname"
-                  placeholder=" "
-                  required
-                />
-                <div className="cut"></div>
-                <label htmlFor="lastname" className="placeholder">
-                  {t('Contact.form_lastname')}
-                </label>
-              </div>
-              <div className="input-container email">
-                <input
-                  ref={emailRef}
-                  id="email"
-                  className="no-drag"
-                  type="email"
-                  name="email"
-                  placeholder=" "
-                  required
-                />
-                <div className="cut cut-short"></div>
-                <label htmlFor="email" className="placeholder">
-                  {t('Contact.form_email')}
-                </label>
-              </div>
-              <textarea
-                  ref={textareaRef}
-                  id="textarea"
-                  className="no-drag"
-                  name="message"
-                  placeholder={placeholder}
-                  onFocus={handleFocus}
-                  onBlur={handleBlur}
-                  required
-              ></textarea>
-              <button id="clearForm" type="button" className="submit clear no-drag" onClick={handleClearForm}>
-                {t('Contact.form_clear')}
-                <img
-                      src={recycle}
-                      alt="clear form"
-                      className={`clearFormImg ${isDarkMode ? '' : 'invert-filter'} ${isAnimating ? 'rotate-animation' : ''}`}
-                />
-              </button>
-              <button type="submit" className="submit no-drag">
-                {t('Contact.form_submit')}
-                <img
-                      src={sendform}
-                      alt="send form"
-                      className={`sendFormImg ${isDarkMode ? '' : 'invert-filter'}`}
-                />
-              </button>
-          </form>
-        </div>
+    <Page title={t('Contact.title')} icon={contact} alt="Contact Icon">
+      <div className="form-box">
+        <form action="https://formsubmit.co/b25719bfc1f7531b25f9664ebaa92ec9" method="POST">
+            <div className="input-container firstname">
+              <input
+                ref={firstnameRef}
+                id="firstName"
+                className="no-drag"
+                type="text"
+                autoComplete="on"
+                placeholder=" "
+                required
+              />
+              <div className="cut">{t('Contact.form_firstname')}</div>
+              <label htmlFor="firstName" className="placeholder">
+                {t('Contact.form_firstname')}
+              </label>
+            </div>
+            <div className="input-container lastname">
+              <input
+                ref={lastnameRef}
+                id="lastName"
+                className="no-drag"
+                type="text"
+                autoComplete="on"
+                placeholder=" "
+                required
+              />
+              <div className="cut">{t('Contact.form_lastname')}</div>
+              <label htmlFor="lastName" className="placeholder">
+                {t('Contact.form_lastname')}
+              </label>
+            </div>
+            <div className="input-container email">
+              <input
+                ref={emailRef}
+                id="email"
+                className="no-drag"
+                type="email"
+                autoComplete="on"
+                placeholder=" "
+                required
+              />
+              <div className="cut">{t('Contact.form_email')}</div>
+              <label htmlFor="email" className="placeholder">
+                {t('Contact.form_email')}
+              </label>
+            </div>
+            <textarea
+                ref={textareaRef}
+                id="textarea"
+                className="no-drag"
+                name="message"
+                placeholder={placeholder}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                required
+            ></textarea>
+            <button id="clearForm" type="button" className="submit clear no-drag" onClick={handleClearForm}>
+              {t('Contact.form_clear')}
+              <img
+                    src={recycle}
+                    alt="Clear Form Icon"
+                    className={`clearFormImg ${isDarkMode ? '' : 'invert-filter'} ${isAnimating ? 'rotate-animation' : ''}`}
+              />
+            </button>
+            <button type="submit" className="submit no-drag">
+              {t('Contact.form_submit')}
+              <img
+                    src={sendform}
+                    alt="Send Form Icon"
+                    className={`sendFormImg ${isDarkMode ? '' : 'invert-filter'}`}
+              />
+            </button>
+        </form>
+      </div>
     </Page>
   );
 }
