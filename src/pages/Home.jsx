@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Page } from './Page';
 import { useSettings } from '../SettingsContext';
 
@@ -12,6 +13,7 @@ export function Home() {
   const interests = t('Home.home_traits_interests', { returnObjects: true });
   const favourites = t('Home.home_traits_favourites', { returnObjects: true });
 
+  
   return (
     <Page title={t('Home.title')} icon={home} alt="Home Icon">
       <div className="home-container">
@@ -70,7 +72,9 @@ export function Home() {
             </div>
           </div>
 
-          <div className="home-quote-container"><p className="home-quote">{t('Home.home_quote')}</p></div>
+          <div className="home-quote-container">
+          <p className="home-quote">{t('Home.home_quote')}</p>
+          </div>
         
       </div>
     </Page>

@@ -6,6 +6,7 @@ import { Contact } from './pages/Contact';
 
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 import { useSettings } from './SettingsContext';
+import Modal from './Modal';
 
 import './assets/App.css';
 import './assets/splide-default.min.css';
@@ -58,7 +59,7 @@ export function App() {
         <div className="PRDlogo" onClick={() => handleNavClick(0)}></div>
         <div className="titleContainer">
           <div className="PRDlogoTitleRiot">Riot</div>
-          <div className="PRDlogoTitleDesign">Design</div>
+          <div className="PRDlogoTitleDesign">Design<Modal /></div>
         </div>
         </div>
       </header>
