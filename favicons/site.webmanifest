@@ -15,7 +15,7 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "start_url": "www.pivotriot.com",
+    "start_url": "/",
     "display": "standalone",
     "orientation": "landscape"
 }
