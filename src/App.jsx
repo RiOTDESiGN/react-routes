@@ -24,7 +24,6 @@ export function App() {
     pagination: false,
     snap: false,
     drag: 'free',
-    noDrag: '.no-drag',
   });
 
   const splideRef = useRef(null);
@@ -37,7 +36,7 @@ export function App() {
         ...carouselOptions,
         direction: 'ttb',
         autoHeight: true,
-        height: 700,
+        height: 750,
         arrows: false,
       });
     } else {

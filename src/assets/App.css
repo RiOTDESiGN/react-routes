@@ -1511,10 +1511,11 @@ a:hover::after {
       background-color: var(--bgcsolid);
     }
     header {
-      position: sticky;
+      position: fixed;
     }
     .page {
-      margin-top: 0px;
+      margin-top: 0;
+      padding-top: 144px;
     }
     .pageContent {
       font-size: 14px;
