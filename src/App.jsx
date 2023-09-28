@@ -36,7 +36,7 @@ export function App() {
         ...carouselOptions,
         direction: 'ttb',
         autoHeight: true,
-        height: 750,
+        height: 950,
         arrows: false,
       });
     } else {
