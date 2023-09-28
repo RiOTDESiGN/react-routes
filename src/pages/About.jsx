@@ -1,38 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSettings } from '../SettingsContext';
 import { Badges } from './Badges';
 import { Page } from './Page';
 
-import headerarrow from '../assets/images/headerarrow.png';
 import about from '../assets/images/about_icon.webp';
 
-function AboutSection({ t, sectionIndex, selectedSection, setSelectedSection, isDarkMode, isWideScreen, uniqueId }) {
-  const handleCheckboxChange = () => {
-    setSelectedSection(sectionIndex);
-  };
-
-  const handleArrowClick = () => {
-    setSelectedSection((prevSelectedSection) =>
-      prevSelectedSection === sectionIndex ? null : sectionIndex
-    );
-  };
+function AboutSection({ t, sectionIndex }) {
 
   return (
     <section className="collapse">
-      <input
-        id={`arrow${uniqueId}`}
-        className="inputAbout"
-        type="checkbox"
-        checked={isWideScreen || selectedSection === sectionIndex}
-        onChange={handleCheckboxChange}
-      />
-      <h3 onClick={handleArrowClick}>
+      <h3>
         {t(`About.about_title_${sectionIndex + 1}`)}
-        <img
-          className={`${selectedSection === sectionIndex ? 'aboutArrowClose' : (isDarkMode ? 'invert-filter aboutArrowOpen' : 'aboutArrowOpen')}`}
-          src={headerarrow}
-          alt="Collapse Section Arrow Icon"
-        />
       </h3>
       <p className="pAbout">{t(`About.about_content_${sectionIndex + 1}`)}</p>
     </section>
@@ -41,24 +19,6 @@ function AboutSection({ t, sectionIndex, selectedSection, setSelectedSection, is
 
 export function About() {
   const { isDarkMode, t } = useSettings();
-  const [selectedSection, setSelectedSection] = useState(0);
-  const [isWideScreen, setIsWideScreen] = useState(
-    window.innerWidth >= 461 && window.innerHeight >= 801
-  );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsWideScreen(
-        window.innerWidth >= 461 && window.innerHeight >= 801
-      );
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <Page title={t('About.title')} icon={about} alt="About Icon">
@@ -68,11 +28,7 @@ export function About() {
             key={sectionIndex}
             t={t}
             sectionIndex={sectionIndex}
-            selectedSection={selectedSection}
-            setSelectedSection={setSelectedSection}
             isDarkMode={isDarkMode}
-            isWideScreen={isWideScreen}
-            uniqueId={sectionIndex}
           />
         ))}
       </div>

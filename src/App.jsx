@@ -11,34 +11,59 @@ import Modal from './Modal';
 import './assets/App.css';
 import './assets/splide-default.min.css';
 
-const carouselOptions = {
-  type: 'slide',
-  keyboard: true,
-  wheel: true,
-  perPage: 1,
-  perMove: 1,
-  wheelMinThreshold: 50,
-  pagination: false,
-  snap: true,
-  noDrag: '.no-drag',
-};
-
 export function App() {
 
   const { isDarkMode, isShrinkHeaderActive, t } = useSettings();
   const [activeLinkIndex, setActiveLinkIndex] = useState(0);
+  const [carouselOptions, setCarouselOptions] = useState({
+    type: 'slide',
+    keyboard: true,
+    wheel: true,
+    perMove: 1,
+    wheelMinThreshold: 50,
+    pagination: false,
+    snap: false,
+    drag: 'free',
+    noDrag: '.no-drag',
+  });
 
   const splideRef = useRef(null);
+
+  const updateCarouselOptions = () => {
+    const mediaQuery = window.matchMedia('(max-width: 806px)');
+    
+    if (mediaQuery.matches) {
+      setCarouselOptions({
+        ...carouselOptions,
+        direction: 'ttb',
+        autoHeight: true,
+        height: 700,
+        arrows: false,
+      });
+    } else {
+      setCarouselOptions({
+        ...carouselOptions,
+        direction: 'ltr',
+        autoHeight: false,
+        height: 0,
+        arrows: true
+      });
+    }
+  };
 
   useEffect(() => {
     if (splideRef.current) {
       const splideInstance = splideRef.current.splide;
       splideInstance.on('moved', onSlideChanged);
+      updateCarouselOptions();
+      window.addEventListener('resize', updateCarouselOptions);
+  
       return () => {
+        window.removeEventListener('resize', updateCarouselOptions);
         splideInstance.destroy();
       };
     }
-  }, []);
+  }, []);  
 
   const onSlideChanged = (newIndex) => {
     window.location.hash = '';

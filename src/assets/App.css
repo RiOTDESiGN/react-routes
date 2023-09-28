@@ -187,6 +187,7 @@ html, body {
 .home-quote-container {
   grid-area: quote;
   place-self: center;
+  text-align: center;
   padding-top: 40px;
 }
 .home-quote {
@@ -283,29 +284,14 @@ h4 {
 .collapse {
   position: relative;
   margin: 0 auto;
-  padding: 0 0 10px 0;
-}
-
-.inputAbout {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  top: 0;
-  left: 0;
+  padding: 10px 0 10px 0;
 }
 
 .pAbout {
   width: 100%;
-  height: 0;
+  height: 100%;
   overflow: hidden;
   text-align: justify;
-  padding-bottom: 20px;
-}
-
-.inputAbout:checked ~ .pAbout {
-  height: 100%;
-  padding-top: 10px;
 }
 
 a {
@@ -773,6 +759,7 @@ a:hover::after {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  min-height: 100px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
 }
@@ -863,6 +850,10 @@ a:hover::after {
   & h3 {
     justify-content: right;
   }
+}
+
+.responsiveMessage {
+  display: none;
 }
 
 .projectsMenuContainer {
@@ -1158,27 +1149,6 @@ a:hover::after {
 
   .about {
     display: inline-block;
-  }
-
-  .aboutArrowClose {
-    width: 20px;
-    height: 11px;
-    margin-top: 8px;
-    transition: .3s;
-    transform: rotate(180deg);
-    filter: var(--settings);
-    cursor: pointer;
-    display: none;
-  }
-
-  .aboutArrowOpen {
-    width: 20px;
-    height: 11px;
-    margin-top: 10px;
-    transition: .3s;
-    transform: rotate(0deg);
-    cursor: pointer;
-    display: none;
   }
   
   .categorySection {
@@ -1532,18 +1502,43 @@ a:hover::after {
   }
 }
 
-  @media only screen and (max-width: 750px) {
-
+  @media only screen and (max-width: 806px) {
+    html, body {
+      overflow-y: scroll;
   }
-
-  @media only screen and (max-width: 460px) {
     body {
       background-image: none;
       background-color: var(--bgcsolid);
     }
+    header {
+      position: sticky;
+    }
+    .page {
+      margin-top: 0px;
+    }
     .pageContent {
       font-size: 14px;
-      padding: 34px 40px 65px 40px;
+      height: auto;
+      overflow: visible;
+    }
+    .title {
+      margin-top: 4px;
+    }
+    .projectsBar {
+      display: none;
+    }
+    .cardButton {
+      display: none;
+    }
+    .responsiveMessage {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 20px;
+      text-align: justify;
+      border: 2px solid var(--cta);
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 700;
     }
     .home-container {
       display: grid;
@@ -1555,13 +1550,19 @@ a:hover::after {
       'info';
       grid-template-columns: 1fr;
       row-gap: 20px;
-      overflow-y: scroll;
   }
   .home-quote-container {
     padding-top: 0px;
   }
   .eru {
     width: 200px;
+}
+.form-box {
+  height: calc(100dvh - 300px);
+  margin-bottom: 0px;
+}
+.form-box-grow {
+  height: calc(100dvh - 226px)
 }
     form {
       row-gap: 0px;
@@ -1596,6 +1597,7 @@ a:hover::after {
     .projectContent {
       padding: 20px 0 0 12px;
       font-size: 14px;
+      height: 100%;
     }
     .projectContentShrink {
       padding: 6px 40px 4px 40px;
@@ -1609,16 +1611,11 @@ a:hover::after {
       height: calc(100dvh - 216px);
     }
     .cardContainer {
-      padding: 40px 0 0 0;
+      grid-template-columns: repeat(1, 1fr);
+      max-height: 100%;
     }
     .pAbout {
-      padding-bottom: 0px;
-    }
-    .aboutArrowClose {
-      display: block;
-    }
-    .aboutArrowOpen {
-      display: block;
+      padding-bottom: 4px;
     }
     .categories {
       width: 100%;
@@ -1642,4 +1639,19 @@ a:hover::after {
     .sectionRight {
       display: none;
     }
+    .settingsTabMinimizeHeader {
+      display: none;
+    }
+    .settings {
+      right: -62px;
+    }
+    .settingsTabSlideOut {
+      transform: translateX(-62px);
+  }
+  .badgeContainer::after {
+    display: none;
+  }
+  nav {
+  display: none;
+}
   }

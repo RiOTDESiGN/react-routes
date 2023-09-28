@@ -72,6 +72,9 @@ export function SettingsProvider({ children }) {
     const menuSpacerBottom = document.querySelectorAll(".menuSpacerBottom");
     applyClassToElements(menuSpacerBottom, "menuSpacerBottomGrow", isShrinkHeaderActive);
 
+    const formBox = document.querySelectorAll(".form-box");
+    applyClassToElements(formBox, "form-box-grow", isShrinkHeaderActive);
+
     const iframeElement = document.getElementById("iframe");
     if (iframeElement) {
       if (isShrinkHeaderActive) {

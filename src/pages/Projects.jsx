@@ -7,7 +7,6 @@ import { PageNotFound } from "./PageNotFound";
 
 import projects from '../assets/images/projects_icon.webp'
 import projectsData from "../projects.json";
-import GitHUB from "../tool_badges.json";
 
 function ProjectsHome({ t }) {
   const { isDarkMode } = useSettings();
@@ -43,7 +42,11 @@ function ProjectsHome({ t }) {
           {projectsData.map((project, index) => (
             <div key={index} className={`projectCard ${index % 2 === 0 ? 'projectCardLeft' : 'projectCardRight'}`} onMouseLeave={handleCardMouseLeave}>
               <h4 className="projectCardTitle">{t(`Projects.project_${project.id}.name`)}</h4>
-              <div className="cardContent" style={{ backgroundImage: `url(${project.image})`, backgroundRepeat: 'no-repeat' }}>
+              <div className="cardContent"
+                   style={{ backgroundImage: `url(${project.image})`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center center',
+                            backgroundSize: 'cover' }}>
                 <div className="cardButton">
                   <a href={project.GHurl} target="_blank" rel="noopener noreferrer">
                     <img className={isDarkMode ? '' : 'invert-filter'} src="./badges/GitHUB.webp" alt="GitHUB Icon" />
@@ -65,6 +68,9 @@ function ProjectsHome({ t }) {
               <div className="codeSpace">{t(`Projects.code_title`)}:<span className="projectSynopsisTechnologies">{project.code}</span></div>
             </div>
           ))}
+        </div>
+        <div className="responsiveMessage">
+          Project live-view, details and case-studies are not available on mobile devices.
         </div>
       </Page>
     );
