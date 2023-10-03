@@ -15,6 +15,7 @@ export function App() {
 
   const { isDarkMode, isShrinkHeaderActive, t } = useSettings();
   const [activeLinkIndex, setActiveLinkIndex] = useState(0);
+  const [isLastSlideVisible, setIsLastSlideVisible] = useState(false);
   const [carouselOptions, setCarouselOptions] = useState({
     type: 'slide',
     keyboard: true,
@@ -32,6 +33,7 @@ export function App() {
     const mediaQuery = window.matchMedia('(max-width: 806px)');
     
     if (mediaQuery.matches) {
+      setIsLastSlideVisible(true);
       setCarouselOptions({
         ...carouselOptions,
         direction: 'ttb',
@@ -40,6 +42,7 @@ export function App() {
         arrows: false,
       });
     } else {
+      setIsLastSlideVisible(false);
       setCarouselOptions({
         ...carouselOptions,
         direction: 'ltr',
@@ -101,6 +104,11 @@ export function App() {
           <SplideSlide>
             <Contact />
           </SplideSlide>
+          {isLastSlideVisible && (
+            <SplideSlide>
+              <div className='footerspace'></div>
+            </SplideSlide>
+          )}
         </SplideTrack>
         <nav>
           <div className={`splide__arrows ${isDarkMode ? 'invert-filter-arrows' : ''}`} />
