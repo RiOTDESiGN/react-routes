@@ -48,6 +48,7 @@
         "challenges_title": "Utfordringer",
         "reflection_title": "Refleksjon",
         "code_title": "Kode",
+        "mobile_message": "Prosjekt live-visning, detaljer og case-studier er ikke tilgjengelige på mobile enheter.",
 
         "project_RNG": {
             "name": "Tilfeldig Nummergenerator",

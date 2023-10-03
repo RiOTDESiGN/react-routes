@@ -48,6 +48,7 @@
         "challenges_title": "Challenges",
         "reflection_title": "Reflection",
         "code_title": "Code",
+        "mobile_message": "Project live-view, details and case-studies are not available on mobile devices.",
 
         "project_RNG": {
             "name": "Random Number Generator",
